@@ -1,0 +1,374 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.PopUpBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+  opacity: 0.7;
+
+  z-index: 99;
+
+  animation: fadeIn 0.2s ease-in;
+}
+
+.PopUpBGOut {
+  animation: fadeOut 0.2s ease-in;
+
+  opacity: 0;
+}
+
+.PopUpWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 100;
+
+  transform: scale(1);
+
+  animation: fadeInPopUp 0.5s ease-in;
+}
+
+.PopUpInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 690px;
+
+  border-radius: 10px;
+}
+
+.PopUp {
+  position: relative;
+  padding: 50px 40px;
+
+  width: 480px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+  border: 1px solid var(--color-primary);
+}
+
+.PopUpOut {
+  animation: fadeOutPopUp 0.5s ease-in;
+
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.CloseBtn {
+  position: absolute;
+  padding: 2px;
+  top: 30px;
+  right: 30px;
+
+  height: 23px;
+  width: 23px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: 2px solid #fff;
+
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    height: 2px;
+
+    background-color: #fff;
+
+    &:nth-child(1) {
+      transform: translateY(1px) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      transform: translateY(-1px) rotate(-45deg);
+    }
+  }
+}
+
+.PopUpDescr {
+  margin-top: 20px;
+
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Poppins;
+  line-height: 26px;
+  letter-spacing: 0.32px;
+  color: #fff;
+}
+
+.RequestWrap {
+  padding: 50px 30px 30px 45px;
+
+  height: 100%;
+  max-width: 410px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #fff;
+}
+
+.RequestTitle {
+  color: var(--color-blue-deep);
+  font-size: 38px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 44px;
+
+  span {
+    color: var(--color-primary-dark);
+  }
+}
+
+.RequestList {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.RequestItem {
+  position: relative;
+  padding-left: 30px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    background: url("./checked.svg") center center/cover no-repeat;
+  }
+}
+
+.RequestItemTitle {
+  color: var(--color-blue-deep);
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 700;
+  letter-spacing: 0.32px;
+}
+
+.RequestItemDescr {
+  color: var(--color-blue-deep);
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.3px;
+}
+
+.ImgWrapper {
+  margin-top: 20px;
+
+  width: 100%;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+.InputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.InputErrorText {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: red;
+
+  animation: shake 0.5s ease-in-out;
+}
+
+.Input,
+.Textarea {
+  margin-top: 28px;
+  padding: 12px 0;
+
+  width: 100%;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.Input,
+.Textarea,
+.Input::placeholder,
+.Textarea::placeholder {
+  color: #fff;
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.Textarea {
+  height: 78px;
+}
+
+.CheckBox {
+  margin-top: 50px;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  color: #fff;
+  font-size: 11px;
+  font-family: Poppins;
+  line-height: 14px;
+  letter-spacing: 0.1px;
+
+  &[type="checkbox"] {
+    padding: 2px;
+    margin: 0;
+
+    width: 15px;
+    height: 15px;
+
+    appearance: none;
+    border: 1px solid #fff;
+
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      transform: scale(0);
+      transform-origin: bottom left;
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em var(--form-control-color);
+      background-color: white;
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &:focus {
+      outline: max(2px, 0.15em) solid currentColor;
+      outline-offset: max(2px, 0.15em);
+    }
+  }
+}
+
+.FormBtn {
+  @include btnOnBlack;
+
+  margin-top: auto;
+
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInPopUp {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutPopUp {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

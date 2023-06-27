@@ -1,8 +1,10 @@
 import React from "react";
 
 import styles from "./Main.module.scss";
+import { useAppContext } from "@/context/AppContext";
 
 const Main = () => {
+  const { setShowRequestDemo } = useAppContext();
   return (
     <section className={styles.Section}>
       <div className="container">
@@ -25,7 +27,9 @@ const Main = () => {
               </div>
               <p className={styles.PackageDescr}>Postbacks Only</p>
 
-              <button className={styles.PackageBtn}>Get Started</button>
+              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
+                Get Started
+              </button>
 
               <ul className={styles.Including}>
                 <li className={styles.IncludingItem}>
@@ -79,7 +83,9 @@ const Main = () => {
               </div>
               <p className={styles.PackageDescr}>Setup fee</p>
 
-              <button className={styles.PackageBtn}>Get Started</button>
+              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
+                Get Started
+              </button>
 
               <ul className={styles.Including}>
                 <li className={styles.IncludingItem}>
@@ -134,7 +140,9 @@ const Main = () => {
               </div>
               <p className={styles.PackageDescr}>Setup fee</p>
 
-              <button className={styles.PackageBtn}>Get Started</button>
+              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
+                Get Started
+              </button>
 
               <ul className={styles.Including}>
                 <li className={styles.IncludingItem}>
@@ -189,7 +197,9 @@ const Main = () => {
               </div>
               <p className={styles.PackageDescr}>Setup fee</p>
 
-              <button className={styles.PackageBtn}>Get Started</button>
+              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
+                Get Started
+              </button>
 
               <ul className={styles.Including}>
                 <li className={styles.IncludingItem}>

@@ -14,7 +14,7 @@ interface IHeaderProps {
 
 const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const [showSubmenu, setShowSubmenu] = useState<boolean>(false);
-  const { pathname } = useAppContext();
+  const { pathname, setShowRequestDemo } = useAppContext();
 
   useEffect(() => {
     if (showSubmenu) {
@@ -88,7 +88,10 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
             </ul>
           </nav>
 
-          <button className={cn(styles.Button, { [styles.ButtonDark]: darkMode && !showSubmenu })}>
+          <button
+            onClick={() => setShowRequestDemo(true)}
+            className={cn(styles.Button, { [styles.ButtonDark]: darkMode && !showSubmenu })}
+          >
             Request Demo
           </button>
         </div>

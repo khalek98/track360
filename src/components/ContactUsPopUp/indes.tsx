@@ -31,6 +31,22 @@ const ContactUsPopUp = () => {
     document.body.style.overflow = "hidden";
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        onClosePopUp();
+      }
+    });
+
+    return () => {
+      window.removeEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          onClosePopUp();
+        }
+      });
+    };
+  });
+
   const onClosePopUp = () => {
     setHidePopUp(true);
     document.body.style.overflow = "auto";

@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Footer, Header } from "@/components";
 import { useAppContext } from "@/context/AppContext";
 import ContactUsPopUp from "@/components/ContactUsPopUp/indes";
+import RequestDemo from "@/components/RequestDemo";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -11,7 +12,7 @@ interface ILayoutProps {
 }
 
 const PrimaryLayout: FC<ILayoutProps> = ({ children, darkMode }) => {
-  const { showContactUs } = useAppContext();
+  const { showContactUs, showRequestDemo } = useAppContext();
 
   return (
     <>
@@ -29,6 +30,7 @@ const PrimaryLayout: FC<ILayoutProps> = ({ children, darkMode }) => {
       <Footer />
 
       {showContactUs && <ContactUsPopUp />}
+      {showRequestDemo && <RequestDemo />}
     </>
   );
 };

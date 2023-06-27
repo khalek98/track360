@@ -5,8 +5,11 @@ import { Fade, Zoom, LightSpeed } from "react-reveal";
 import styles from "./Reporting.module.scss";
 
 import ReportingImg from "./Reporting.png";
+import { useAppContext } from "@/context/AppContext";
 
 const Reporting = () => {
+  const { setShowRequestDemo } = useAppContext();
+
   return (
     <section id="reporting" className={styles.Section}>
       <div className="container">
@@ -44,7 +47,9 @@ const Reporting = () => {
             </Fade>
           </ul>
 
-          <button className={styles.Button}>Request Demo</button>
+          <button onClick={() => setShowRequestDemo(true)} className={styles.Button}>
+            Request Demo
+          </button>
         </div>
       </div>
     </section>

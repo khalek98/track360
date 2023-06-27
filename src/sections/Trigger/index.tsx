@@ -2,7 +2,11 @@ import React from "react";
 
 import styles from "./Trigger.module.scss";
 
+import { useAppContext } from "@/context/AppContext";
+
 const Trigger = () => {
+  const { setShowRequestDemo } = useAppContext();
+
   return (
     <section className={styles.Trigger}>
       <div className="container">
@@ -11,7 +15,9 @@ const Trigger = () => {
             <span>Achieve</span> your business goals through the power of
             <span> affiliate marketing</span>
           </h2>
-          <button className={styles.Button}>Request Demo</button>
+          <button onClick={() => setShowRequestDemo(true)} className={styles.Button}>
+            Request Demo
+          </button>
         </div>
       </div>
     </section>

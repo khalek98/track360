@@ -5,8 +5,10 @@ import { Fade, Zoom } from "react-reveal";
 import styles from "./Communicator.module.scss";
 
 import CommunicatorImg from "./Communicator.png";
+import { useAppContext } from "@/context/AppContext";
 
 const Communicator = () => {
+  const { setShowRequestDemo } = useAppContext();
   return (
     <section id="communicator" className={styles.Section}>
       <div className="container">
@@ -43,7 +45,9 @@ const Communicator = () => {
             </Fade>
           </ul>
 
-          <button className={styles.Button}>Request Demo</button>
+          <button onClick={() => setShowRequestDemo(true)} className={styles.Button}>
+            Request Demo
+          </button>
         </div>
       </div>
     </section>
