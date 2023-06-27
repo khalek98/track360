@@ -1,0 +1,276 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Main {
+  position: relative;
+  padding: 180px 0 110px;
+
+  background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+  overflow: hidden;
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.MainWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+}
+
+.Title {
+  max-width: 675px;
+
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 65px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+
+  span {
+    color: var(--color-primary);
+  }
+}
+
+.Text {
+  max-width: 760px;
+
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+
+  span {
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+}
+
+.ImgWrapper {
+  height: 644px;
+  width: 644px;
+  background: url("../../../assets/img/main/main.png") center center/cover no-repeat;
+}
+
+.MiddleMenuWrapp {
+  position: relative;
+  padding: 70px;
+
+  width: 644px;
+  height: 644px;
+
+  border-radius: 50%;
+  border: 1px dashed rgba(72, 198, 239, 0.4);
+}
+
+.DashedBg {
+  padding: 43px;
+
+  width: 504px;
+  height: 504px;
+
+  border-radius: 50%;
+  border: 2px dashed rgba(102, 252, 241, 0.4);
+}
+
+.FildeBg {
+  position: relative;
+  width: 418px;
+  height: 418px;
+
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+}
+
+.CircleLinkWrap {
+  position: absolute;
+
+  height: 154px;
+  width: 154px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #474d53;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+
+  &_1 {
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &_2 {
+    right: -65px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &_3 {
+    bottom: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &_4 {
+    left: -65px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.CircleLink {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 19px;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.33px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.MiddleMenu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+}
+
+.MiddleMenuLink {
+  position: relative;
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 17px;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0.85px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 1px;
+    width: 4px;
+
+    background-color: #fff;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.Arrow {
+  position: absolute;
+
+  height: 15px;
+  width: 15px;
+
+  &:nth-child(1) {
+    top: 55px;
+    right: 52px;
+
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  &:nth-child(2) {
+    bottom: 55px;
+    right: 52px;
+
+    border-bottom: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+  }
+
+  &:nth-child(3) {
+    bottom: 55px;
+    left: 52px;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+  }
+
+  &:nth-child(4) {
+    top: 55px;
+    left: 52px;
+
+    border-right: 2px solid #ffffff;
+    border-top: 2px solid #ffffff;
+  }
+}
+
+.Inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  border-radius: 50%;
+
+  animation: rotateCircles 7s linear infinite;
+}
+
+.FiledCircle {
+  position: absolute;
+
+  border-radius: 50%;
+  background: #66fcf1;
+
+  &:nth-child(1) {
+    top: 55px;
+    left: 102px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+  &:nth-child(2) {
+    bottom: 103px;
+    right: 67px;
+
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@keyframes rotateCircles {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

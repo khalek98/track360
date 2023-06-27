@@ -1,0 +1,46 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 100px 0 0;
+}
+
+.SectionWrapper {
+  @include solutionsWrapper;
+  grid-template-columns: 560px auto;
+}
+
+.Title {
+  @include solutionsTitle;
+}
+
+.Text {
+  @include solutionsText;
+}
+
+.List {
+  @include solutionsList;
+  margin-top: 0;
+  max-width: 520px;
+}
+
+.ListItem {
+  @include solutionsItem;
+}
+
+.ImgWrapper {
+  position: relative;
+  margin-top: 10px;
+
+  width: 100%;
+
+  grid-column: 2/3;
+  grid-row: 1/4;
+}
+
+.Screenshot {
+  position: absolute;
+
+  top: -50px;
+  left: 80px;
+}

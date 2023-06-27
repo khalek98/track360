@@ -1,0 +1,93 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 140px 0 170px;
+}
+
+.SectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 40px;
+}
+
+.Title {
+  @include solutionsTitle;
+  text-align: center;
+}
+
+.Text {
+  @include solutionsText;
+  max-width: 760px;
+
+  text-align: center;
+  font-size: 22px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.44px;
+}
+
+.BlocksWrapper {
+  margin-top: 40px;
+
+  display: flex;
+  column-gap: 40px;
+}
+
+.Block {
+  padding: 40px;
+
+  width: 520px;
+  height: 580px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 46px;
+
+  border-radius: 20px;
+  border: 1px solid #53dfd5;
+  background: #fff;
+
+  list-style-type: none;
+
+  &:nth-child(1) {
+    .BlockImg {
+      background: url("./On-Premise.svg") center center/cover no-repeat;
+    }
+  }
+
+  &:nth-child(2) {
+    .BlockImg {
+      background: url("./SaaS.svg") center center/cover no-repeat;
+    }
+  }
+}
+
+.BlockImg {
+  height: 130px;
+  width: 130px;
+}
+
+.BlockTitle {
+  color: #53dfd5;
+  font-size: 40px;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.8px;
+}
+
+.BlockList {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.BlockItem {
+  @include solutionsItem;
+}

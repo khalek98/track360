@@ -1,0 +1,260 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25px 0;
+
+  width: 100%;
+
+  z-index: 99;
+}
+
+.HeaderWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Logo {
+  height: 34px;
+
+  fill: #ffffff;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.LogoDark {
+  fill: var(--color-blue-deep) !important;
+}
+
+.Menu {
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 50px;
+
+  list-style-type: none;
+}
+
+.MenuItem {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+
+.MenuLink {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  text-decoration: none;
+
+  transition: all 0.2s ease-in-out;
+
+  svg {
+    margin-top: 4px;
+
+    fill: #fff;
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-primary);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.LinkDark {
+  color: var(--color-blue-deep) !important;
+
+  &:hover {
+    color: var(--color-primary-dark) !important;
+  }
+}
+
+.MenuLinkActive,
+.MenuLink:hover {
+  color: var(--color-primary) !important;
+
+  &::after {
+    opacity: 1;
+  }
+
+  svg {
+    fill: var(--color-primary);
+  }
+}
+
+.SubNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  visibility: hidden;
+}
+
+.SubNavActive {
+  visibility: visible;
+}
+
+.BlurBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+
+  z-index: -1;
+
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.BlurBgOut {
+  animation: fadeOut 0.3s ease-in-out;
+
+  opacity: 0;
+}
+
+.Submenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 95px 0px 50px 40px;
+
+  width: 100%;
+  max-height: 315px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+
+  column-gap: 40px;
+  row-gap: 16px;
+
+  background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+  clip-path: ellipse(150% 100% at 50% 0%);
+
+  transition: all 0.3s ease-in-out;
+  // transform: translateY(0px);
+  opacity: 1;
+  visibility: visible;
+
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.SubmenuOut {
+  animation: fadeOut 0.3s ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.SubmenuItem {
+  max-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.SubmenuLink {
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Poppins;
+  letter-spacing: 0.32px;
+  text-decoration: none;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--color-primary-dark) !important;
+  }
+}
+
+.Button {
+  @include btnOnBlack;
+
+  padding: 15px 35px;
+}
+
+.ButtonDark {
+  border-color: var(--color-blue-deep) !important;
+  color: var(--color-blue-deep) !important;
+
+  &:hover {
+    background-color: var(--color-primary-dark) !important;
+    border-color: var(--color-primary-dark) !important;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes outMenu {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,82 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Solutions {
+  padding: 105px 0 125px;
+}
+
+.SolutionsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.Title {
+  @include title;
+  color: #ffffff;
+  text-align: center;
+}
+
+.SolutionsList {
+  display: flex;
+  justify-content: space-between;
+
+  list-style-type: none;
+}
+
+.SolutionsItem {
+  padding: 20px;
+  height: auto;
+  width: 150px;
+  min-height: 150px;
+
+  display: grid;
+  grid-template-rows: 43px auto auto;
+  justify-items: center;
+  align-items: center;
+  row-gap: 12px;
+
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #000;
+    box-shadow: 4px 4px 14px 0px rgba(102, 252, 241, 0.4);
+
+    .SolutionsLink {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.SolutionsTitle {
+  font-family: "Montserrat";
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.45px;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.SolutionsLink {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 12px;
+  font-family: Montserrat;
+  font-weight: 600;
+  letter-spacing: 0.36px;
+  text-transform: capitalize;
+
+  transition: all 0.2s ease-in-out;
+
+  visibility: hidden;
+  opacity: 0;
+}

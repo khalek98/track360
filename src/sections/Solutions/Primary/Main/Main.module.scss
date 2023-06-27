@@ -1,0 +1,55 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Main {
+  position: relative;
+  padding: 160px 0 235px;
+
+  background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+  overflow: hidden;
+  clip-path: ellipse(150% 100% at 50% 0%);
+}
+
+.MainWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
+}
+
+.Title {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 65px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
+.Subtitle {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 50px;
+  letter-spacing: 0.69em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.Text {
+  max-width: 760px;
+
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 127%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+
+  span {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+}

@@ -1,0 +1,81 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Choose {
+  padding: 140px 0;
+}
+
+.ChooseWrapper {
+  display: grid;
+  grid-template-columns: 500px 650px;
+  justify-content: space-between;
+  row-gap: 50px;
+}
+
+.Title {
+  @include subtitle;
+
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 80px;
+
+  span {
+    display: block;
+  }
+}
+
+.Text {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: var(--color-blue-deep);
+}
+
+.ChooseList {
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/5;
+  row-gap: 28px;
+
+  list-style-type: none;
+}
+
+.ChooseItem {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 20px;
+}
+
+.ImgWrapper {
+  height: auto;
+  width: 100%;
+}
+
+.ChooseItemText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+}
+
+.ChooseTitle {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-blue-deep);
+}
+
+.ChooseDescr {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: var(--color-blue-deep);
+}

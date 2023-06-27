@@ -1,0 +1,48 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 220px 0 0;
+  @include media-2xl {
+  }
+}
+
+.SectionWrapper {
+  @include solutionsWrapper;
+  grid-template-columns: 540px auto;
+  column-gap: 110px;
+}
+
+.Title {
+  @include solutionsTitle;
+}
+
+.Text {
+  @include solutionsText;
+}
+
+.List {
+  @include solutionsList;
+  margin-top: 0;
+}
+
+.ListItem {
+  @include solutionsItem;
+}
+
+.ImgWrapper {
+  position: relative;
+  margin-top: 10px;
+
+  width: 100%;
+
+  grid-column: 2/3;
+  grid-row: 1/4;
+}
+
+.Screenshot {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+}

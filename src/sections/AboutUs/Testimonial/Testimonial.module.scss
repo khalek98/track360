@@ -1,0 +1,85 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  position: relative;
+  padding: 100px 0 105px;
+
+  background: linear-gradient(109.53deg, #28303c 33.07%, #000000 86.95%, #202833 110.4%);
+
+  overflow: hidden;
+}
+
+.CircleDashed {
+  @include circleDashed;
+
+  top: 16px;
+  right: -230px;
+
+  width: 343px;
+  height: 343px;
+
+  border: 2px dashed var(--color-primary-dark);
+  opacity: 0.7;
+}
+
+.SectionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.Title {
+  @include title;
+
+  color: #fff;
+}
+
+.Slider {
+  margin-top: 70px;
+}
+
+.Recomendation {
+  position: relative;
+
+  color: #fff;
+  font-size: 24px;
+  font-family: Poppins;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 35px;
+  letter-spacing: 0.24px;
+
+  &::before {
+    content: "“";
+    position: absolute;
+    left: -27px;
+    top: -11px;
+
+    color: var(--color-primary);
+    font-size: 72px;
+    font-family: Poppins;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 45px;
+    letter-spacing: 0.72px;
+  }
+}
+
+.Persone {
+  margin-top: 78px;
+
+  font-size: 18px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 160%;
+  color: #fff;
+}
+
+.Position {
+  color: #fff;
+  font-size: 15px;
+  font-family: Poppins;
+  font-style: italic;
+  line-height: 160%;
+  letter-spacing: -0.45px;
+}

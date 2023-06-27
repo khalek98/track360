@@ -1,0 +1,70 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 190px 0 0;
+  overflow: hidden;
+}
+
+.SectionWrapper {
+  @include solutionsWrapper;
+  column-gap: 150px;
+}
+
+.Title {
+  @include solutionsTitle;
+}
+
+.Text {
+  @include solutionsText;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.List {
+  @include solutionsList;
+}
+
+.ListItem {
+  @include solutionsItem;
+  text-transform: capitalize;
+}
+
+.ImgWrapper {
+  position: relative;
+
+  width: 100%;
+
+  grid-column: 2/3;
+  grid-row: 1/4;
+}
+
+.Screenshot1 {
+  position: absolute;
+  top: -68px;
+  left: 55px;
+
+  width: 950px;
+  height: 441px;
+
+  box-shadow: -6.5px 7.79px 20px rgba(56, 56, 110, 0.15);
+  border-radius: 5px;
+
+  z-index: 1;
+}
+
+.Screenshot2 {
+  position: absolute;
+  top: 335px;
+  left: 0;
+
+  width: 900px;
+  height: 207px;
+
+  box-shadow: -21px -20px 29px rgba(35, 48, 107, 0.15);
+  border-radius: 2px;
+
+  z-index: 2;
+}

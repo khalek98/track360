@@ -1,0 +1,403 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 160px 0 130px;
+}
+
+.SectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Title {
+  @include title;
+
+  color: #fff;
+  font-family: Poppins;
+  line-height: 50px;
+  letter-spacing: 12.42px;
+}
+
+.Subtitle {
+  @include subtitle;
+
+  margin-top: 50px;
+
+  color: #fff;
+  font-size: 60px;
+  font-family: Poppins;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.Label {
+  margin-top: 30px;
+
+  color: #fff;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0.16px;
+}
+
+.Note {
+  margin-top: 20px;
+
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-family: Poppins;
+  line-height: 23px;
+  letter-spacing: 0.56px;
+}
+
+.Packages {
+  margin-top: 60px;
+
+  display: flex;
+  column-gap: 20px;
+}
+
+.Package {
+  padding: 40px 20px;
+
+  width: 280px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid var(--color-primary);
+  background: rgba(255, 255, 255, 0.2);
+
+  &:nth-child(1) {
+    .Features {
+      margin-top: 31px;
+    }
+  }
+
+  &:nth-child(2) {
+    .PackagePrice {
+      margin-bottom: 4px;
+    }
+  }
+
+  &:nth-child(3) {
+    .PackagePrice {
+      margin-bottom: 7px;
+    }
+  }
+
+  &:nth-child(4) {
+    .IncludingPrice {
+      &:before {
+        content: "";
+      }
+    }
+  }
+}
+
+.PackageTitle {
+  color: #fff;
+  font-size: 26px;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.78px;
+}
+
+.PackageDescr {
+  margin-top: 12px;
+
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-family: Poppins;
+  line-height: 120%;
+  letter-spacing: 0.28px;
+}
+
+.PriceWrap {
+  margin-top: 40px;
+
+  display: flex;
+  align-items: flex-end;
+  column-gap: 2px;
+
+  span {
+    font-family: Poppins;
+    font-size: 40px;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: capitalize;
+    color: #fff;
+  }
+}
+
+.PackagePrice {
+  color: #fff;
+  font-size: 14px;
+  font-family: Poppins;
+  text-transform: lowercase;
+}
+
+.PackageBtn {
+  @include btnOnBlack;
+  margin-top: 30px;
+
+  width: 100%;
+  height: 50px;
+
+  color: var(--color-blue-deep);
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: 0.48px;
+
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+  }
+}
+
+.Including {
+  margin-top: 55px;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+}
+
+.IncludingItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.IncludingTitle {
+  color: #fff;
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.28px;
+
+  span {
+    margin-top: 3px;
+
+    display: block;
+
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 100%;
+  }
+}
+
+.Checkmark {
+  width: 24px;
+  height: 24px;
+
+  background: url(../../../assets/icons/chenk_mark.svg) center center/cover no-repeat;
+}
+
+.IncludingPrice {
+  position: relative;
+
+  color: var(--color-primary-dark);
+  text-align: center;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+
+  &::before {
+    content: "$";
+    position: absolute;
+    left: -9px;
+    top: -3px;
+
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.Divider {
+  margin-top: 45px;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.PriceMO {
+  margin-top: 45px;
+
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+
+  span {
+    display: inline-flex;
+
+    font-size: 44px;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: 0.88px;
+    text-transform: capitalize;
+    color: var(--color-primary-dark);
+  }
+}
+
+.PriceMODescr {
+  margin-top: 5px;
+  font-family: Poppins;
+  font-size: 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Features {
+  margin-top: 47px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.Feature {
+  position: relative;
+  padding-left: 10px;
+
+  color: #fff;
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 127%;
+
+  list-style-type: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+
+    height: 4px;
+    width: 4px;
+
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  span {
+    color: var(--color-primary-dark);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.28px;
+  }
+}
+
+.NoteAfterPrice {
+  margin-top: 30px;
+
+  align-self: flex-start;
+  color: #fff;
+  font-size: 14px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 137%;
+  letter-spacing: 0.14px;
+
+  span {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+.Table {
+  margin-top: 80px;
+
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 390px 1fr;
+  justify-content: space-between;
+}
+
+.TableInner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+// .TableStatic {
+// }
+
+.TableCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.TableTitle {
+  height: 48px;
+
+  color: var(--color-primary-dark);
+  font-size: 40px;
+  font-weight: 500;
+  font-family: Poppins;
+  letter-spacing: 0.4px;
+}
+
+.FeatureTitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Poppins;
+  letter-spacing: 0.4px;
+  line-height: 24px;
+
+  span {
+    display: block;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+}
+
+.TableList {
+  margin-top: 14px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+
+  list-style-type: none;
+}
+
+.TableItem {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 160%;
+  letter-spacing: 0.16px;
+
+  border-bottom: 1px solid var(--color-primary-dark);
+}

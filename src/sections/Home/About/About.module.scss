@@ -1,0 +1,57 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.About {
+  position: relative;
+  padding: 100px 0 140px 0;
+
+  overflow: hidden;
+}
+
+.AboutWrapper {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 30px;
+}
+
+.Title {
+  @include title;
+}
+
+.Subtitle {
+  @include subtitle;
+
+  margin-top: 10px;
+  max-width: 540px;
+}
+
+.Text {
+  max-width: 540px;
+
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 139%;
+  letter-spacing: 0.05em;
+  color: var(--color-blue-deep);
+
+  span {
+    font-weight: 700;
+  }
+
+  &:nth-child(3) {
+    margin-top: 20px;
+  }
+}
+
+.ImgWrapper {
+  position: absolute;
+  top: 55px;
+  right: -144px;
+
+  height: 818px;
+  width: 818px;
+
+  background: url(../../../assets/img/about/about.svg) center center/cover no-repeat;
+}

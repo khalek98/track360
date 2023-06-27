@@ -1,0 +1,296 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 185px 0 200px;
+
+  overflow: hidden;
+}
+
+.SectionWrapper {
+  @include solutionsWrapper;
+  grid-template-columns: 530px auto;
+  column-gap: 180px;
+}
+
+.Title {
+  @include solutionsTitle;
+  font-size: 50px;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: 1px;
+}
+
+.Text {
+  @include solutionsText;
+
+  font-size: 22px;
+  line-height: 31px;
+  letter-spacing: 0.44px;
+
+  font-size: 22px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0.44px;
+}
+
+.ContactsWrap {
+  margin-top: 190px;
+
+  display: grid;
+  row-gap: 20px;
+
+  grid-column: 1/2;
+}
+
+.ContactItem {
+  display: grid;
+  grid-template-columns: 80px auto;
+  column-gap: 10px;
+
+  list-style-type: none;
+}
+
+.ContactItemWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 6px;
+}
+
+.ContactSvg {
+  height: 80px;
+  width: 80px;
+}
+
+.Contact {
+  color: var(--color-blue-deep);
+  font-size: 18px;
+  font-family: Poppins;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 160%;
+  letter-spacing: 0.18px;
+  text-decoration: none;
+}
+
+.ContactForm {
+  position: relative;
+  margin-top: 11px;
+  padding: 40px 50px 50px;
+
+  width: 100%;
+
+  display: grid;
+  justify-items: center;
+
+  grid-column: 2/3;
+  grid-row: 1/5;
+
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+.ContactFormTitle {
+  color: var(--color-blue-deep);
+  font-size: 28px;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.Form {
+  margin-top: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+
+.InputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.InputErrorText {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: red;
+
+  animation: shake 0.5s ease-in-out;
+}
+
+.Input,
+.Textarea {
+  margin-top: 28px;
+  padding: 12px 0;
+
+  width: 100%;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-blue-deep);
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.Input,
+.Textarea,
+.Input::placeholder,
+.Textarea::placeholder {
+  color: var(--color-blue-deep);
+  font-size: 12px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.Textarea {
+  height: 78px;
+}
+
+.CheckBox {
+  margin-top: 30px;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  color: var(--color-blue-deep);
+  font-size: 10px;
+  font-family: Poppins;
+  line-height: 14px;
+  letter-spacing: 0.1px;
+
+  &[type="checkbox"] {
+    padding: 2px;
+    margin: 0;
+
+    width: 15px;
+    height: 15px;
+
+    appearance: none;
+    border: 1px solid var(--color-blue-deep);
+
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      transform: scale(0);
+      transform-origin: bottom left;
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em var(--form-control-color);
+      background-color: var(--color-blue-deep);
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &:focus {
+      outline: max(2px, 0.15em) solid currentColor;
+      outline-offset: max(2px, 0.15em);
+    }
+  }
+}
+
+.FormBtn {
+  margin-top: 55px;
+
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+
+  color: var(--color-blue-deep);
+  text-align: center;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: 0.16px;
+
+  background-color: transparent;
+  border-radius: 70px;
+  border: 2px solid var(--color-blue-deep);
+
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  opacity: 0.7;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+}
+
+.BluredBG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+  background: rgba(102, 252, 241, 0.5);
+  filter: blur(117px);
+  will-change: filter;
+
+  z-index: -1;
+}
+
+.DoashedBG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 781px;
+  height: 781px;
+
+  border-radius: 50%;
+  border: 1px dashed var(--color-primary-dark);
+
+  z-index: -2;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

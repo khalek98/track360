@@ -1,0 +1,175 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_variables.scss";
+
+@mixin circleDashed {
+  position: absolute;
+
+  display: block;
+
+  border: 2px dashed rgba(72, 198, 239, 0.3);
+  border-radius: 50%;
+
+  z-index: 99;
+}
+
+@mixin btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--color-primary);
+  border-radius: 90px;
+  background: transparent;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+  letter-spacing: 0.03em;
+  color: var(--color-primary);
+
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-blue-deep);
+  }
+}
+
+@mixin btnOnBlack {
+  @include btn;
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-blue-deep);
+  }
+}
+
+@mixin btnFilledOnBlack {
+  @include btn;
+  color: var(--color-blue-deep);
+  background-color: var(--color-primary);
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+@mixin title {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 70px;
+  letter-spacing: 0.69em;
+  text-transform: uppercase;
+
+  color: var(--color-blue-deep);
+}
+
+@mixin subtitle {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+
+  color: #28303c;
+
+  span {
+    color: var(--color-primary-dark);
+  }
+}
+
+@mixin solutionsTitle {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+  color: var(--color-blue-deep);
+
+  grid-column: 1/2;
+}
+
+@mixin solutionsTitleRight {
+  @include solutionsTitle;
+  grid-column: 2/3;
+}
+
+@mixin solutionsText {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: 0.04em;
+  color: var(--color-blue-deep);
+
+  grid-column: 1/2;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+@mixin solutionsTextRight {
+  @include solutionsText;
+  grid-column: 2/3;
+}
+
+@mixin solutionsWrapper {
+  display: grid;
+  grid-template-columns: 570px auto;
+  row-gap: 40px;
+}
+
+@mixin solutionsWrapperRight {
+  @include solutionsWrapper;
+  grid-template-columns: auto 570px;
+}
+
+@mixin solutionsList {
+  margin-top: 15px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  grid-column: 1/2;
+}
+
+@mixin solutionsListRight {
+  @include solutionsList;
+  grid-column: 2/3;
+}
+
+@mixin solutionsItem {
+  position: relative;
+  padding-left: 40px;
+
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: var(--color-blue-deep);
+
+  list-style-type: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 30px;
+    height: 30px;
+
+    background: url("../assets/icons/solutions/listCircle.svg") center center/cover no-repeat;
+  }
+}
+
+@mixin solutionsItemRight {
+  @include solutionsItem;
+  grid-column: 2/3;
+}

@@ -1,0 +1,67 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 280px 0 225px;
+}
+
+.SectionWrapper {
+  @include solutionsWrapperRight;
+  grid-template-columns: auto 560px;
+  column-gap: 135px;
+}
+
+.Title {
+  @include solutionsTitleRight;
+}
+
+.Text {
+  @include solutionsTextRight;
+}
+
+.List {
+  @include solutionsListRight;
+}
+
+.ListItem {
+  @include solutionsItemRight;
+}
+
+.Button {
+  @include btnOnBlack;
+
+  grid-column: 2/3;
+
+  width: 240px;
+  height: 60px;
+
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 110%;
+  letter-spacing: 0.03em;
+  color: #161c23;
+
+  background-color: var(--color-primary-dark);
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid var(--color-primary-dark);
+  }
+}
+
+.ImgWrapper {
+  position: relative;
+
+  width: 100%;
+
+  grid-column: 1/2;
+  grid-row: 1/5;
+}
+
+.Screenshot {
+  position: absolute;
+
+  top: -140px;
+  right: 30px;
+}

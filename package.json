@@ -1,0 +1,42 @@
+{
+  "name": "track360",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev ",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "classnames": "^2.3.2",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.43.5",
+    "react-reveal": "^1.2.2",
+    "react-scroll": "^1.8.9"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "@types/node": "18.15.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "@types/react-scroll": "^1.8.6",
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "postcss": "^8.4.21",
+    "sass": "^1.59.2",
+    "typescript": "4.9.5"
+  },
+  "browserslist": [
+    "> 0.05%",
+    "IE 11",
+    "last 2 versions",
+    "not dead"
+  ],
+  "main": "index.js",
+  "license": "MIT"
+}
