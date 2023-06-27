@@ -61,3 +61,70 @@
 .SpanStyled {
   color: #fff !important;
 }
+
+.CircleeDashed {
+  position: absolute;
+
+  display: block;
+
+  border: 2px dashed rgba(72, 198, 239, 0.3);
+  border-radius: 50%;
+
+  z-index: 99;
+
+  &_1 {
+    top: 70px;
+    right: -222px;
+
+    height: 430px;
+    width: 430px;
+  }
+
+  &_2 {
+    bottom: 22px;
+    left: -192px;
+
+    height: 309px;
+    width: 309px;
+
+    .CircleFilled {
+      top: 20px;
+      right: 35px;
+
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
+
+.CircleeDashed .CircleFilled {
+  position: absolute;
+
+  display: block;
+
+  background: var(--color-primary);
+  border-radius: 50%;
+
+  z-index: 99;
+}
+
+.Inner {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  animation-name: rotate360;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

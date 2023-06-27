@@ -157,6 +157,7 @@
 
 .MiddleMenuLink {
   position: relative;
+
   color: var(--color-primary);
   text-align: center;
   font-size: 17px;
@@ -166,6 +167,8 @@
   letter-spacing: 0.85px;
   text-transform: uppercase;
   text-decoration: none;
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     text-decoration: underline;
@@ -230,7 +233,7 @@
   }
 }
 
-.Inner {
+.MiddleMenuInner {
   position: absolute;
   top: 0;
   left: 0;
@@ -240,7 +243,7 @@
 
   border-radius: 50%;
 
-  animation: rotateCircles 7s linear infinite;
+  animation: rotate360 7s linear infinite;
 }
 
 .FiledCircle {
@@ -266,11 +269,77 @@
   }
 }
 
-@keyframes rotateCircles {
+@keyframes rotate360 {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.CircleeDashed {
+  position: absolute;
+
+  display: block;
+
+  border: 2px dashed rgba(72, 198, 239, 0.3);
+  border-radius: 50%;
+
+  z-index: 99;
+
+  &_1 {
+    bottom: 444px;
+    right: -222px;
+
+    height: 430px;
+    width: 430px;
+
+    .CircleFilled {
+      top: 145px;
+      left: -155px;
+
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  &_2 {
+    bottom: 22px;
+    left: -192px;
+
+    height: 309px;
+    width: 309px;
+
+    .CircleFilled {
+      top: 20px;
+      right: 35px;
+
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
+
+.CircleeDashed .CircleFilled {
+  position: absolute;
+
+  display: block;
+
+  background: var(--color-primary);
+  border-radius: 50%;
+
+  z-index: 99;
+}
+
+.Inner {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  animation-name: rotate360;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }

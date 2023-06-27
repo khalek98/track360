@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import cn from "classnames";
 
 import styles from "./ContactUsPopUp.module.scss";
-import { useForm } from "react-hook-form";
 import { useAppContext } from "@/context/AppContext";
 
 interface IForm {

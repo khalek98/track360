@@ -1,13 +1,23 @@
 import React from "react";
 import cn from "classnames";
+import { Fade, Zoom } from "react-reveal";
 
 import styles from "./Main.module.scss";
-import MainSectionLayout from "@/layouts/MainSectionLayout/MainSectionLayout";
+import ArrowLink from "@/components/ArrowLink";
 
 const Main = () => {
   return (
     <section className={styles.Main}>
-      <MainSectionLayout arrowLink="about" />
+      <div className={cn(styles.CircleeDashed, styles.CircleeDashed_1)}>
+        <div className={cn(styles.CircleFilled, styles.CircleFilled_1)}></div>
+      </div>
+      <div className={cn(styles.CircleeDashed, styles.CircleeDashed_2)}>
+        <div className={styles.Inner}>
+          <div className={cn(styles.CircleFilled, styles.CircleFilled_2)}></div>
+        </div>
+      </div>
+      <ArrowLink arrowLink="about" />
+
       <div className="container">
         <div className={styles.MainWrapper}>
           <h1 className={styles.Title}>
@@ -20,7 +30,7 @@ const Main = () => {
           </p>
 
           <div className={styles.MiddleMenuWrapp}>
-            <div className={styles.Inner}>
+            <div className={styles.MiddleMenuInner}>
               <div className={styles.FiledCircle}></div>
               <div className={styles.FiledCircle}></div>
             </div>
@@ -32,39 +42,57 @@ const Main = () => {
                 <div className={styles.Arrow}></div>
 
                 <div className={styles.MiddleMenu}>
-                  <a href="solutions/primary#payment" className={styles.MiddleMenuLink}>
-                    Payment Modules
-                  </a>
-                  <a href="solutions/primary#compliance" className={styles.MiddleMenuLink}>
-                    Compliance
-                  </a>
-                  <a href="solutions/primary#communicator" className={styles.MiddleMenuLink}>
-                    Communicator
-                  </a>
-                  <a href="solutions/primary#organization" className={styles.MiddleMenuLink}>
-                    Organization Manager
-                  </a>
+                  <Fade top delay={400}>
+                    <a href="solutions/primary#payment" className={styles.MiddleMenuLink}>
+                      Payment Modules
+                    </a>
+                  </Fade>
+                  <Fade top delay={300}>
+                    <a href="solutions/primary#compliance" className={styles.MiddleMenuLink}>
+                      Compliance
+                    </a>
+                  </Fade>
+                  <Fade top delay={200}>
+                    <a href="solutions/primary#communicator" className={styles.MiddleMenuLink}>
+                      Communicator
+                    </a>
+                  </Fade>
+                  <Fade top delay={100}>
+                    <a href="solutions/primary#organization" className={styles.MiddleMenuLink}>
+                      Organization Manager
+                    </a>
+                  </Fade>
                 </div>
 
                 <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_1)}>
-                  <a href="solutions/primary#affiliate" className={styles.CircleLink}>
-                    affiliate manager
-                  </a>
+                  <Zoom>
+                    <a href="solutions/primary#affiliate" className={styles.CircleLink}>
+                      affiliate manager
+                    </a>
+                  </Zoom>
                 </div>
+
                 <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_2)}>
-                  <a href="solutions/primary#reporting" className={styles.CircleLink}>
-                    Reports
-                  </a>
+                  <Zoom delay={200}>
+                    <a href="solutions/primary#reporting" className={styles.CircleLink}>
+                      Reports
+                    </a>
+                  </Zoom>
                 </div>
+
                 <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_3)}>
-                  <a href="solutions/primary#marketing" className={styles.CircleLink}>
-                    marketing tools
-                  </a>
+                  <Zoom delay={300}>
+                    <a href="solutions/primary#marketing" className={styles.CircleLink}>
+                      marketing tools
+                    </a>
+                  </Zoom>
                 </div>
                 <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_4)}>
-                  <a href="solutions/primary#deals" className={styles.CircleLink}>
-                    deals manager
-                  </a>
+                  <Zoom delay={400}>
+                    <a href="solutions/primary#deals" className={styles.CircleLink}>
+                      deals manager
+                    </a>
+                  </Zoom>
                 </div>
               </div>
             </div>

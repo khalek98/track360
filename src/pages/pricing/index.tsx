@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
-import PrimaryLayout from "@/layouts/PrimaryLayout";
+import MainLayout from "@/layouts/MainLayout";
 import Main from "@/sections/Pricing/Main";
 import Trigger from "@/sections/Pricing/Trigger";
 import Solutions from "@/sections/Pricing/Solutions";
@@ -19,11 +19,11 @@ const PricingPage = () => {
         </style>
         <title>Track 360 | Pricing</title>
       </Head>
-      <PrimaryLayout>
+      <MainLayout>
         <Main />
         <Trigger />
         <Solutions />
-      </PrimaryLayout>
+      </MainLayout>
     </>
   );
 };

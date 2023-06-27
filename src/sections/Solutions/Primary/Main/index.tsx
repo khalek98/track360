@@ -1,12 +1,20 @@
 import React from "react";
+import cn from "classnames";
 
 import styles from "./Main.module.scss";
-import MainSectionLayout from "@/layouts/MainSectionLayout/MainSectionLayout";
+import ArrowLink from "@/components/ArrowLink";
 
 const Main = () => {
   return (
     <section className={styles.Main}>
-      <MainSectionLayout circle={false} arrowLink="affiliate" />
+      <div className={cn(styles.CircleeDashed, styles.CircleeDashed_1)}></div>
+      <div className={cn(styles.CircleeDashed, styles.CircleeDashed_2)}>
+        <div className={styles.Inner}>
+          <div className={cn(styles.CircleFilled, styles.CircleFilled_2)}></div>
+        </div>
+      </div>
+
+      <ArrowLink arrowLink="affiliate" />
       <div className="container">
         <div className={styles.MainWrapper}>
           <h1 className={styles.Subtitle}>solutions</h1>

@@ -5,7 +5,7 @@ import About from "@/sections/Home/About";
 import Solutions from "@/sections/Home/Solutions";
 import Trigger from "@/sections/Trigger";
 import Choose from "@/sections/Home/Choose";
-import PrimaryLayout from "@/layouts/PrimaryLayout";
+import MainLayout from "@/layouts/MainLayout";
 import Head from "next/head";
 
 const Home = () => {
@@ -14,13 +14,13 @@ const Home = () => {
       <Head>
         <title>Track 360</title>
       </Head>
-      <PrimaryLayout>
+      <MainLayout>
         <Main />
         <About />
         <Solutions />
         <Trigger />
         <Choose />
-      </PrimaryLayout>
+      </MainLayout>
     </>
   );
 };

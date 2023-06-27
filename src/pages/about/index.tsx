@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 
-import PrimaryLayout from "@/layouts/PrimaryLayout";
+import MainLayout from "@/layouts/MainLayout";
 import Main from "@/sections/AboutUs/Main";
 import Team from "@/sections/AboutUs/Team";
 import Testimonial from "@/sections/AboutUs/Testimonial";
@@ -20,12 +20,12 @@ const AboutPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>About Us | Track 360</title>
       </Head>
-      <PrimaryLayout>
+      <MainLayout>
         <Main />
         <Team />
         <Testimonial />
         <Partnership />
-      </PrimaryLayout>
+      </MainLayout>
     </>
   );
 };

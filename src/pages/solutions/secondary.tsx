@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import PrimaryLayout from "@/layouts/PrimaryLayout";
+import MainLayout from "@/layouts/MainLayout";
 import Integration from "@/sections/Solutions/Secondary/Integration";
 import Migration from "@/sections/Solutions/Secondary/Migration";
 import Trigger from "@/sections/Trigger";
@@ -11,14 +11,15 @@ const SolutionsSecondary = () => {
   return (
     <>
       <Head>
+        <link rel="icon" href="../favicons/favicon.svg" type="image/svg+xml" />
         <title>Our Solutions | Track 360</title>
       </Head>
-      <PrimaryLayout darkMode={true}>
+      <MainLayout darkMode={true}>
         <Integration />
         <Migration />
         <Trigger />
         <Installations />
-      </PrimaryLayout>
+      </MainLayout>
     </>
   );
 };
