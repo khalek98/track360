@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import cn from "classnames";
+import Link from "next/link";
 
 import styles from "./Header.module.scss";
 
@@ -54,9 +55,9 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
       </nav>
       <div className="container">
         <div className={styles.HeaderWrapper}>
-          <div className={styles.LogoWrapper}>
+          <Link href="/" className={styles.LogoWrapper}>
             <Logo className={cn(styles.Logo, { [styles.LogoDark]: darkMode && !showSubmenu })} />
-          </div>
+          </Link>
           <nav className={cn(styles.Nav)}>
             <ul className={styles.Menu}>
               {menuList.map(({ menuLink, menuName }, index) => (

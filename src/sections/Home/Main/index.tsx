@@ -36,10 +36,7 @@ const Main = () => {
             </div>
             <div className={styles.DashedBg}>
               <div className={styles.FildeBg}>
-                <div className={styles.Arrow}></div>
-                <div className={styles.Arrow}></div>
-                <div className={styles.Arrow}></div>
-                <div className={styles.Arrow}></div>
+                <div className={styles.ArrowInner}></div>
 
                 <div className={styles.MiddleMenu}>
                   <Fade top delay={400}>
@@ -64,36 +61,32 @@ const Main = () => {
                   </Fade>
                 </div>
 
-                <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_1)}>
-                  <Zoom>
-                    <a href="solutions/primary#affiliate" className={styles.CircleLink}>
-                      affiliate manager
-                    </a>
-                  </Zoom>
-                </div>
+                <a
+                  href="solutions/primary#affiliate"
+                  className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_1)}
+                >
+                  affiliate manager
+                </a>
 
-                <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_2)}>
-                  <Zoom delay={200}>
-                    <a href="solutions/primary#reporting" className={styles.CircleLink}>
-                      Reports
-                    </a>
-                  </Zoom>
-                </div>
+                <a
+                  href="solutions/primary#reporting"
+                  className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_2)}
+                >
+                  Reports
+                </a>
 
-                <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_3)}>
-                  <Zoom delay={300}>
-                    <a href="solutions/primary#marketing" className={styles.CircleLink}>
-                      marketing tools
-                    </a>
-                  </Zoom>
-                </div>
-                <div className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_4)}>
-                  <Zoom delay={400}>
-                    <a href="solutions/primary#deals" className={styles.CircleLink}>
-                      deals manager
-                    </a>
-                  </Zoom>
-                </div>
+                <a
+                  href="solutions/primary#marketing"
+                  className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_3)}
+                >
+                  marketing tools
+                </a>
+                <a
+                  href="solutions/primary#deals"
+                  className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_4)}
+                >
+                  deals manager
+                </a>
               </div>
             </div>
           </div>

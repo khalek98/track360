@@ -15,9 +15,9 @@ const Reporting = () => {
       <div className="container">
         <div className={styles.SectionWrapper}>
           <div className={styles.ImgWrapper}>
-            <LightSpeed left delay={500}>
+            <Fade left delay={500}>
               <Image src={ReportingImg} alt="Reporting" className={styles.Screenshot} />
-            </LightSpeed>
+            </Fade>
           </div>
 
           <h2 className={styles.Title}>Reporting</h2>

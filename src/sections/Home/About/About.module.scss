@@ -48,10 +48,10 @@
 .ImgWrapper {
   position: absolute;
   top: 55px;
-  right: -144px;
+  right: 0px;
 
   height: 818px;
   width: 818px;
 
-  background: url(../../../assets/img/about/about.svg) center center/cover no-repeat;
+  background: url("./about.png") center center/cover no-repeat;
 }

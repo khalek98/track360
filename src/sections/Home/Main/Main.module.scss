@@ -50,12 +50,6 @@
   }
 }
 
-.ImgWrapper {
-  height: 644px;
-  width: 644px;
-  background: url("../../../assets/img/main/main.png") center center/cover no-repeat;
-}
-
 .MiddleMenuWrapp {
   position: relative;
   padding: 70px;
@@ -81,9 +75,6 @@
   position: relative;
   width: 418px;
   height: 418px;
-
-  border-radius: 50%;
-  border: 1px solid var(--color-primary);
 }
 
 .CircleLinkWrap {
@@ -96,32 +87,60 @@
   justify-content: center;
   align-items: center;
 
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.33px;
+  text-transform: uppercase;
+  text-decoration: none;
+
   background-color: #474d53;
   border: 1px solid var(--color-primary);
   border-radius: 50%;
 
+  transition: all 0.2s ease-in-out;
+
   &_1 {
     top: -65px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
+
+    &:hover {
+      transform: scale(1.1) translateX(-43%) !important;
+    }
   }
 
   &_2 {
     right: -65px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) !important;
+
+    &:hover {
+      transform: scale(1.1) translateY(-43%) !important;
+    }
   }
 
   &_3 {
     bottom: -65px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
+
+    &:hover {
+      transform: scale(1.1) translateX(-43%) !important;
+    }
   }
 
   &_4 {
     left: -65px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) !important;
+
+    &:hover {
+      transform: scale(1.1) translateY(-43%) !important;
+    }
   }
 }
 
@@ -136,9 +155,7 @@
   text-transform: uppercase;
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
-  }
+  transition: all 0.3s ease-in-out;
 }
 
 .MiddleMenu {
@@ -194,43 +211,17 @@
   }
 }
 
-.Arrow {
+.ArrowInner {
   position: absolute;
+  top: 0;
+  left: 0;
 
-  height: 15px;
-  width: 15px;
+  height: 100%;
+  width: 100%;
 
-  &:nth-child(1) {
-    top: 55px;
-    right: 52px;
+  background: url("./CircleWithArrows.svg") center center/cover no-repeat;
 
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-  }
-
-  &:nth-child(2) {
-    bottom: 55px;
-    right: 52px;
-
-    border-bottom: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-  }
-
-  &:nth-child(3) {
-    bottom: 55px;
-    left: 52px;
-
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-  }
-
-  &:nth-child(4) {
-    top: 55px;
-    left: 52px;
-
-    border-right: 2px solid #ffffff;
-    border-top: 2px solid #ffffff;
-  }
+  animation: rotate360 15s linear infinite;
 }
 
 .MiddleMenuInner {
@@ -243,7 +234,7 @@
 
   border-radius: 50%;
 
-  animation: rotate360 7s linear infinite;
+  animation: rotate360 15s linear infinite;
 }
 
 .FiledCircle {
@@ -266,15 +257,6 @@
 
     width: 20px;
     height: 20px;
-  }
-}
-
-@keyframes rotate360 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -342,4 +324,13 @@
   animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

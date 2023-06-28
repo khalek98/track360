@@ -1,10 +1,10 @@
 import React from "react";
 import cn from "classnames";
+import NextLink from "next/link";
 
 import styles from "./Footer.module.scss";
 import Logo from "@/assets/icons/logo.svg";
 
-import Menu from "../Menu";
 import { Link } from "react-scroll";
 import { useAppContext } from "@/context/AppContext";
 import { menuList } from "@/utils/menuList";
@@ -16,9 +16,9 @@ const Footer = () => {
     <footer className={styles.Footer}>
       <div className="container">
         <div className={styles.FooterWrapper}>
-          <div className={styles.LogoWrapper}>
+          <NextLink href="/" className={styles.LogoWrapper}>
             <Logo className={styles.Logo} />
-          </div>
+          </NextLink>
 
           <div className={styles.MenuWrapper}>
             <h4 className={styles.FooterTitle}>Menu</h4>
