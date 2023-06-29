@@ -9,7 +9,31 @@
 
   width: 100%;
 
+  transition: all 0.3s ease-in-out;
   z-index: 99;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+    opacity: 0;
+
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.HeaderFixed {
+  position: fixed;
+
+  &:before {
+    opacity: 1;
+  }
 }
 
 .HeaderWrapper {

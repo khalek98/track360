@@ -14,6 +14,7 @@ interface IHeaderProps {
 }
 
 const Header: FC<IHeaderProps> = ({ darkMode }) => {
+  const [fixedHeader, setFixedHeader] = useState<boolean>(false);
   const [showSubmenu, setShowSubmenu] = useState<boolean>(false);
   const { pathname, setShowRequestDemo } = useAppContext();
 
@@ -25,12 +26,32 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
     }
   }, [showSubmenu]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 1) {
+        setFixedHeader(true);
+      } else {
+        setFixedHeader(false);
+      }
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {
+        if (window.scrollY > 1) {
+          setFixedHeader(true);
+        } else {
+          setFixedHeader(false);
+        }
+      });
+    };
+  });
+
   const onCloseMenu = () => {
     setShowSubmenu(false);
   };
 
   return (
-    <header id="header" className={styles.Header}>
+    <header id="header" className={cn(styles.Header, { [styles.HeaderFixed]: fixedHeader })}>
       <nav
         className={cn(styles.SubNav, { [styles.SubNavActive]: showSubmenu })}
         onClick={onCloseMenu}
@@ -56,7 +77,11 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
       <div className="container">
         <div className={styles.HeaderWrapper}>
           <Link href="/" className={styles.LogoWrapper}>
-            <Logo className={cn(styles.Logo, { [styles.LogoDark]: darkMode && !showSubmenu })} />
+            <Logo
+              className={cn(styles.Logo, {
+                [styles.LogoDark]: darkMode && !fixedHeader && !showSubmenu,
+              })}
+            />
           </Link>
           <nav className={cn(styles.Nav)}>
             <ul className={styles.Menu}>
@@ -70,7 +95,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     className={cn(
                       styles.MenuLink,
                       {
-                        [styles.LinkDark]: darkMode && !showSubmenu,
+                        [styles.LinkDark]: darkMode && !fixedHeader && !showSubmenu,
                       },
                       {
                         [styles.MenuLinkActive]: pathname === menuLink,
@@ -91,7 +116,9 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
 
           <button
             onClick={() => setShowRequestDemo(true)}
-            className={cn(styles.Button, { [styles.ButtonDark]: darkMode && !showSubmenu })}
+            className={cn(styles.Button, {
+              [styles.ButtonDark]: darkMode && !fixedHeader && !showSubmenu,
+            })}
           >
             Request Demo
           </button>

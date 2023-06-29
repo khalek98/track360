@@ -24,7 +24,7 @@ const Main = () => {
           </h2>
           <p className={styles.Text}>
             Track 360 is powered by <span className={styles.SpanStyled}>Proline Ltd</span>, based in
-            Tel Aviv, Israel. Established in 2017, Proline has over{" "}
+            Tel Aviv, Israel. Established in 2017, Proline&apos;s Team has over{" "}
             <span>20 years of R&D experience.</span>
           </p>
           <p className={styles.Text}>

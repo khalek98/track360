@@ -1,16 +1,20 @@
 import React from "react";
 import cn from "classnames";
 import NextLink from "next/link";
+import { animateScroll as scroll } from "react-scroll";
 
 import styles from "./Footer.module.scss";
 import Logo from "@/assets/icons/logo.svg";
 
-import { Link } from "react-scroll";
 import { useAppContext } from "@/context/AppContext";
 import { menuList } from "@/utils/menuList";
 
 const Footer = () => {
   const { pathname } = useAppContext();
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   return (
     <footer className={styles.Footer}>
@@ -78,7 +82,7 @@ const Footer = () => {
             <div className={styles.Label}>©Track360 by Proline Ltd 2023</div>
           </div>
 
-          <Link to="header" smooth={true} duration={800} className={styles.Arrow}></Link>
+          <div onClick={scrollToTop} className={styles.Arrow}></div>
         </div>
       </div>
     </footer>

@@ -4,7 +4,7 @@ import styles from "./Installations.module.scss";
 
 const Installations = () => {
   return (
-    <section className={styles.Section}>
+    <section id="installations" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
           <h2 className={styles.Title}>Installations</h2>

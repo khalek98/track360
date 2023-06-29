@@ -24,9 +24,14 @@ const Main = () => {
             Maximize <span>Your Affiliate</span> Success
           </h1>
           <p className={styles.Text}>
-            Track 360 is the most feature-rich, enabling <span>affiliate management software</span>{" "}
-            available today. With an unrivaled level of functionality, you can perform{" "}
-            <span>more actions</span> than ever before.
+            Track 360 is powered by <span className={styles.SpanStyled}>Proline Ltd</span>, based in
+            Tel Aviv, Israel. Established in 2017, Proline&apos;s Team has over{" "}
+            <span>20 years of R&D experience.</span>
+          </p>
+          <p className={styles.Text}>
+            Comprised of experienced marketers and software developers, Proline is dedicated to
+            providing the best and most feature-rich{" "}
+            <span className={styles.SpanStyled}>affiliate software</span> on the market.
           </p>
 
           <div className={styles.MiddleMenuWrapp}>
