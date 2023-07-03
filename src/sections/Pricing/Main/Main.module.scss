@@ -57,14 +57,17 @@
 .Packages {
   margin-top: 60px;
 
-  display: flex;
-  column-gap: 20px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
 }
 
 .Package {
   padding: 40px 20px;
 
-  width: 280px;
+  width: 300px;
   height: auto;
 
   display: flex;
