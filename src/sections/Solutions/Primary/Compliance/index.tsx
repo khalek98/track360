@@ -23,7 +23,7 @@ const Compliance = () => {
 
           <Fade right>
             <p className={styles.Text}>
-              Track 360 lets you manage your compliance with <span>various regulations</span> and
+              Track 360 lets you manage your compliance with <span>various regulations</span> and{" "}
               <span>guidelines related</span> to your affiliate marketing.
             </p>
           </Fade>

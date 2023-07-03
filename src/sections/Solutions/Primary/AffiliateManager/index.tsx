@@ -27,19 +27,16 @@ const AffiliateManager = () => {
               <li className={styles.ListItem}>Data on clicks, revenue and other metrics;</li>
             </Fade>
             <Fade right duration={500} delay={300}>
-              <li className={styles.ListItem}>Data on commission structures;</li>
+              <li className={styles.ListItem}>View and apply commission structures;</li>
             </Fade>
             <Fade right duration={500} delay={400}>
               <li className={styles.ListItem}>Flexible onboarding and KYC process;</li>
             </Fade>
-            <Fade right duration={500} delay={500}>
-              <li className={styles.ListItem}>Revenue and other metrics;</li>
-            </Fade>
             <Fade right duration={500} delay={600}>
-              <li className={styles.ListItem}>Rates & Payment info;</li>
+              <li className={styles.ListItem}>Payment info & Affiliate Statement;</li>
             </Fade>
             <Fade right duration={500} delay={700}>
-              <li className={styles.ListItem}>Notes history;</li>
+              <li className={styles.ListItem}> Add notes & Notes History;</li>
             </Fade>
             <Fade right duration={500} delay={800}>
               <li className={styles.ListItem}>Customizable accounts registration API.</li>

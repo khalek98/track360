@@ -16,10 +16,10 @@ const PaymentModules = () => {
             </Zoom>
           </div>
 
-          <h2 className={styles.Title}>Payment Modules</h2>
+          <h2 className={styles.Title}>Payment Module</h2>
           <Fade left>
             <p className={styles.Text}>
-              Track 360’s payment modules allow operators to <span>manage mass payments</span> to
+              Track 360’s payment module allow operators to <span>manage mass payments</span> to
               their affiliates efficiently, accurately, and securely, while providing{" "}
               <span>flexibility and compliance with tax laws and regulation.</span>
             </p>

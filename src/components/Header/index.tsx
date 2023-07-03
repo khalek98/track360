@@ -19,14 +19,6 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const { pathname, setShowRequestDemo } = useAppContext();
 
   useEffect(() => {
-    if (showSubmenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [showSubmenu]);
-
-  useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 1) {
         setFixedHeader(true);
@@ -51,7 +43,14 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
   };
 
   return (
-    <header id="header" className={cn(styles.Header, { [styles.HeaderFixed]: fixedHeader })}>
+    <header
+      id="header"
+      className={cn(
+        styles.Header,
+        { [styles.HeaderFixed]: fixedHeader },
+        { [styles.HeaderDark]: darkMode },
+      )}
+    >
       <nav
         className={cn(styles.SubNav, { [styles.SubNavActive]: showSubmenu })}
         onClick={onCloseMenu}
@@ -77,11 +76,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
       <div className="container">
         <div className={styles.HeaderWrapper}>
           <Link href="/" className={styles.LogoWrapper}>
-            <Logo
-              className={cn(styles.Logo, {
-                [styles.LogoDark]: darkMode && !fixedHeader && !showSubmenu,
-              })}
-            />
+            <Logo className={cn(styles.Logo)} />
           </Link>
           <nav className={cn(styles.Nav)}>
             <ul className={styles.Menu}>
@@ -94,9 +89,6 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     }}
                     className={cn(
                       styles.MenuLink,
-                      {
-                        [styles.LinkDark]: darkMode && !fixedHeader && !showSubmenu,
-                      },
                       {
                         [styles.MenuLinkActive]: pathname === menuLink,
                       },
@@ -114,12 +106,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
             </ul>
           </nav>
 
-          <button
-            onClick={() => setShowRequestDemo(true)}
-            className={cn(styles.Button, {
-              [styles.ButtonDark]: darkMode && !fixedHeader && !showSubmenu,
-            })}
-          >
+          <button onClick={() => setShowRequestDemo(true)} className={cn(styles.Button)}>
             Request Demo
           </button>
         </div>

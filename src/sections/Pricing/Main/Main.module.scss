@@ -2,7 +2,7 @@
 @import "@/styles/_mixins.scss";
 
 .Section {
-  padding: 160px 0 130px;
+  padding: 160px 0 150px;
 }
 
 .SectionWrapper {
@@ -262,11 +262,12 @@
 }
 
 .PriceMODescr {
-  margin-top: 5px;
-  font-family: Poppins;
-  font-size: 10px;
-  font-weight: 500;
   color: #fff;
+  font-size: 11px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 137%;
 }
 
 .Features {
@@ -328,7 +329,7 @@
 }
 
 .Table {
-  margin-top: 80px;
+  margin-top: 150px;
 
   width: 100%;
 

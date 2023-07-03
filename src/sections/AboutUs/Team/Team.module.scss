@@ -38,7 +38,8 @@
   width: 100%;
   max-width: 340px;
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     .TeamDescription {
@@ -99,10 +100,10 @@
     left: -5px;
 
     width: calc(100% + 10px);
-    height: 100%;
+    height: 130%;
 
     background: linear-gradient(178deg, rgba(247, 247, 247, 0.8) 0%, #f7f7f7 40%);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s linear;
     z-index: 1;
   }
 }
@@ -110,8 +111,7 @@
 .TeamLink {
   position: absolute;
   bottom: 0;
-
-  align-self: end;
+  left: 0;
 
   color: var(--color-blue-deep);
   font-size: 18px;
@@ -120,7 +120,7 @@
   letter-spacing: 0.4px;
   text-decoration-line: underline;
 
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s linear;
 
   z-index: 3;
 

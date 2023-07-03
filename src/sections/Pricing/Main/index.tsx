@@ -22,10 +22,11 @@ const Main = () => {
               <p className={styles.PackageDescr}>
                 Suitable for small businesses with a limited budget.
               </p>
-              <div className={styles.PriceWrap}>
-                <span>Free</span>
+              {/* Replace */}
+              <div className={styles.PriceMO}>
+                $<span>199</span>/mo
               </div>
-              <p className={styles.PackageDescr}>Postbacks Only</p>
+              <p className={styles.PriceMODescr}>(Prepaid for 3 months)</p>
 
               <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
                 Get Started
@@ -33,21 +34,17 @@ const Main = () => {
 
               <ul className={styles.Including}>
                 <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>
-                    Integration to CRM
-                    <span>(On Demand)</span>
+                  <div className={styles.IncludingTitle}>Leads per month</div>
+                  <div className={styles.IncludingPrice}>
+                    Up to <span>500</span>
                   </div>
-                  <div className={styles.Checkmark}></div>
                 </li>
 
                 <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Trading & Website</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Training</div>
-                  <div className={styles.Checkmark}></div>
+                  <div className={styles.IncludingTitle}>Setup fee </div>
+                  <div className={styles.IncludingPrice}>
+                    <span>Free</span>
+                  </div>
                 </li>
 
                 <li className={styles.IncludingItem}>
@@ -57,11 +54,6 @@ const Main = () => {
               </ul>
 
               <div className={styles.Divider}></div>
-
-              <div className={styles.PriceMO}>
-                $<span>199</span>/mo
-              </div>
-              <p className={styles.PriceMODescr}>(Prepaid for 3 months)</p>
 
               <ul className={styles.Features}>
                 <li className={styles.Feature}>
@@ -249,6 +241,12 @@ const Main = () => {
             *All packages include <span>10M</span> impressions/ mo & <span>4M</span> clicks/ mo.
             Above, $0.06 per additional <span>1000 impressions</span> & $0.5 per additional 1000
             clicks.
+          </p>
+
+          <p className={styles.NoteAfterPrice}>
+            **The quoted Integration and Migration costs apply only if client data is ready for
+            immediate use. Extra charges may apply for data processing, currency conversion, or
+            consolidation from multiple sources.
           </p>
 
           <div className={styles.Table}>

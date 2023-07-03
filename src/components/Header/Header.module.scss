@@ -36,6 +36,12 @@
   }
 }
 
+.HeaderDark {
+  &::before {
+    opacity: 1;
+  }
+}
+
 .HeaderWrapper {
   display: flex;
   flex-direction: row;
@@ -49,10 +55,6 @@
   fill: #ffffff;
 
   transition: all 0.3s ease-in-out;
-}
-
-.LogoDark {
-  fill: var(--color-blue-deep) !important;
 }
 
 .Menu {

@@ -38,32 +38,26 @@ const MarketingTools = () => {
               <li className={styles.ListItem}>Ad serving (according to geo-based regulation);</li>
             </Fade>
             <Fade delay={300}>
-              <li className={styles.ListItem}>Ad hoc such as VIP focus;</li>
-            </Fade>
-            <Fade delay={400}>
               <li className={styles.ListItem}>Mobile tracking integrations;</li>
             </Fade>
-            <Fade delay={500}>
+            <Fade delay={400}>
               <li className={styles.ListItem}>Lead Registration API;</li>
             </Fade>
-            <Fade delay={600}>
+            <Fade delay={500}>
               <li className={styles.ListItem}>
                 Show/ Hide Creatives to Selected Groups of Affiliates;
               </li>
             </Fade>
-            <Fade delay={700}>
+            <Fade delay={600}>
               <li className={styles.ListItem}>
                 Auto enable/ disable creatives according to expiry dates such as for holiday
                 promotions;
               </li>
             </Fade>
+            <Fade delay={700}>
+              <li className={styles.ListItem}>Email templates for Affiliate Manager;</li>
+            </Fade>
             <Fade delay={800}>
-              <li className={styles.ListItem}>Email templates for subscribers;</li>
-            </Fade>
-            <Fade delay={900}>
-              <li className={styles.ListItem}>Social media sharing;</li>
-            </Fade>
-            <Fade delay={1000}>
               <li className={styles.ListItem}>
                 Water marks for risk warnings/ compliance purposes.
               </li>

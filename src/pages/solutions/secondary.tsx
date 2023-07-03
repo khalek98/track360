@@ -15,10 +15,10 @@ const SolutionsSecondary = () => {
         <title>Our Solutions | Track 360</title>
       </Head>
       <MainLayout darkMode={true}>
-        <Integration />
-        <Migration />
-        <Trigger />
         <Installations />
+        <Trigger />
+        <Migration />
+        <Integration />
       </MainLayout>
     </>
   );

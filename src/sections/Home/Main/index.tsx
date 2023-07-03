@@ -11,11 +11,7 @@ const Main = () => {
       <div className={cn(styles.CircleeDashed, styles.CircleeDashed_1)}>
         <div className={cn(styles.CircleFilled, styles.CircleFilled_1)}></div>
       </div>
-      <div className={cn(styles.CircleeDashed, styles.CircleeDashed_2)}>
-        <div className={styles.Inner}>
-          <div className={cn(styles.CircleFilled, styles.CircleFilled_2)}></div>
-        </div>
-      </div>
+      <div className={cn(styles.CircleeDashed, styles.CircleeDashed_2)}></div>
       <ArrowLink arrowLink="about" />
 
       <div className="container">
@@ -24,22 +20,24 @@ const Main = () => {
             Maximize <span>Your Affiliate</span> Success
           </h1>
           <p className={styles.Text}>
-            Track 360 is powered by <span className={styles.SpanStyled}>Proline Ltd</span>, based in
-            Tel Aviv, Israel. Established in 2017, Proline&apos;s Team has over{" "}
-            <span>20 years of R&D experience.</span>
-          </p>
-          <p className={styles.Text}>
-            Comprised of experienced marketers and software developers, Proline is dedicated to
-            providing the best and most feature-rich{" "}
-            <span className={styles.SpanStyled}>affiliate software</span> on the market.
+            Track 360 is the most feature-rich, enabling <span>affiliate management software</span>{" "}
+            available today. With an unrivaled level of functionality, you can perform{" "}
+            <span>more actions</span> than ever before.
           </p>
 
           <div className={styles.MiddleMenuWrapp}>
             <div className={styles.MiddleMenuInner}>
-              <div className={styles.FiledCircle}></div>
-              <div className={styles.FiledCircle}></div>
+              <div className={cn(styles.FiledCircle, styles.FiledCircle_1)}></div>
+              <div className={cn(styles.FiledCircle, styles.FiledCircle_2)}></div>
+              <div className={cn(styles.FiledCircle, styles.FiledCircle_3)}></div>
+              <div className={cn(styles.FiledCircle, styles.FiledCircle_4)}></div>
             </div>
             <div className={styles.DashedBg}>
+              <div className={styles.DashedBgInner}>
+                <div className={cn(styles.FiledCircle, styles.FiledCircle_5)}></div>
+                <div className={cn(styles.FiledCircle, styles.FiledCircle_6)}></div>
+              </div>
+
               <div className={styles.FildeBg}>
                 <div className={styles.ArrowInner}></div>
 
