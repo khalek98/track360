@@ -2,7 +2,11 @@
 @import "@/styles/_mixins.scss";
 
 .Section {
-  padding: 165px 0 0;
+  padding: 220px 0 0;
+
+  @include media-xl {
+    padding-top: 160px;
+  }
 }
 
 .SectionWrapper {
@@ -44,4 +48,16 @@
 
   top: -60px;
   left: 60px;
+
+  width: 717px;
+  height: 648px;
+
+  @include media-xl {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    width: 617px;
+    height: 558px;
+  }
 }

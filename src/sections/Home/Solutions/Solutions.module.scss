@@ -2,18 +2,23 @@
 @import "@/styles/_mixins.scss";
 
 .Solutions {
-  padding: 20px 0 85px;
+  padding: 0 0 85px;
 }
 
 .SolutionsWrapper {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
+  align-items: center;
 }
 
 .Title {
   @include title;
   text-align: center;
+
+  @include media-sm {
+    text-align: start;
+  }
 }
 
 .SolutionsList {
@@ -21,6 +26,23 @@
   justify-content: space-between;
 
   list-style-type: none;
+
+  @include media-xl {
+    flex-wrap: wrap;
+    column-gap: 35px;
+    justify-content: flex-start;
+  }
+
+  @include media-lg {
+    justify-content: space-between;
+    column-gap: 40px;
+    max-width: 800px;
+  }
+
+  @include media-md {
+    justify-content: center;
+    gap: 20px;
+  }
 }
 
 .SolutionsItem {
@@ -43,7 +65,15 @@
 
   &:hover {
     background: #ffffff;
-    box-shadow: 3px 4px 18px rgba(72, 198, 239, 0.2);
+    box-shadow: 3px 4px 18px 0px rgba(72, 198, 239, 0.2);
+  }
+
+  @include media-md {
+    height: 140px;
+    width: 140px;
+
+    background: #ffffff;
+    box-shadow: 3px 4px 18px 0px rgba(72, 198, 239, 0.2);
   }
 }
 
@@ -56,4 +86,8 @@
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: var(--color-blue-deep);
+
+  @include media-xl {
+    font-size: 15px;
+  }
 }

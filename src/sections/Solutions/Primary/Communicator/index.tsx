@@ -4,7 +4,7 @@ import { Fade, Zoom } from "react-reveal";
 
 import styles from "./Communicator.module.scss";
 
-import CommunicatorImg from "./Communicator.png";
+import CommunicatorImg from "./Communicator.svg";
 import { useAppContext } from "@/context/AppContext";
 
 const Communicator = () => {
@@ -13,11 +13,11 @@ const Communicator = () => {
     <section id="communicator" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Zoom deley={500}>
-              <Image src={CommunicatorImg} alt="Communicator" className={styles.Screenshot} />
-            </Zoom>
-          </div>
+          <Zoom deley={500}>
+            <div className={styles.ImgWrapper}>
+              <CommunicatorImg className={styles.Screenshot} />
+            </div>
+          </Zoom>
 
           <Fade right>
             <h2 className={styles.Title}>Communicator</h2>

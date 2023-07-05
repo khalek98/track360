@@ -49,12 +49,48 @@
   justify-content: space-between;
 }
 
+.LogoWrapper {
+  z-index: 10;
+}
+
 .Logo {
   height: 34px;
 
   fill: #ffffff;
 
   transition: all 0.3s ease-in-out;
+
+  @include media-lg {
+    max-width: 150px;
+  }
+}
+
+.Nav {
+  @include media-md {
+    position: fixed;
+    padding-top: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+    background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  @include media-sm {
+    padding: 100px 30px 0;
+  }
+}
+
+.NavMobileActive {
+  visibility: visible;
+  opacity: 1;
 }
 
 .Menu {
@@ -66,12 +102,43 @@
   column-gap: 50px;
 
   list-style-type: none;
+
+  @include media-xl {
+    column-gap: 35px;
+  }
+
+  @include media-lg {
+    column-gap: 30px;
+  }
+
+  @include media-md {
+    padding-bottom: 100px;
+
+    max-width: 670px;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    overflow: hidden scroll;
+  }
 }
 
 .MenuItem {
-  display: flex;
-  align-items: center;
-  column-gap: 7px;
+  @include media-md {
+    padding: 30px 10px;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.MenuItemActive {
+  row-gap: 40px;
 }
 
 .MenuLink {
@@ -91,8 +158,11 @@
 
   transition: all 0.2s ease-in-out;
 
+  z-index: 10;
+
   svg {
-    margin-top: 4px;
+    width: 10px;
+    height: 6px;
 
     fill: #fff;
 
@@ -112,19 +182,42 @@
     opacity: 0;
     transition: all 0.3s ease-in-out;
   }
+
+  @include media-xl {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @include media-md {
+    width: 100%;
+    height: 100%;
+
+    justify-content: space-between;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.24px;
+
+    &::after {
+      display: none;
+    }
+
+    svg {
+      width: 20px;
+      height: 12px;
+    }
+  }
 }
 
-.LinkDark {
-  color: var(--color-blue-deep) !important;
-
-  &:hover {
-    color: var(--color-primary-dark) !important;
-  }
+.ArrowActive {
+  transform: rotateZ(-180deg);
 }
 
 .MenuLinkActive,
 .MenuLink:hover {
-  color: var(--color-primary-dark) !important;
+  color: var(--color-primary-dark);
 
   &::after {
     opacity: 1;
@@ -143,6 +236,10 @@
   bottom: 0;
 
   visibility: hidden;
+
+  @include media-md {
+    position: static;
+  }
 }
 
 .SubNavActive {
@@ -163,6 +260,10 @@
   z-index: -1;
 
   animation: fadeIn 0.3s ease-in-out;
+
+  @include media-md {
+    display: none;
+  }
 }
 
 .BlurBgOut {
@@ -192,11 +293,27 @@
   clip-path: ellipse(150% 100% at 50% 0%);
 
   transition: all 0.3s ease-in-out;
-  // transform: translateY(0px);
   opacity: 1;
   visibility: visible;
 
   animation: fadeIn 0.3s ease-in-out;
+
+  @include media-md {
+    position: static;
+    padding: 0;
+
+    max-height: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+
+    background: none;
+    clip-path: none;
+    transition: none;
+    animation: none !important;
+  }
 }
 
 .SubmenuOut {
@@ -204,6 +321,10 @@
 
   opacity: 0;
   visibility: hidden;
+
+  @include media-md {
+    height: 0px;
+  }
 }
 
 .SubmenuItem {
@@ -212,6 +333,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include media-md {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .SubmenuLink {
@@ -221,11 +347,17 @@
   font-family: Poppins;
   letter-spacing: 0.32px;
   text-decoration: none;
+  font-weight: 400;
 
   transition: all 0.2s ease-in-out;
 
   &:hover {
     color: var(--color-primary-dark) !important;
+  }
+
+  @include media-md {
+    font-size: 18px;
+    line-height: normal;
   }
 }
 
@@ -233,15 +365,65 @@
   @include btnOnBlack;
 
   padding: 15px 35px;
+
+  z-index: 10;
+
+  @include media-lg {
+    padding: 15px 25px;
+  }
+
+  @include media-md {
+    display: none;
+  }
 }
 
-.ButtonDark {
-  border-color: var(--color-blue-deep) !important;
-  color: var(--color-blue-deep) !important;
+.Hamburger {
+  display: none;
 
-  &:hover {
-    background-color: var(--color-primary-dark) !important;
-    border-color: var(--color-primary-dark) !important;
+  @include media-md {
+    padding: 2px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 30px;
+    height: 24px;
+
+    background: none;
+    border: none;
+
+    transition: all 0.2s ease-in-out;
+
+    cursor: pointer;
+
+    span {
+      height: 2px;
+      width: 100%;
+
+      background-color: #fff;
+      border-radius: 2px;
+
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
+
+.HamburgerActive {
+  padding: 0;
+
+  span {
+    &:first-child {
+      transform: translateY(11px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:last-child {
+      transform: translateY(-11px) rotate(-45deg);
+    }
   }
 }
 

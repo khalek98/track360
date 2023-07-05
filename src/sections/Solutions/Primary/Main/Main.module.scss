@@ -70,6 +70,16 @@
 
     height: 430px;
     width: 430px;
+
+    @include media_xl {
+      height: 400px;
+      width: 400px;
+    }
+
+    @include media_lg {
+      height: 360px;
+      width: 360px;
+    }
   }
 
   &_2 {
@@ -81,10 +91,10 @@
 
     .CircleFilled {
       top: 20px;
-      right: 35px;
+      right: 46px;
 
-      height: 35px;
-      width: 35px;
+      height: 25px;
+      width: 25px;
     }
   }
 }
@@ -107,7 +117,7 @@
   width: 100%;
 
   animation-name: rotate360;
-  animation-duration: 6s;
+  animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }

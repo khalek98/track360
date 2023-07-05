@@ -11,7 +11,8 @@ const Trigger = () => {
       <div className="container">
         <div className={styles.TriggerWrapper}>
           <h2 className={styles.Title}>
-            Not sure about <span>which plan</span> will suit you best?
+            Are you interested in an <span>on-premise installation</span> or not sure{" "}
+            <span>which plan</span> is best for you?
           </h2>
           <button className={styles.Button} onClick={() => setShowContactUs(true)}>
             Contact Us

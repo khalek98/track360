@@ -26,7 +26,7 @@ const PrimaryLayout: FC<ILayoutProps> = ({ children, darkMode }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header darkMode={darkMode} />
-      {children}
+      <main style={{ overflowX: "hidden" }}>{children}</main>
       <Footer />
 
       {showContactUs && <ContactUsPopUp />}

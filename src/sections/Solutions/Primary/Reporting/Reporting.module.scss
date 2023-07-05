@@ -2,7 +2,11 @@
 @import "@/styles/_mixins.scss";
 
 .Section {
-  padding: 190px 0px 0 0;
+  padding-top: 190px;
+
+  @include media_xl {
+    padding-top: 130px;
+  }
 }
 
 .SectionWrapper {
@@ -59,6 +63,11 @@
 
   grid-column: 1/2;
   grid-row: 1/5;
+
+  @include media-lg {
+    grid-column: unset;
+    grid-row: unset;
+  }
 }
 
 .Screenshot {
@@ -69,4 +78,12 @@
 
   height: 809px;
   width: 832px;
+
+  @include media_xl {
+    top: 55%;
+    transform: translateY(-50%);
+
+    height: 609px;
+    width: 632px;
+  }
 }

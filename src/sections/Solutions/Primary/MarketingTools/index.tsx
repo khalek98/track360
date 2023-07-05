@@ -5,18 +5,18 @@ import { Fade, Bounce, LightSpeed } from "react-reveal";
 
 import styles from "./MarketingTools.module.scss";
 
-import MarketingToolsImg from "./MarketingTools.png";
+import MarketingToolsImg from "./MarketingTools.svg";
 
 const MarketingTools = () => {
   return (
     <section id="marketing" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Fade right delay={500} duration={1000}>
-              <Image src={MarketingToolsImg} alt="Marketing Tools" className={styles.Screenshot} />
-            </Fade>
-          </div>
+          <Fade right delay={500} duration={1000}>
+            <div className={styles.ImgWrapper}>
+              <MarketingToolsImg className={styles.Screenshot} />
+            </div>
+          </Fade>
 
           <Bounce>
             <h2 className={styles.Title}>Marketing Tools</h2>

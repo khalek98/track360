@@ -52,7 +52,7 @@ export const submenuList: IMenuList[] = [
     menuLink: "/solutions/primary#deals",
   },
   {
-    menuName: "Payment Modules",
+    menuName: "Payment Module",
     menuLink: "/solutions/primary#payment",
   },
   {
@@ -60,15 +60,15 @@ export const submenuList: IMenuList[] = [
     menuLink: "/solutions/primary#organization",
   },
   {
-    menuName: "Integration",
-    menuLink: "/solutions/secondary#integration",
+    menuName: "Installations",
+    menuLink: "/solutions/secondary#installations",
   },
   {
     menuName: "Migration",
     menuLink: "/solutions/secondary#migration",
   },
   {
-    menuName: "Installations",
-    menuLink: "/solutions/secondary#installations",
+    menuName: "Integration",
+    menuLink: "/solutions/secondary#integration",
   },
 ];

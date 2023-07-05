@@ -1,25 +1,20 @@
 import React from "react";
-import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
 
 import styles from "./OrganizationManager.module.scss";
 
-import OrganizationManagerImg from "./OrganizationManager.png";
+import OrganizationManagerImg from "./OrganizationManager.svg";
 
 const OrganizationManager = () => {
   return (
     <section id="organization" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Fade right delay={500}>
-              <Image
-                src={OrganizationManagerImg}
-                alt="Organization Manager"
-                className={styles.Screenshot}
-              />
-            </Fade>
-          </div>
+          <Fade right delay={500}>
+            <div className={styles.ImgWrapper}>
+              <OrganizationManagerImg className={styles.Screenshot} />
+            </div>
+          </Fade>
 
           <Fade>
             <h2 className={styles.Title}>Organization Manager</h2>

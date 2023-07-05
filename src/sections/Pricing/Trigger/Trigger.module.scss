@@ -14,19 +14,27 @@
 }
 
 .Title {
-  width: 760px;
+  max-width: 1000px;
 
-  font-family: Poppins;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 50px;
-  letter-spacing: 0.4px;
-  text-align: center;
-  text-transform: capitalize;
   color: #fff;
+  text-align: center;
+  font-size: 46px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.36px;
 
   span {
     color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  @include media-2xl {
+    max-width: 800px;
+
+    font-size: 36px;
+    line-height: 44px;
   }
 }
 

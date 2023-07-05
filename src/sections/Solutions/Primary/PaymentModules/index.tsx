@@ -4,17 +4,17 @@ import { Fade, Zoom, Bounce } from "react-reveal";
 
 import styles from "./PaymentModules.module.scss";
 
-import PaymentModulesImg from "./PaymentModule.png";
+import PaymentModulesImg from "./PaymentModule.svg";
 const PaymentModules = () => {
   return (
     <section id="payment" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Zoom duration={1000}>
-              <Image src={PaymentModulesImg} alt="Payment Modules" className={styles.Screenshot} />
-            </Zoom>
-          </div>
+          <Zoom duration={1000}>
+            <div className={styles.ImgWrapper}>
+              <PaymentModulesImg className={styles.Screenshot} />
+            </div>
+          </Zoom>
 
           <h2 className={styles.Title}>Payment Module</h2>
           <Fade left>

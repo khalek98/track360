@@ -3,6 +3,14 @@
 
 .Section {
   padding: 280px 0 225px;
+
+  @include media-2xl {
+    padding: 200px 0;
+  }
+
+  @include media-xl {
+    padding: 150px 0;
+  }
 }
 
 .SectionWrapper {
@@ -63,5 +71,15 @@
   position: absolute;
 
   top: -140px;
-  right: 30px;
+  right: 0px;
+
+  width: 772px;
+  height: 743px;
+
+  @include media-xl {
+    top: -100px;
+
+    width: 682px;
+    height: 656px;
+  }
 }

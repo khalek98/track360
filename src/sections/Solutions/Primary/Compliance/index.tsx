@@ -4,18 +4,18 @@ import { Fade, LightSpeed } from "react-reveal";
 
 import styles from "./Compliance.module.scss";
 
-import ComplianceImg from "./Compliance.png";
+import ComplianceImg from "./Compliance.svg";
 
 const Compliance = () => {
   return (
     <section id="compliance" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Fade left delay={500}>
-              <Image src={ComplianceImg} alt="Compliance" className={styles.Screenshot} />
-            </Fade>
-          </div>
+          <Fade left delay={500}>
+            <div className={styles.ImgWrapper}>
+              <ComplianceImg className={styles.Screenshot} />
+            </div>
+          </Fade>
 
           <LightSpeed right>
             <h2 className={styles.Title}>Compliance</h2>

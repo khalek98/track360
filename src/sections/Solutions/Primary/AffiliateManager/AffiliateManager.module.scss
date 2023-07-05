@@ -2,8 +2,11 @@
 @import "@/styles/_mixins.scss";
 
 .Section {
-  padding: 190px 0 0;
-  overflow: hidden;
+  padding-top: 190px;
+
+  @include media-xl {
+    padding-top: 140px;
+  }
 }
 
 .SectionWrapper {
@@ -25,6 +28,10 @@
 
 .List {
   @include solutionsList;
+
+  @include media-lg {
+    order: 5;
+  }
 }
 
 .ListItem {
@@ -39,12 +46,18 @@
 
   grid-column: 2/3;
   grid-row: 1/4;
+
+  @include media-lg {
+    grid-column: unset;
+    grid-row: unset;
+    height: 450px;
+  }
 }
 
 .Screenshot1 {
   position: absolute;
   top: -68px;
-  left: 55px;
+  left: 46px;
 
   width: 950px;
   height: 441px;
@@ -53,6 +66,18 @@
   border-radius: 5px;
 
   z-index: 1;
+
+  @include media-xl {
+    top: 0;
+
+    width: 850px;
+    height: 395px;
+  }
+
+  @include media-lg {
+    width: 720px;
+    height: 335px;
+  }
 }
 
 .Screenshot2 {
@@ -61,10 +86,15 @@
   left: 0;
 
   width: 900px;
-  height: 207px;
+  height: 171px;
 
   box-shadow: -21px -20px 29px rgba(35, 48, 107, 0.15);
   border-radius: 2px;
 
   z-index: 2;
+
+  @include media-lg {
+    top: 285px;
+    left: -20px;
+  }
 }

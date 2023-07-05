@@ -3,7 +3,10 @@
 
 .Footer {
   padding: 50px 0 85px 0;
+
   background: linear-gradient(107.18deg, #202833 32.6%, #000000 99.44%);
+
+  overflow: hidden;
 }
 
 .FooterWrapper {
@@ -11,6 +14,26 @@
   grid-template-columns: 1fr repeat(3, auto) 52px;
   grid-template-rows: repeat(2, auto);
   column-gap: 100px;
+
+  @include media-2xl {
+    column-gap: 80px;
+  }
+
+  @include media-xl {
+    // column-gap: 30px;
+    grid-template-columns: 1fr repeat(2, auto) 52px;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 50px;
+  }
+
+  @include media-md {
+    grid-template-columns: repeat(3, auto) 45px;
+    column-gap: 50px;
+  }
+
+  @include media-sm {
+    grid-template-columns: auto 52px;
+  }
 }
 
 .LogoWrapper {
@@ -21,6 +44,18 @@
 .Logo {
   fill: #ffffff;
   height: 40px;
+
+  @include media-md {
+    max-width: 160px;
+  }
+
+  @include media-sm {
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    width: 100%;
+    max-width: 200px;
+  }
 }
 
 .Arrow {
@@ -34,16 +69,24 @@
   &:hover {
     transform: scale(1.1);
   }
+
+  @include media-sm {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
 }
 
 .ContactsWrapper {
-  display: flex;
-  flex-direction: column;
+  @include media-xl {
+    grid-row: 1/3;
+  }
+
+  @include media-sm {
+    grid-row: 3/4;
+  }
 }
 
 .ContactsList {
-  margin-top: 20px;
-
   display: flex;
   flex-direction: column;
   row-gap: 30px;
@@ -61,6 +104,12 @@
   font-weight: 400;
   font-family: Poppins;
   letter-spacing: 0.14px;
+
+  @include media-sm {
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0.18px;
+  }
 }
 
 .Mail {
@@ -76,6 +125,10 @@
   &:hover {
     color: var(--color-primary);
   }
+
+  @include media-sm {
+    font-size: 20px;
+  }
 }
 
 .Address {
@@ -87,22 +140,60 @@
   font-family: Poppins;
   line-height: 134%;
   letter-spacing: 0.14px;
+
+  @include media-sm {
+    max-width: 100%;
+
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 .FooterTitle {
-  margin-bottom: 8px;
   font-family: "Poppins";
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
   color: #ffffff;
+
+  @include media-sm {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
 }
 
 .MenuWrapper,
-.TermsWrapper {
+.TermsWrapper,
+.ContactsWrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
+
+  @include media-sm {
+    grid-column: 1/3;
+  }
+}
+
+.MenuWrapper {
+  @include media-xl {
+    grid-row: 1/3;
+  }
+
+  @include media-sm {
+    grid-row: 2/3;
+  }
+}
+
+.TermsWrapper {
+  @include media-xl {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  @include media-sm {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
 }
 
 .Menu,
@@ -127,33 +218,39 @@
   &:hover {
     color: var(--color-primary);
   }
+
+  @include media-sm {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.18px;
+  }
 }
 
 .MenuLinkActive {
   color: var(--color-primary);
+
+  @include media-sm {
+    font-weight: 600;
+    letter-spacing: 0.22px;
+  }
 }
 
 .TermsLink {
-  font-family: "Poppins";
-  font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.32px;
+  text-decoration-line: underline;
   color: #ffffff;
-  text-decoration: none;
 
   transition: all 0.2s ease-in-out;
 
   &:hover {
     color: var(--color-primary);
   }
-}
-
-.TermsLink {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-  text-decoration: underline;
 }
 
 .Label {

@@ -36,6 +36,10 @@
     background-color: var(--color-primary);
     color: var(--color-blue-deep);
   }
+
+  @include media-xl {
+    font-size: 14px;
+  }
 }
 
 @mixin btnOnBlack {
@@ -66,6 +70,16 @@
   text-transform: uppercase;
 
   color: var(--color-blue-deep);
+
+  @include media-xl {
+    line-height: 56px;
+  }
+
+  @include media-sm {
+    font-size: 16px;
+    line-height: 34px;
+    letter-spacing: 11.04px;
+  }
 }
 
 @mixin subtitle {
@@ -80,6 +94,16 @@
   span {
     color: var(--color-primary-dark);
   }
+
+  @include media-xl {
+    font-size: 46px;
+    line-height: 54px;
+  }
+
+  @include media-md {
+    font-size: 60px;
+    line-height: 70px;
+  }
 }
 
 @mixin solutionsTitle {
@@ -91,6 +115,16 @@
   color: var(--color-blue-deep);
 
   grid-column: 1/2;
+
+  @include media-xl {
+    font-size: 46px;
+    line-height: 56px;
+  }
+
+  @include media-lg {
+    font-size: 42px;
+    line-height: 50px;
+  }
 }
 
 @mixin solutionsTitleRight {
@@ -111,6 +145,10 @@
   span {
     font-weight: 700;
   }
+
+  @include media-lg {
+    font-size: 18px;
+  }
 }
 
 @mixin solutionsTextRight {
@@ -122,11 +160,25 @@
   display: grid;
   grid-template-columns: 570px auto;
   row-gap: 40px;
+
+  @include media-xl {
+    grid-template-columns: 460px auto;
+    column-gap: 50px;
+    row-gap: 30px;
+  }
+
+  @include media-lg {
+    grid-template-columns: 1fr;
+  }
 }
 
 @mixin solutionsWrapperRight {
   @include solutionsWrapper;
   grid-template-columns: auto 570px;
+
+  @include media-xl {
+    grid-template-columns: auto 460px;
+  }
 }
 
 @mixin solutionsList {
@@ -136,6 +188,10 @@
   flex-direction: column;
   row-gap: 14px;
   grid-column: 1/2;
+
+  @include media-lg {
+    order: 5;
+  }
 }
 
 @mixin solutionsListRight {
@@ -166,6 +222,11 @@
     height: 30px;
 
     background: url("../assets/icons/solutions/listCircle.svg") center center/cover no-repeat;
+  }
+
+  @include media-xl {
+    font-size: 16px;
+    line-height: 23px;
   }
 }
 

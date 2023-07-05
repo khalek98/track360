@@ -3,6 +3,10 @@
 
 .Section {
   padding: 165px 0 145px;
+
+  @include media_xl {
+    padding-top: 145px;
+  }
 }
 
 .SectionWrapper {
@@ -34,7 +38,7 @@
   width: 100%;
 
   grid-column: 1/2;
-  grid-row: 1/5;
+  grid-row: 1/4;
 }
 
 .Screenshot {
@@ -43,6 +47,12 @@
   top: -40px;
   right: 70px;
 
-  height: 641px;
-  width: 798px;
+  height: 602px;
+  width: 832px;
+
+  @include media_xl {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
 }

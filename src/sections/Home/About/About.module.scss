@@ -5,29 +5,65 @@
   position: relative;
   padding: 100px 0 140px 0;
 
-  overflow: hidden;
+  @include media-xl {
+    padding: 100px 0;
+  }
 }
 
 .AboutWrapper {
-  display: flex;
-  flex-direction: column;
-
+  display: grid;
+  grid-template-columns: 550px auto;
   row-gap: 30px;
+  column-gap: 140px;
+
+  @include media-2xl {
+    column-gap: 90px;
+  }
+
+  @include media-xl {
+    grid-template-columns: 450px auto;
+  }
+
+  @include media-lg {
+    grid-template-columns: 360px auto;
+    column-gap: 60px;
+  }
+
+  @include media-md {
+    grid-template-columns: 1fr;
+  }
 }
 
 .Title {
   @include title;
+
+  grid-column: 1/2;
 }
 
 .Subtitle {
   @include subtitle;
 
-  margin-top: 10px;
   max-width: 540px;
+
+  grid-column: 1/2;
+
+  @include media-xl {
+    max-width: 450px;
+  }
+
+  @include media-md {
+    max-width: unset;
+  }
+
+  @include media-sm {
+    margin-top: 30px;
+  }
 }
 
 .Text {
   max-width: 540px;
+
+  grid-column: 1/2;
 
   font-family: "Montserrat";
   font-weight: 500;
@@ -43,15 +79,78 @@
   &:nth-child(3) {
     margin-top: 20px;
   }
+
+  @include media-md {
+    max-width: unset;
+
+    &:nth-child(3) {
+      margin-top: 0;
+    }
+
+    &:nth-child(4) {
+      order: 5;
+    }
+  }
 }
 
 .ImgWrapper {
-  position: absolute;
-  top: 55px;
-  right: 0px;
+  position: relative;
 
-  height: 818px;
-  width: 818px;
+  grid-column: 2/3;
+  grid-row: 1/5;
 
-  background: url("./about.png") center center/cover no-repeat;
+  svg {
+    position: absolute;
+
+    height: 918px;
+    width: 918px;
+
+    top: -50px;
+    left: 0;
+  }
+
+  @include media-2xl {
+    svg {
+      top: -25px;
+
+      height: 818px;
+      width: 818px;
+    }
+  }
+
+  @include media-xl {
+    svg {
+      top: 50%;
+      transform: translateY(-50%);
+
+      height: 718px;
+      width: 718px;
+    }
+  }
+
+  @include media-md {
+    height: 590px;
+
+    grid-column: unset;
+    grid-row: unset;
+    order: 4;
+
+    svg {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      height: 115%;
+      width: 115%;
+    }
+  }
+
+  @include media-sm {
+    height: 310px;
+
+    svg {
+      height: 125%;
+      width: 125%;
+    }
+  }
 }

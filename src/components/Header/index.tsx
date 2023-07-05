@@ -16,6 +16,8 @@ interface IHeaderProps {
 const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const [fixedHeader, setFixedHeader] = useState<boolean>(false);
   const [showSubmenu, setShowSubmenu] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const { pathname, setShowRequestDemo } = useAppContext();
 
   useEffect(() => {
@@ -36,10 +38,48 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
         }
       });
     };
-  });
+  }, []);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 992);
+    window.addEventListener("resize", () => {
+      setIsMobile(window.innerWidth < 992);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setIsMobile(window.innerWidth < 992);
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [openMenu]);
+
+  const onCloseSubMenu = () => {
+    setShowSubmenu(false);
+  };
+
+  const onShowMenu = () => {
+    setOpenMenu(true);
+  };
 
   const onCloseMenu = () => {
+    setOpenMenu(false);
     setShowSubmenu(false);
+  };
+
+  const onToggleMenu = () => {
+    if (openMenu) {
+      onCloseMenu();
+    } else {
+      onShowMenu();
+    }
   };
 
   return (
@@ -51,41 +91,28 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
         { [styles.HeaderDark]: darkMode },
       )}
     >
-      <nav
-        className={cn(styles.SubNav, { [styles.SubNavActive]: showSubmenu })}
-        onClick={onCloseMenu}
-      >
-        <ul
-          className={cn(
-            styles.Submenu,
-            { [styles.SubmenuActive]: showSubmenu },
-            { [styles.SubmenuOut]: !showSubmenu },
-          )}
-          onMouseLeave={onCloseMenu}
-        >
-          {submenuList.map(({ menuLink, menuName }) => (
-            <li className={styles.SubmenuItem} key={menuName}>
-              <a href={menuLink} className={cn(styles.SubmenuLink)}>
-                {menuName}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <div className={cn(styles.BlurBg, { [styles.BlurBgOut]: !showSubmenu })}></div>
-      </nav>
       <div className="container">
         <div className={styles.HeaderWrapper}>
           <Link href="/" className={styles.LogoWrapper}>
             <Logo className={cn(styles.Logo)} />
           </Link>
-          <nav className={cn(styles.Nav)}>
-            <ul className={styles.Menu}>
-              {menuList.map(({ menuLink, menuName }, index) => (
-                <li className={cn(styles.MenuItem)} key={menuName}>
+          <nav className={cn(styles.Nav, { [styles.NavMobileActive]: openMenu })}>
+            <ul className={cn(styles.Menu)}>
+              {menuList.map(({ menuLink, menuName }, index: number) => (
+                <li
+                  className={cn(styles.MenuItem, { [styles.MenuItemActive]: showSubmenu })}
+                  key={menuName}
+                  onMouseEnter={() => {
+                    !isMobile && index === 1 ? setShowSubmenu(true) : setShowSubmenu(false);
+                  }}
+                  onClick={() => {
+                    index === 1 ? setShowSubmenu(!showSubmenu) : setShowSubmenu(false);
+                  }}
+                >
                   <a
                     href={menuLink}
-                    onMouseEnter={() => {
-                      index === 1 ? setShowSubmenu(true) : setShowSubmenu(false);
+                    onClick={(e) => {
+                      index === 1 && e.preventDefault();
                     }}
                     className={cn(
                       styles.MenuLink,
@@ -99,8 +126,40 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     )}
                   >
                     {menuName}
-                    {menuName === "Our Solutions" && <ArrowSvg />}
+                    {menuName === "Our Solutions" && (
+                      <ArrowSvg
+                        className={cn(styles.Arrow, { [styles.ArrowActive]: showSubmenu })}
+                      />
+                    )}
                   </a>
+
+                  {index === 1 && (
+                    <nav
+                      className={cn(styles.SubNav, { [styles.SubNavActive]: showSubmenu })}
+                      onClick={onCloseSubMenu}
+                    >
+                      <ul
+                        className={cn(
+                          styles.Submenu,
+                          { [styles.SubmenuActive]: showSubmenu },
+                          { [styles.SubmenuOut]: !showSubmenu },
+                        )}
+                        onMouseLeave={() => !isMobile && onCloseSubMenu}
+                      >
+                        {submenuList.map(({ menuLink, menuName }) => (
+                          <li className={styles.SubmenuItem} key={menuName}>
+                            <a href={menuLink} className={cn(styles.SubmenuLink)}>
+                              {menuName}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                      <div
+                        onMouseEnter={() => setShowSubmenu(false)}
+                        className={cn(styles.BlurBg, { [styles.BlurBgOut]: !showSubmenu })}
+                      ></div>
+                    </nav>
+                  )}
                 </li>
               ))}
             </ul>
@@ -108,6 +167,15 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
 
           <button onClick={() => setShowRequestDemo(true)} className={cn(styles.Button)}>
             Request Demo
+          </button>
+
+          <button
+            onClick={() => onToggleMenu()}
+            className={cn(styles.Hamburger, { [styles.HamburgerActive]: openMenu })}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </div>

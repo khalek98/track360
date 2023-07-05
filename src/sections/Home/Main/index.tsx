@@ -38,13 +38,13 @@ const Main = () => {
                 <div className={cn(styles.FiledCircle, styles.FiledCircle_6)}></div>
               </div>
 
-              <div className={styles.FildeBg}>
+              <div className={styles.FiledBg}>
                 <div className={styles.ArrowInner}></div>
 
                 <div className={styles.MiddleMenu}>
                   <Fade top delay={400}>
                     <a href="solutions/primary#payment" className={styles.MiddleMenuLink}>
-                      Payment Modules
+                      Payment Module
                     </a>
                   </Fade>
                   <Fade top delay={300}>

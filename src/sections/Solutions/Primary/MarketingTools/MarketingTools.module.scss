@@ -3,7 +3,8 @@
 
 .Section {
   padding: 220px 0 0;
-  @include media-2xl {
+  @include media-xl {
+    padding-top: 130px;
   }
 }
 
@@ -32,7 +33,6 @@
 
 .ImgWrapper {
   position: relative;
-  margin-top: 10px;
 
   width: 100%;
 
@@ -45,4 +45,7 @@
 
   top: 0;
   left: 0;
+
+  width: 762px;
+  height: 704px;
 }

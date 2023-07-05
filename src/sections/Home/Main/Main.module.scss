@@ -6,8 +6,19 @@
   padding: 180px 0 110px;
 
   background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
-  overflow: hidden;
   clip-path: ellipse(150% 100% at 50% 0%);
+
+  @include media-lg {
+    padding: 150px 0 120px;
+  }
+
+  @include media-sm {
+    padding: 160px 0 120px;
+  }
+
+  @include media-xs {
+    clip-path: ellipse(200% 100% at 50% 0%);
+  }
 }
 
 .MainWrapper {
@@ -15,6 +26,9 @@
   flex-direction: column;
   align-items: center;
   row-gap: 40px;
+
+  @include media-sm {
+  }
 }
 
 .Title {
@@ -30,6 +44,19 @@
 
   span {
     color: var(--color-primary);
+  }
+
+  @include media-lg {
+    max-width: 500px;
+
+    font-size: 50px;
+    line-height: 56px;
+  }
+
+  @include media-sm {
+    font-size: 55px;
+    line-height: 63px;
+    letter-spacing: 1.1px;
   }
 }
 
@@ -48,6 +75,22 @@
     font-weight: 700;
     color: var(--color-primary);
   }
+
+  @include media-lg {
+    max-width: 700px;
+
+    font-size: 20px;
+  }
+
+  @include media-md {
+    max-width: 600px;
+  }
+
+  @include media-sm {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.54px;
+  }
 }
 
 .MiddleMenuWrapp {
@@ -59,17 +102,50 @@
 
   border-radius: 50%;
   border: 1px dashed rgba(72, 198, 239, 0.4);
+
+  @include media-xl {
+    margin-top: 40px;
+  }
+
+  @include media-lg {
+    width: 550px;
+    height: 550px;
+  }
+
+  @include media-sm {
+    margin-top: 0;
+
+    height: 350px;
+    width: 350px;
+  }
 }
 
 .DashedBg {
-  position: relative;
-  padding: 52px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   width: 524px;
   height: 524px;
 
   border-radius: 50%;
   border: 1px dashed rgba(102, 252, 241, 0.4);
+
+  @include media-lg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 450px;
+    height: 450px;
+  }
+
+  @include media-sm {
+    height: 290px;
+    width: 290px;
+  }
 }
 
 .DashedBgInner {
@@ -82,13 +158,27 @@
 
   border-radius: 50%;
 
-  animation: rotate360 50s linear infinite;
+  animation: rotate360Reverse 50s linear infinite;
 }
 
-.FildeBg {
-  position: relative;
+.FiledBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: 418px;
   height: 418px;
+
+  @include media-lg {
+    width: 350px;
+    height: 350px;
+  }
+
+  @include media-sm {
+    height: 227px;
+    width: 227px;
+  }
 }
 
 .CircleLinkWrap {
@@ -156,20 +246,41 @@
       transform: scale(1.1) translateY(-45%) !important;
     }
   }
-}
 
-.CircleLink {
-  color: var(--color-primary-dark);
-  text-align: center;
-  font-size: 19px;
-  font-family: Montserrat;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 1.33px;
-  text-transform: uppercase;
-  text-decoration: none;
+  @include media-lg {
+    height: 130px;
+    width: 130px;
 
-  transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    line-height: 20px;
+
+    border-width: 2px;
+  }
+
+  @include media-sm {
+    height: 84px;
+    width: 84px;
+
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.723px;
+
+    &_1 {
+      top: -35px;
+    }
+
+    &_2 {
+      right: -35px;
+    }
+
+    &_3 {
+      bottom: -35px;
+    }
+
+    &_4 {
+      left: -35px;
+    }
+  }
 }
 
 .MiddleMenu {
@@ -223,6 +334,16 @@
       display: none;
     }
   }
+
+  @include media-lg {
+    font-size: 15px;
+  }
+
+  @include media-sm {
+    font-size: 9px;
+    line-height: 13px;
+    letter-spacing: 0.462px;
+  }
 }
 
 .ArrowInner {
@@ -235,7 +356,7 @@
 
   background: url("./CircleWithArrows.svg") center center/cover no-repeat;
 
-  animation: rotate360 40s linear infinite;
+  animation: rotate360 20s linear infinite;
 }
 
 .MiddleMenuInner {
@@ -264,7 +385,18 @@
     width: 32px;
     height: 32px;
 
-    animation: scaleAnimation 10s linear infinite;
+    animation: scaleAnimation 4s linear infinite;
+
+    @include media-lg {
+      left: 73px;
+    }
+
+    @include media-sm {
+      left: 17px;
+
+      height: 23px;
+      width: 23px;
+    }
   }
 
   &_2 {
@@ -274,7 +406,15 @@
     width: 23px;
     height: 23px;
 
-    animation: scaleAnimation 10s linear infinite 2s;
+    animation: scaleAnimation 4s linear infinite 2s;
+
+    @include media-lg {
+      right: 99px;
+    }
+
+    @include media-sm {
+      right: 37px;
+    }
   }
 
   &_3 {
@@ -284,7 +424,18 @@
     width: 28px;
     height: 28px;
 
-    animation: scaleAnimation 10s linear infinite 4s;
+    animation: scaleAnimation 4s linear infinite 4s;
+
+    @include media-lg {
+      right: 37px;
+    }
+
+    @include media-sm {
+      right: -3px;
+
+      height: 20px;
+      width: 20px;
+    }
   }
 
   &_4 {
@@ -294,7 +445,15 @@
     width: 18px;
     height: 18px;
 
-    animation: scaleAnimation 10s linear infinite 3s;
+    animation: scaleAnimation 4s linear infinite 3s;
+
+    @include media-lg {
+      bottom: 151px;
+    }
+
+    @include media-sm {
+      bottom: 77px;
+    }
   }
 
   &_5 {
@@ -304,7 +463,15 @@
     width: 18px;
     height: 18px;
 
-    animation: scaleAnimation 15s linear infinite 1s;
+    animation: scaleAnimation 4s linear infinite 1s;
+
+    @include media-lg {
+      top: 101px;
+    }
+
+    @include media-sm {
+      top: 45px;
+    }
   }
 
   &_6 {
@@ -314,7 +481,15 @@
     bottom: 47px;
     left: 89px;
 
-    animation: scaleAnimation 10s linear infinite;
+    animation: scaleAnimation 4s linear infinite;
+
+    @include media-lg {
+      left: 64px;
+    }
+
+    @include media-sm {
+      left: 20px;
+    }
   }
 }
 
@@ -351,6 +526,17 @@
       width: 35px;
     }
   }
+
+  @include media-lg {
+    &_1 {
+      height: 360px;
+      width: 360px;
+    }
+  }
+
+  @include media-md {
+    display: none !important;
+  }
 }
 
 .CircleeDashed .CircleFilled {
@@ -385,7 +571,7 @@
   }
 }
 
-@keyframes rotate360Reverce {
+@keyframes rotate360Reverse {
   from {
     transform: rotate(0deg);
   }

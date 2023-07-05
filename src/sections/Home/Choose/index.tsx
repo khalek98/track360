@@ -30,11 +30,11 @@ const Choose = () => {
           <ul className={styles.ChooseList}>
             {reasonsArr.map(({ title, descr, imgSVG: ImgSVG }, index) => (
               <li className={styles.ChooseItem} key={title}>
-                <div className={styles.ImgWrapper}>
-                  <Zoom delay={index * 100}>
+                <Zoom delay={index * 100}>
+                  <div className={styles.ImgWrapper}>
                     <ImgSVG />
-                  </Zoom>
-                </div>
+                  </div>
+                </Zoom>
                 <Fade right delay={index * 200}>
                   <div className={styles.ChooseItemText}>
                     <h3 className={styles.ChooseTitle}>{title}</h3>

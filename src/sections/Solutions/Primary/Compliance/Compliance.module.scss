@@ -2,7 +2,7 @@
 @import "@/styles/_mixins.scss";
 
 .Section {
-  padding: 105px 0 0;
+  padding: 140px 0 0;
 }
 
 .SectionWrapper {
@@ -29,17 +29,24 @@
 
 .ImgWrapper {
   position: relative;
-  margin-top: 10px;
 
   width: 100%;
 
   grid-column: 1/2;
-  grid-row: 1/5;
+  grid-row: 1/4;
 }
 
 .Screenshot {
   position: absolute;
 
   top: 0;
-  right: 70px;
+  right: 0px;
+
+  height: 693px;
+  width: 762px;
+
+  @include media-xl {
+    height: 593px;
+    width: 662px;
+  }
 }

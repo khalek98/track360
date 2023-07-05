@@ -4,12 +4,11 @@ import { Fade } from "react-reveal";
 
 import styles from "./About.module.scss";
 
+import AboutImg from "./about.svg";
+
 const About = () => {
   return (
     <section className={styles.About} id="about">
-      <Fade right duration={1000}>
-        <div className={styles.ImgWrapper}></div>
-      </Fade>
       <div className="container">
         <div className={styles.AboutWrapper}>
           <h2 className={styles.Title}>About Us</h2>
@@ -33,6 +32,12 @@ const About = () => {
               reliable, high-quality, user-friendly software, we provide unparalleled insights into
               your affiliate program&apos;s performance, giving you the edge you need to succeed.
             </p>
+          </Fade>
+
+          <Fade right duration={1000}>
+            <div className={styles.ImgWrapper}>
+              <AboutImg />
+            </div>
           </Fade>
         </div>
       </div>

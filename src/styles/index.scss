@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
 @import "@/styles/_media-mixin.scss";
 @import "@/styles/_variables.scss";
 
@@ -42,20 +42,24 @@ p {
     max-width: 1180px;
   }
 
-  @include media-lg {
+  @include media-xl {
     max-width: 960px;
   }
 
+  @include media-lg {
+    max-width: 860px;
+  }
+
   @include media-md {
-    max-width: 720px;
+    max-width: 670px;
   }
 
   @include media-sm {
-    max-width: 540px;
+    max-width: 100%;
+    padding: 0 50px;
   }
 
   @include media-xs {
-    max-width: 100%;
     padding: 0 30px;
   }
 }

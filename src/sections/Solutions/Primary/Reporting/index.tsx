@@ -4,7 +4,7 @@ import { Fade, Zoom, LightSpeed } from "react-reveal";
 
 import styles from "./Reporting.module.scss";
 
-import ReportingImg from "./Reporting.png";
+import ReportingImg from "./Reporting.svg";
 import { useAppContext } from "@/context/AppContext";
 
 const Reporting = () => {
@@ -14,11 +14,11 @@ const Reporting = () => {
     <section id="reporting" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Fade left delay={500}>
-              <Image src={ReportingImg} alt="Reporting" className={styles.Screenshot} />
-            </Fade>
-          </div>
+          <Fade left delay={500}>
+            <div className={styles.ImgWrapper}>
+              <ReportingImg className={styles.Screenshot} />
+            </div>
+          </Fade>
 
           <h2 className={styles.Title}>Reporting</h2>
           <Zoom>
@@ -43,7 +43,10 @@ const Reporting = () => {
               <li className={styles.ListItem}>Customizable - any KPI can be included;</li>
             </Fade>
             <Fade right delay={500}>
-              <li className={styles.ListItem}>ROI Analysis</li>
+              <li className={styles.ListItem}>
+                ROI Analysis - calculate the return on investment on each affiliate and their
+                individual payout program so that you can optimize your marketing spend.
+              </li>
             </Fade>
           </ul>
 

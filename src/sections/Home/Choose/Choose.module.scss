@@ -3,6 +3,11 @@
 
 .Choose {
   padding: 140px 0;
+
+  //sm
+  @include media-sm {
+    padding: 80px 0;
+  }
 }
 
 .ChooseWrapper {
@@ -10,6 +15,28 @@
   grid-template-columns: 500px 650px;
   justify-content: space-between;
   row-gap: 50px;
+
+  @include media-2xl {
+    grid-template-columns: 435px 590px;
+  }
+
+  @include media-xl {
+    grid-template-columns: 350px auto;
+    row-gap: 40px;
+    column-gap: 100px;
+  }
+
+  @include media-lg {
+    column-gap: 65px;
+  }
+
+  @include media-md {
+    grid-template-columns: 1fr;
+  }
+
+  @include media-sm {
+    row-gap: 30px;
+  }
 }
 
 .Title {
@@ -32,6 +59,10 @@
   line-height: 150%;
   letter-spacing: 0.02em;
   color: var(--color-blue-deep);
+
+  @include media-xl {
+    font-size: 18px;
+  }
 }
 
 .ChooseList {
@@ -41,12 +72,24 @@
   row-gap: 28px;
 
   list-style-type: none;
+
+  @include media-md {
+    grid-column: unset;
+    grid-row: unset;
+  }
 }
 
 .ChooseItem {
   display: grid;
   grid-template-columns: 120px 1fr;
   column-gap: 20px;
+
+  //sm
+  @include media-sm {
+    margin-top: 10px;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
 }
 
 .ImgWrapper {

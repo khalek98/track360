@@ -4,18 +4,18 @@ import { Fade } from "react-reveal";
 
 import styles from "./DealsManager.module.scss";
 
-import DealsManagerImg from "./DealsManager.png";
+import DealsManagerImg from "./DealsManager.svg";
 
 const DealsManager = () => {
   return (
     <section id="deals" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <div className={styles.ImgWrapper}>
-            <Fade left>
-              <Image src={DealsManagerImg} alt="Deals Manager" className={styles.Screenshot} />
-            </Fade>
-          </div>
+          <Fade left>
+            <div className={styles.ImgWrapper}>
+              <DealsManagerImg className={styles.Screenshot} />
+            </div>
+          </Fade>
 
           <h2 className={styles.Title}>Deals Manager</h2>
           <Fade bottom>
