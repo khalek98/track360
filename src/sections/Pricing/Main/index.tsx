@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import { Swiper as SwiperWrapp, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperWrap, SwiperSlide } from "swiper/react";
 import Swiper from "swiper";
 
 import "swiper/css";
@@ -115,16 +115,16 @@ const Main = () => {
             )}
           </ul>
 
-          <SwiperWrapp
+          <SwiperWrap
             onSlideChange={(swiper) => {
               setActivePackageSlide(swiper.activeIndex);
             }}
             onSwiper={(swiper) => {
               setSwiper(swiper);
             }}
-            wrapperClass={styles.PackagesWrapperMobile}
-            centeredSlides={true}
-            spaceBetween={30}
+            // wrapperClass={styles.PackagesWrapperMobile}
+            // centeredSlides={true}
+            // spaceBetween={30}
             className={cn(styles.PackagesContentMobile, "mySwiper")}
           >
             {pricePackageArr.map(
@@ -212,7 +212,7 @@ const Main = () => {
                 </SwiperSlide>
               ),
             )}
-          </SwiperWrapp>
+          </SwiperWrap>
 
           <ul className={styles.PackagesPagination}>
             {pricePackageArr.map((_, index) => (
