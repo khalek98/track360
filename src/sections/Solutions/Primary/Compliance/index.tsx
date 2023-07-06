@@ -1,25 +1,22 @@
 import React from "react";
-import Image from "next/image";
-import { Fade, LightSpeed } from "react-reveal";
+import { Fade } from "react-reveal";
 
 import styles from "./Compliance.module.scss";
-
-import ComplianceImg from "./Compliance.svg";
 
 const Compliance = () => {
   return (
     <section id="compliance" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <Fade left delay={500}>
+          <Fade bottom delay={500}>
             <div className={styles.ImgWrapper}>
-              <ComplianceImg className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </div>
           </Fade>
 
-          <LightSpeed right>
+          <Fade right>
             <h2 className={styles.Title}>Compliance</h2>
-          </LightSpeed>
+          </Fade>
 
           <Fade right>
             <p className={styles.Text}>

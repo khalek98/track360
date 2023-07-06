@@ -4,8 +4,6 @@ import { Fade } from "react-reveal";
 
 import styles from "./About.module.scss";
 
-import AboutImg from "./about.svg";
-
 const About = () => {
   return (
     <section className={styles.About} id="about">
@@ -36,7 +34,8 @@ const About = () => {
 
           <Fade right duration={1000}>
             <div className={styles.ImgWrapper}>
-              <AboutImg />
+              {/* <AboutImg /> */}
+              <div className={styles.Screenshot}></div>
             </div>
           </Fade>
         </div>

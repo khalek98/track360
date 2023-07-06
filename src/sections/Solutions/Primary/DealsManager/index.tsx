@@ -1,10 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { Fade } from "react-reveal";
 
 import styles from "./DealsManager.module.scss";
-
-import DealsManagerImg from "./DealsManager.svg";
 
 const DealsManager = () => {
   return (
@@ -13,7 +10,7 @@ const DealsManager = () => {
         <div className={styles.SectionWrapper}>
           <Fade left>
             <div className={styles.ImgWrapper}>
-              <DealsManagerImg className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </div>
           </Fade>
 

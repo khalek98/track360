@@ -1,10 +1,8 @@
 import React from "react";
-import Image from "next/image";
-import { Fade, Zoom, LightSpeed } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 
 import styles from "./Reporting.module.scss";
 
-import ReportingImg from "./Reporting.svg";
 import { useAppContext } from "@/context/AppContext";
 
 const Reporting = () => {
@@ -16,7 +14,7 @@ const Reporting = () => {
         <div className={styles.SectionWrapper}>
           <Fade left delay={500}>
             <div className={styles.ImgWrapper}>
-              <ReportingImg className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </div>
           </Fade>
 
@@ -31,18 +29,18 @@ const Reporting = () => {
           </Zoom>
 
           <ul className={styles.List}>
-            <Fade right>
+            <Fade bottom>
               <li className={styles.ListItem}>
                 Fast Aggregation – view reports by dates, Affiliates, Geos, Employees, etc.;
               </li>
             </Fade>
-            <Fade right delay={300}>
+            <Fade bottom delay={300}>
               <li className={styles.ListItem}>Export to Pdf, Excel, Email, and API;</li>
             </Fade>
-            <Fade right delay={400}>
+            <Fade bottom delay={400}>
               <li className={styles.ListItem}>Customizable - any KPI can be included;</li>
             </Fade>
-            <Fade right delay={500}>
+            <Fade bottom delay={500}>
               <li className={styles.ListItem}>
                 ROI Analysis - calculate the return on investment on each affiliate and their
                 individual payout program so that you can optimize your marketing spend.

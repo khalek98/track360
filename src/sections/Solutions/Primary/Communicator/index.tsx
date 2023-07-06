@@ -1,10 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
 
 import styles from "./Communicator.module.scss";
 
-import CommunicatorImg from "./Communicator.svg";
 import { useAppContext } from "@/context/AppContext";
 
 const Communicator = () => {
@@ -15,7 +13,7 @@ const Communicator = () => {
         <div className={styles.SectionWrapper}>
           <Zoom deley={500}>
             <div className={styles.ImgWrapper}>
-              <CommunicatorImg className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </div>
           </Zoom>
 

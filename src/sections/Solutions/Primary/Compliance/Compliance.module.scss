@@ -45,6 +45,8 @@
   height: 693px;
   width: 762px;
 
+  background: url("./Compliance.svg") center center/contain no-repeat;
+
   @include media-xl {
     height: 593px;
     width: 662px;

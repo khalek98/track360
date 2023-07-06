@@ -50,6 +50,8 @@
   height: 602px;
   width: 832px;
 
+  background: url("./DealsManager.svg") center center/contain no-repeat;
+
   @include media_xl {
     top: 50%;
     right: 0;

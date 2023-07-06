@@ -79,6 +79,8 @@
   height: 809px;
   width: 832px;
 
+  background: url("./Reporting.svg") center center/contain no-repeat;
+
   @include media_xl {
     top: 55%;
     transform: translateY(-50%);

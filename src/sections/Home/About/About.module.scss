@@ -99,58 +99,55 @@
   grid-column: 2/3;
   grid-row: 1/5;
 
-  svg {
-    position: absolute;
-
-    height: 918px;
-    width: 918px;
-
-    top: -50px;
-    left: 0;
-  }
-
-  @include media-2xl {
-    svg {
-      top: -25px;
-
-      height: 818px;
-      width: 818px;
-    }
-  }
-
-  @include media-xl {
-    svg {
-      top: 50%;
-      transform: translateY(-50%);
-
-      height: 718px;
-      width: 718px;
-    }
-  }
-
   @include media-md {
     height: 590px;
 
     grid-column: unset;
     grid-row: unset;
     order: 4;
-
-    svg {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      height: 115%;
-      width: 115%;
-    }
   }
 
   @include media-sm {
     height: 310px;
+  }
+}
 
-    svg {
-      height: 125%;
-      width: 125%;
-    }
+.Screenshot {
+  position: absolute;
+
+  height: 918px;
+  width: 918px;
+
+  top: -50px;
+  left: 0;
+  background: url("./about.svg") center center/contain no-repeat;
+
+  @include media-2xl {
+    top: -25px;
+
+    height: 818px;
+    width: 818px;
+  }
+
+  @include media-xl {
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: 718px;
+    width: 718px;
+  }
+
+  @include media-md {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 115%;
+    width: 115%;
+  }
+
+  @include media-sm {
+    height: 125%;
+    width: 125%;
   }
 }

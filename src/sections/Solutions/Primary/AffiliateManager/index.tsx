@@ -4,9 +4,6 @@ import { Fade } from "react-reveal";
 
 import styles from "./AffiliateManager.module.scss";
 
-import Img1 from "./Affiliate_1.svg";
-import Img2 from "./Affiliate_2.svg";
-
 const AffiliateManager = () => {
   return (
     <section id="affiliate" className={styles.Section}>
@@ -45,11 +42,11 @@ const AffiliateManager = () => {
 
           <div className={styles.ImgWrapper}>
             <Fade right duration={500}>
-              <Img1 className={cn(styles.Screenshot, styles.Screenshot1)} />
+              <div className={cn(styles.Screenshot, styles.Screenshot1)}></div>
             </Fade>
 
-            <Fade right duration={500} delay={500}>
-              <Img2 className={cn(styles.Screenshot, styles.Screenshot2)} />
+            <Fade right duration={500}>
+              <div className={cn(styles.Screenshot, styles.Screenshot2)}></div>
             </Fade>
           </div>
         </div>

@@ -1,11 +1,8 @@
 import React from "react";
-import Image from "next/image";
 
-import { Fade, Bounce, LightSpeed } from "react-reveal";
+import { Fade } from "react-reveal";
 
 import styles from "./MarketingTools.module.scss";
-
-import MarketingToolsImg from "./MarketingTools.svg";
 
 const MarketingTools = () => {
   return (
@@ -14,19 +11,19 @@ const MarketingTools = () => {
         <div className={styles.SectionWrapper}>
           <Fade right delay={500} duration={1000}>
             <div className={styles.ImgWrapper}>
-              <MarketingToolsImg className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </div>
           </Fade>
 
-          <Bounce>
+          <Fade>
             <h2 className={styles.Title}>Marketing Tools</h2>
-          </Bounce>
-          <LightSpeed left duration={1000}>
+          </Fade>
+          <Fade left duration={1000}>
             <p className={styles.Text}>
               Track 360 includes a range of <span>marketing tools</span> to equip your affiliates
               with, so that they can effectively <span>promote your business.</span>
             </p>
-          </LightSpeed>
+          </Fade>
 
           <ul className={styles.List}>
             <Fade delay={100}>

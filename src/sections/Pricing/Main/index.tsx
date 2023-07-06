@@ -1,10 +1,22 @@
 import React from "react";
+import cn from "classnames";
 
 import styles from "./Main.module.scss";
 import { useAppContext } from "@/context/AppContext";
+import { pricePackageArr } from "@/utils/pricePackage";
 
 const Main = () => {
   const { setShowRequestDemo } = useAppContext();
+  const [showFeeList, setShowFeeList] = React.useState<string[]>([]);
+
+  const onSetShowFeeList = (id: string) => {
+    if (showFeeList.includes(id)) {
+      setShowFeeList(showFeeList.filter((i) => i !== id));
+    } else {
+      setShowFeeList([...showFeeList, id]);
+    }
+  };
+
   return (
     <section className={styles.Section}>
       <div className="container">
@@ -17,231 +29,96 @@ const Main = () => {
           </p>
 
           <ul className={styles.Packages}>
-            <li className={styles.Package}>
-              <h3 className={styles.PackageTitle}>Start Up</h3>
-              <p className={styles.PackageDescr}>
-                Suitable for small businesses with a limited budget.
-              </p>
-              {/* Replace */}
-              <div className={styles.PriceMO}>
-                $<span>199</span>/mo
-              </div>
-              <p className={styles.PriceMODescr}>(Prepaid for 3 months)</p>
-
-              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
-                Get Started
-              </button>
-
-              <ul className={styles.Including}>
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Leads per month</div>
-                  <div className={styles.IncludingPrice}>
-                    Up to <span>500</span>
+            {pricePackageArr.map(
+              (
+                { id: packageId, packageTitle, packageDescr, priceMO, includes, feeList, features },
+                index,
+              ) => (
+                <li key={packageId} className={styles.Package}>
+                  <h3 className={styles.PackageTitle}>{packageTitle}</h3>
+                  <p className={styles.PackageDescr}>{packageDescr}</p>
+                  <div className={styles.PriceMO}>
+                    {priceMO.curr && priceMO.curr}
+                    <span>{priceMO.value}</span>
+                    {priceMO.months && "/mo"}
+                    {priceMO.descr && <p className={styles.PriceMODescr}>{priceMO.descr}</p>}
                   </div>
+
+                  <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
+                    Get Started
+                  </button>
+
+                  <ul className={styles.Including}>
+                    {includes.map((include, index) => (
+                      <li key={index} className={styles.IncludingItem}>
+                        <div className={styles.IncludingTitle}>
+                          {include.title}{" "}
+                          {include.id === "Setup fee" && (
+                            <span
+                              tabIndex={0}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") onSetShowFeeList(packageId);
+                              }}
+                              onClick={() => onSetShowFeeList(packageId)}
+                            >
+                              {showFeeList.includes(packageId) ? "-" : "+"}
+                            </span>
+                          )}
+                          {include.id === "Setup fee" && (
+                            <ul
+                              className={cn(styles.FeeList, {
+                                [styles.FeeListActive]: showFeeList.includes(packageId),
+                              })}
+                            >
+                              {feeList.map((fee, j) => (
+                                <li
+                                  key={j}
+                                  className={cn(styles.FeeItem, {
+                                    [styles.FeeItemActive]: showFeeList.includes(packageId),
+                                  })}
+                                >
+                                  {fee}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                        <div className={styles.IncludingText}>
+                          {include.text && include.text}{" "}
+                          <span className={cn({ [styles.Currency]: include.curr })}>
+                            {include.value}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div
+                    className={cn(styles.Divider, {
+                      [styles.DividerActive]: showFeeList.includes(packageId),
+                    })}
+                  ></div>
+
+                  <ul className={styles.Features}>
+                    {features.map((feature, index) => (
+                      <li key={index} className={styles.Feature}>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Setup fee </div>
-                  <div className={styles.IncludingPrice}>
-                    <span>Free</span>
-                  </div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Migration</div>
-                  <div className={styles.IncludingPrice}>1,000 - 5,000</div>
-                </li>
-              </ul>
-
-              <div className={styles.Divider}></div>
-
-              <ul className={styles.Features}>
-                <li className={styles.Feature}>
-                  Up to <span>500</span> Leads per month
-                </li>
-                <li className={styles.Feature}>
-                  Basic cloud storage and server hosting for 1 user
-                </li>
-                <li className={styles.Feature}>Limited customer support</li>
-              </ul>
-            </li>
-
-            <li className={styles.Package}>
-              <h3 className={styles.PackageTitle}>Standard</h3>
-              <p className={styles.PackageDescr}>Suitable for medium-sized businesses.</p>
-              <div className={styles.PriceWrap}>
-                <p className={styles.PackagePrice}>$</p>
-                <span>2,500</span>
-              </div>
-              <p className={styles.PackageDescr}>Setup fee</p>
-
-              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
-                Get Started
-              </button>
-
-              <ul className={styles.Including}>
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>
-                    Integration to CRM
-                    <span>(On Demand)</span>
-                  </div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Trading & Website</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Training</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Migration</div>
-                  <div className={styles.IncludingPrice}>1,000 - 5,000</div>
-                </li>
-              </ul>
-
-              <div className={styles.Divider}></div>
-
-              <div className={styles.PriceMO}>
-                $<span>1,450</span>/mo
-              </div>
-
-              <ul className={styles.Features}>
-                <li className={styles.Feature}>
-                  Up to <span>2,500</span> Leads per month
-                </li>
-                <li className={styles.Feature}>
-                  Increased storage and server hosting for up to 5 users
-                </li>
-                <li className={styles.Feature}>Priority customer support</li>
-              </ul>
-            </li>
-
-            <li className={styles.Package}>
-              <h3 className={styles.PackageTitle}>Premium</h3>
-              <p className={styles.PackageDescr}>
-                Suitable for larger businesses with more complex needs.
-              </p>
-              <div className={styles.PriceWrap}>
-                <p className={styles.PackagePrice}>$</p>
-                <span>4,000</span>
-              </div>
-              <p className={styles.PackageDescr}>Setup fee</p>
-
-              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
-                Get Started
-              </button>
-
-              <ul className={styles.Including}>
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>
-                    Integration to CRM
-                    <span>(On Demand)</span>
-                  </div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Trading & Website</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Training</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Migration</div>
-                  <div className={styles.IncludingPrice}>1,000 - 5,000</div>
-                </li>
-              </ul>
-
-              <div className={styles.Divider}></div>
-
-              <div className={styles.PriceMO}>
-                $<span>2,950</span>/mo
-              </div>
-
-              <ul className={styles.Features}>
-                <li className={styles.Feature}>
-                  Up to <span>10,000</span> Leads per month
-                </li>
-                <li className={styles.Feature}>
-                  Advanced cloud storage and server hosting for up to 10 users
-                </li>
-                <li className={styles.Feature}>Dedicated account manager during working hours</li>
-              </ul>
-            </li>
-
-            <li className={styles.Package}>
-              <h3 className={styles.PackageTitle}>Enterprise</h3>
-              <p className={styles.PackageDescr}>
-                Suitable for large businesses with extensive requirements.
-              </p>
-
-              <div className={styles.PriceWrap}>
-                <span>Call Us</span>
-              </div>
-              <p className={styles.PackageDescr}>Setup fee</p>
-
-              <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
-                Get Started
-              </button>
-
-              <ul className={styles.Including}>
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>
-                    Integration to CRM
-                    <span>(On Demand)</span>
-                  </div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Trading & Website</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Training</div>
-                  <div className={styles.Checkmark}></div>
-                </li>
-
-                <li className={styles.IncludingItem}>
-                  <div className={styles.IncludingTitle}>Migration</div>
-                  <div className={styles.IncludingPrice}>Call Us</div>
-                </li>
-              </ul>
-
-              <div className={styles.Divider}></div>
-
-              <div className={styles.PriceMO}>
-                <span>Call Us</span>
-              </div>
-
-              <ul className={styles.Features}>
-                <li className={styles.Feature}>
-                  <span>Unlimited</span> Leads per month
-                </li>
-                <li className={styles.Feature}>Customized cloud platform</li>
-                <li className={styles.Feature}>Unlimited storage and server hosting</li>
-                <li className={styles.Feature}>
-                  Dedicated technical account manager and personalized service
-                </li>
-              </ul>
-            </li>
+              ),
+            )}
           </ul>
 
           <p className={styles.NoteAfterPrice}>
-            *All packages include <span>10M</span> impressions/ mo & <span>4M</span> clicks/ mo.
-            Above, $0.06 per additional <span>1000 impressions</span> & $0.5 per additional 1000
-            clicks.
+            All packages include 10M impressions/ mo & 4M clicks/ mo. Above, $0.06 per additional
+            1000 impressions & $0.5 per additional 1000 clicks.
           </p>
+
+          <div className={styles.NoteAfterPrice}>
+            *Setup fee may vary pending on system analysis, complexity & client&apos;s requirements
+          </div>
 
           <p className={styles.NoteAfterPrice}>
             **The quoted Integration and Migration costs apply only if client data is ready for

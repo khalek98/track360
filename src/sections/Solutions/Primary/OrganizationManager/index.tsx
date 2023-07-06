@@ -3,8 +3,6 @@ import { Fade, Zoom } from "react-reveal";
 
 import styles from "./OrganizationManager.module.scss";
 
-import OrganizationManagerImg from "./OrganizationManager.svg";
-
 const OrganizationManager = () => {
   return (
     <section id="organization" className={styles.Section}>
@@ -12,7 +10,7 @@ const OrganizationManager = () => {
         <div className={styles.SectionWrapper}>
           <Fade right delay={500}>
             <div className={styles.ImgWrapper}>
-              <OrganizationManagerImg className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </div>
           </Fade>
 

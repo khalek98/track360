@@ -105,15 +105,12 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   onMouseEnter={() => {
                     !isMobile && index === 1 ? setShowSubmenu(true) : setShowSubmenu(false);
                   }}
-                  onClick={() => {
-                    index === 1 ? setShowSubmenu(!showSubmenu) : setShowSubmenu(false);
-                  }}
                 >
                   <a
                     href={menuLink}
-                    onClick={(e) => {
-                      index === 1 && e.preventDefault();
-                    }}
+                    // onClick={(e) => {
+                    //   index === 1 && e.preventDefault();
+                    // }}
                     className={cn(
                       styles.MenuLink,
                       {
@@ -128,6 +125,10 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     {menuName}
                     {menuName === "Our Solutions" && (
                       <ArrowSvg
+                        onClick={(e: React.SyntheticEvent) => {
+                          e.preventDefault();
+                          index === 1 ? setShowSubmenu(!showSubmenu) : onCloseMenu();
+                        }}
                         className={cn(styles.Arrow, { [styles.ArrowActive]: showSubmenu })}
                       />
                     )}
@@ -148,7 +149,11 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                       >
                         {submenuList.map(({ menuLink, menuName }) => (
                           <li className={styles.SubmenuItem} key={menuName}>
-                            <a href={menuLink} className={cn(styles.SubmenuLink)}>
+                            <a
+                              onClick={onCloseMenu}
+                              href={menuLink}
+                              className={cn(styles.SubmenuLink)}
+                            >
                               {menuName}
                             </a>
                           </li>

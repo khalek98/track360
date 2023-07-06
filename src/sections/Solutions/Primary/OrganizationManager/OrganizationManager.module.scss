@@ -52,6 +52,8 @@
   width: 717px;
   height: 648px;
 
+  background: url("./OrganizationManager.svg") center center/contain no-repeat;
+
   @include media-xl {
     top: 50%;
     left: 0;
