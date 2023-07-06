@@ -1,0 +1,13 @@
+@import "@/styles/_media-mixin.scss";
+@import "@/styles/_mixins.scss";
+
+.Section {
+  padding: 200px 0 150px;
+}
+
+.SectionWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  color: var(--color-blue-deep);
+}

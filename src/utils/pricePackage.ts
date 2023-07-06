@@ -89,7 +89,7 @@ export const pricePackageArr: pricePackage[] = [
         system`,
         title: `Integration with CRM,
         Website, Third-party
-        system`,
+        system**`,
         value: "1,500",
         curr: true,
       },
@@ -136,7 +136,7 @@ export const pricePackageArr: pricePackage[] = [
         system`,
         title: `Integration with CRM,
         Website, Third-party
-        system`,
+        system**`,
         value: "3,000",
         curr: true,
       },
@@ -180,7 +180,7 @@ export const pricePackageArr: pricePackage[] = [
         system`,
         title: `Integration with CRM,
         Website, Third-party
-        system`,
+        system**`,
         value: "Included",
       },
       {

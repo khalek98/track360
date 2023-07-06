@@ -68,12 +68,12 @@ const Footer = () => {
             <h4 className={styles.FooterTitle}>Terms & Policies</h4>
             <ul className={styles.TermsList}>
               <li className={styles.TermsItem}>
-                <a href="#" className={styles.TermsLink}>
+                <a href="terms" className={styles.TermsLink}>
                   Terms of Service
                 </a>
               </li>
               <li className={styles.TermsItem}>
-                <a href="#" className={styles.TermsLink}>
+                <a href="privacy" className={styles.TermsLink}>
                   Privacy Policy
                 </a>
               </li>

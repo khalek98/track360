@@ -391,10 +391,12 @@
     }
 
     @include media-sm {
-      left: 17px;
+      left: 25px;
 
       height: 23px;
       width: 23px;
+
+      animation-name: scaleAnimationMobile;
     }
   }
 
@@ -413,6 +415,8 @@
 
     @include media-sm {
       right: 37px;
+
+      animation-name: scaleAnimationMobile;
     }
   }
 
@@ -430,10 +434,12 @@
     }
 
     @include media-sm {
-      right: -3px;
+      right: 3px;
 
       height: 20px;
       width: 20px;
+
+      animation-name: scaleAnimationMobile;
     }
   }
 
@@ -452,6 +458,8 @@
 
     @include media-sm {
       bottom: 77px;
+
+      animation-name: scaleAnimationMobile;
     }
   }
 
@@ -470,6 +478,8 @@
 
     @include media-sm {
       top: 45px;
+
+      animation-name: scaleAnimationMobile;
     }
   }
 
@@ -488,6 +498,8 @@
 
     @include media-sm {
       left: 20px;
+
+      animation-name: scaleAnimationMobile;
     }
   }
 }
@@ -590,6 +602,20 @@
 
   60% {
     transform: scale(1.6);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleAnimationMobile {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.5);
   }
 
   100% {

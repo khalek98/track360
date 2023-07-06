@@ -1,10 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { Fade, Bounce } from "react-reveal";
 
 import styles from "./Integration.module.scss";
-
-import IntegrationImg from "./Integration.png";
 
 const Integration = () => {
   return (
@@ -29,29 +26,28 @@ const Integration = () => {
           </Fade>
 
           <ul className={styles.List}>
-            <Bounce delay={100}>
+            <Fade bottom delay={100}>
               <li className={styles.ListItem}>Reads data from various databases;</li>
-            </Bounce>
-            <Bounce delay={200}>
+            </Fade>
+            <Fade bottom delay={200}>
               <li className={styles.ListItem}>Postback events;</li>
-            </Bounce>
-            <Bounce delay={300}>
+            </Fade>
+            <Fade bottom delay={300}>
               <li className={styles.ListItem}>Push & Pulls;</li>
-            </Bounce>
-            <Bounce delay={400}>
+            </Fade>
+            <Fade bottom delay={400}>
               <li className={styles.ListItem}>Files & API;</li>
-            </Bounce>
-            <Bounce delay={500}>
+            </Fade>
+            <Fade bottom delay={500}>
               <li className={styles.ListItem}>File uploads;</li>
-            </Bounce>
-            <Bounce delay={600}>
+            </Fade>
+            <Fade bottom delay={600}>
               <li className={styles.ListItem}>Message queues.</li>
-            </Bounce>
+            </Fade>
           </ul>
-
           <div className={styles.ImgWrapper}>
             <Fade right>
-              <Image src={IntegrationImg} alt="Integration" className={styles.Screenshot} />
+              <div className={styles.Screenshot}></div>
             </Fade>
           </div>
         </div>
