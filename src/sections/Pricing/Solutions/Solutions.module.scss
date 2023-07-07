@@ -15,6 +15,10 @@
   @include title;
   color: #ffffff;
   text-align: center;
+
+  @include media-sm {
+    text-align: start;
+  }
 }
 
 .SolutionsList {
@@ -22,6 +26,23 @@
   justify-content: space-between;
 
   list-style-type: none;
+
+  @include media-xl {
+    flex-wrap: wrap;
+    column-gap: 35px;
+    justify-content: center;
+  }
+
+  @include media-lg {
+    justify-content: space-between;
+    column-gap: 40px;
+    max-width: 800px;
+  }
+
+  @include media-md {
+    justify-content: center;
+    gap: 30px;
+  }
 }
 
 .SolutionsItem {
@@ -50,6 +71,16 @@
     .SolutionsLink {
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  @include media-md {
+    grid-template-rows: 43px auto;
+    background: #000;
+    box-shadow: 4px 4px 14px 0px rgba(102, 252, 241, 0.4);
+
+    .SolutionsLink {
+      display: none;
     }
   }
 }

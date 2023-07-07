@@ -94,7 +94,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
       <div className="container">
         <div className={styles.HeaderWrapper}>
           <Link href="/" className={styles.LogoWrapper}>
-            <Logo className={cn(styles.Logo)} />
+            <Logo onClick={onCloseMenu} className={cn(styles.Logo)} />
           </Link>
           <nav className={cn(styles.Nav, { [styles.NavMobileActive]: openMenu })}>
             <ul className={cn(styles.Menu)}>
@@ -108,9 +108,9 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                 >
                   <a
                     href={menuLink}
-                    // onClick={(e) => {
-                    //   index === 1 && e.preventDefault();
-                    // }}
+                    onClick={() => {
+                      index !== 1 && onCloseMenu();
+                    }}
                     className={cn(
                       styles.MenuLink,
                       {

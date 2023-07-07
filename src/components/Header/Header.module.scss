@@ -368,6 +368,10 @@
 
   z-index: 10;
 
+  @include media-xl {
+    font-size: 14px;
+  }
+
   @include media-lg {
     padding: 15px 25px;
   }

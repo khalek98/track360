@@ -3,6 +3,10 @@
 
 .Section {
   padding: 160px 0 150px;
+
+  @include media-sm {
+    padding: 150px 0 120px;
+  }
 }
 
 .SectionWrapper {
@@ -62,7 +66,7 @@
 }
 
 .Packages {
-  margin-top: 60px;
+  margin: 60px 0 10px;
 
   width: 100%;
 
@@ -80,12 +84,11 @@
   display: none;
 
   @include media-sm {
-    margin-top: 60px;
-    margin-bottom: 10px;
-
-    width: 100%;
+    width: 100vw;
     max-width: 400px;
     display: block;
+
+    overflow: initial;
   }
 }
 
@@ -170,6 +173,18 @@
       }
     }
   }
+
+  @include media-sm {
+    padding: 40px 15px 20px;
+
+    height: 760px;
+
+    &:nth-child(1) {
+      .DividerActive {
+        margin-top: 30px !important;
+      }
+    }
+  }
 }
 
 .Package::-webkit-scrollbar {
@@ -183,6 +198,11 @@
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0.78px;
+
+  @include media-sm {
+    font-size: 30px;
+    letter-spacing: 0.9px;
+  }
 }
 
 .PackageDescr {
@@ -194,6 +214,11 @@
   font-family: Poppins;
   line-height: 120%;
   letter-spacing: 0.28px;
+
+  @include media_sm {
+    margin-top: 15px;
+    max-width: 250px;
+  }
 }
 
 .PriceWrap {
@@ -243,6 +268,10 @@
     background-color: transparent;
     color: var(--color-primary);
   }
+
+  @include media_sm {
+    font-size: 16px;
+  }
 }
 
 .Including {
@@ -275,6 +304,12 @@
     font-weight: 400;
     cursor: pointer;
   }
+
+  @include media_sm {
+    max-width: 156px;
+
+    font-size: 14px;
+  }
 }
 
 .IncludingText {
@@ -286,14 +321,17 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 160%;
+  line-height: 130%;
   letter-spacing: 0.12px;
 
   span {
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.14px;
+  }
+
+  @include media_sm {
   }
 }
 
@@ -304,7 +342,7 @@
     top: -3px;
     left: -9px;
 
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-size: 11px;
     font-weight: 500;
     line-height: 11px;
@@ -347,13 +385,6 @@
 
 .FeeItemActive {
   display: list-item;
-}
-
-.Checkmark {
-  width: 24px;
-  height: 24px;
-
-  background: url(../../../assets/icons/chenk_mark.svg) center center/cover no-repeat;
 }
 
 .Dollar {
@@ -401,8 +432,18 @@
     line-height: 100%;
     font-weight: 600;
     letter-spacing: 0.88px;
-    text-transform: capitalize;
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
+  }
+
+  @include media_sm {
+    margin-top: 40px;
+
+    font-weight: 400;
+
+    span {
+      font-size: 48px;
+      letter-spacing: 0.96px;
+    }
   }
 }
 
@@ -456,10 +497,14 @@
   }
 
   span {
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.28px;
+  }
+
+  @include media_sm {
+    font-size: 14px;
   }
 }
 
@@ -493,15 +538,96 @@
 
   width: 100%;
 
+  @include media_sm {
+    position: relative;
+    margin-top: 100px;
+
+    height: 390px;
+  }
+}
+
+.TableContent {
   display: grid;
   grid-template-columns: 390px 1fr;
   justify-content: space-between;
+
+  @include media-sm {
+    position: absolute;
+    top: 0;
+    left: -30px;
+
+    width: 100vw;
+
+    grid-template-columns: 55% 45%;
+  }
+
+  @include media-xs {
+    grid-template-columns: minmax(190px, 100%) minmax(130px, 200px);
+  }
+}
+
+.TableStatic {
+  @include media-sm {
+    background-color: #303740;
+  }
+}
+
+.TableStatic > .TableList {
+  @include media-sm {
+    position: relative;
+    padding: 20px 15px 25px 25px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100vw;
+      height: 1px;
+
+      background-color: rgba(217, 217, 217, 0.1);
+    }
+  }
+}
+
+.TableStatic .TableItem {
+  @include media-sm {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 116%;
+    letter-spacing: 0.14px;
+  }
 }
 
 .TableInner {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @include media-sm {
+    display: none;
+  }
+}
+
+.TableInnerMobile {
+  display: none;
+
+  @include media-sm {
+    display: block;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100vw;
+      height: 1px;
+
+      background-color: rgba(217, 217, 217, 0.1);
+    }
+  }
 }
 
 .TableCol {
@@ -512,25 +638,46 @@
 .TableTitle {
   height: 48px;
 
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   font-size: 40px;
   font-weight: 500;
   font-family: Poppins;
   letter-spacing: 0.4px;
+
+  @include media_sm {
+    margin: 23px 15px 23px 25px;
+
+    height: auto;
+
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+  }
 }
 
 .FeatureTitle {
-  color: #fff;
+  color: var(--color-primary);
+  font-weight: 700;
   font-size: 20px;
-  font-weight: 500;
   font-family: Poppins;
   letter-spacing: 0.4px;
   line-height: 24px;
 
   span {
     display: block;
-    color: var(--color-primary-dark);
-    font-weight: 700;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @include media_sm {
+    margin: 23px 20px 23px;
+
+    span {
+      display: none;
+
+      font-size: 20px;
+    }
   }
 }
 
@@ -542,6 +689,11 @@
   grid-template-rows: repeat(5, 1fr);
 
   list-style-type: none;
+
+  @include media_sm {
+    margin-top: 0;
+    padding: 20px 20px 25px;
+  }
 }
 
 .TableItem {
@@ -557,5 +709,32 @@
   line-height: 160%;
   letter-spacing: 0.16px;
 
-  border-bottom: 1px solid var(--color-primary-dark);
+  border-bottom: 1px solid var(--color-primary);
+
+  @include media_sm {
+    border-bottom: none;
+    height: 45px;
+  }
+}
+
+.TablePag {
+  bottom: 1px !important;
+
+  width: 100% !important;
+  height: 2px !important;
+
+  display: flex !important;
+  column-gap: 2px;
+}
+
+.TablePagItem {
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+
+  background-color: #303740;
+}
+
+.TablePagItemActive {
+  background-color: var(--color-primary) !important;
 }

@@ -36,10 +36,6 @@
     background-color: var(--color-primary);
     color: var(--color-blue-deep);
   }
-
-  @include media-xl {
-    font-size: 14px;
-  }
 }
 
 @mixin btnOnBlack {

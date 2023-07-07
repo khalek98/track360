@@ -1,10 +1,13 @@
 import React from "react";
 import cn from "classnames";
 import { Swiper as SwiperWrap, SwiperSlide } from "swiper/react";
-import Swiper from "swiper";
+import SwiperClass, { Pagination } from "swiper";
+
+// import Pagination from "swiper/modules/pagination";
 
 import "swiper/css";
 import "swiper/css/pagination";
+
 import styles from "./Main.module.scss";
 
 import { useAppContext } from "@/context/AppContext";
@@ -13,8 +16,8 @@ import { pricePackageArr } from "@/utils/pricePackage";
 const Main = () => {
   const { setShowRequestDemo } = useAppContext();
   const [showFeeList, setShowFeeList] = React.useState<string[]>([]);
-  const [swiper, setSwiper] = React.useState<Swiper | null>(null);
-  const [activePackageSlide, setActivePackageSlide] = React.useState(0);
+  const [swiper, setSwiper] = React.useState<SwiperClass | null>(null);
+  const [activePackageSlide, setActivePackageSlide] = React.useState(2);
 
   const onSetShowFeeList = (id: string) => {
     if (showFeeList.includes(id)) {
@@ -122,10 +125,11 @@ const Main = () => {
             onSwiper={(swiper) => {
               setSwiper(swiper);
             }}
-            // wrapperClass={styles.PackagesWrapperMobile}
-            // centeredSlides={true}
-            // spaceBetween={30}
-            className={cn(styles.PackagesContentMobile, "mySwiper")}
+            initialSlide={2}
+            slidesPerView={1.2}
+            centeredSlides={true}
+            spaceBetween={15}
+            className={cn(styles.Packages, styles.PackagesContentMobile, "mySwiper")}
           >
             {pricePackageArr.map(
               ({
@@ -248,19 +252,19 @@ const Main = () => {
           </p>
 
           <div className={styles.Table}>
-            <div className={styles.TableStatic}>
-              <h2 className={styles.TableTitle}>Features</h2>
-              <ul className={styles.TableList}>
-                <li className={styles.TableItem}># of Reports</li>
-                <li className={styles.TableItem}>Deals Module</li>
-                <li className={styles.TableItem}>Payment Management System</li>
-                <li className={styles.TableItem}>Compliance System</li>
-                <li className={styles.TableItem}>API connections to Affiliates/IBs</li>
-                <li className={styles.TableItem}>Number of Brands/Products</li>
-              </ul>
-            </div>
+            <div className={styles.TableContent}>
+              <div className={styles.TableStatic}>
+                <h2 className={styles.TableTitle}>Features</h2>
+                <ul className={styles.TableList}>
+                  <li className={styles.TableItem}># of Reports</li>
+                  <li className={styles.TableItem}>Deals Module</li>
+                  <li className={styles.TableItem}>Payment Management System</li>
+                  <li className={styles.TableItem}>Compliance System</li>
+                  <li className={styles.TableItem}>API connections to Affiliates/IBs</li>
+                  <li className={styles.TableItem}>Number of Brands/Products</li>
+                </ul>
+              </div>
 
-            <div className={styles.TableContant}>
               <div className={styles.TableInner}>
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
@@ -318,6 +322,75 @@ const Main = () => {
                   </ul>
                 </div>
               </div>
+
+              <SwiperWrap
+                modules={[Pagination]}
+                initialSlide={2}
+                pagination={{
+                  type: "bullets",
+                  clickable: true,
+                  horizontalClass: styles.TablePag,
+                  bulletClass: styles.TablePagItem,
+                  bulletActiveClass: styles.TablePagItemActive,
+                }}
+                className={cn(styles.TableInner, styles.TableInnerMobile, "mySwiper")}
+              >
+                <SwiperSlide className={styles.TableCol}>
+                  <h3 className={styles.FeatureTitle}>
+                    Start Up<span>Package</span>
+                  </h3>
+                  <ul className={styles.TableList}>
+                    <li className={styles.TableItem}>Full Package</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>+ $700/mo</li>
+                    <li className={styles.TableItem}>N/A</li>
+                    <li className={styles.TableItem}>Up to 3</li>
+                    <li className={styles.TableItem}>1</li>
+                  </ul>
+                </SwiperSlide>
+
+                <SwiperSlide className={styles.TableCol}>
+                  <h3 className={styles.FeatureTitle}>
+                    Standard<span>Package</span>
+                  </h3>
+                  <ul className={styles.TableList}>
+                    <li className={styles.TableItem}>Full Package</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>+ $250/mo</li>
+                    <li className={styles.TableItem}>+ $250/mo</li>
+                    <li className={styles.TableItem}>Up to 50</li>
+                    <li className={styles.TableItem}>1</li>
+                  </ul>
+                </SwiperSlide>
+
+                <SwiperSlide className={styles.TableCol}>
+                  <h3 className={styles.FeatureTitle}>
+                    Premium<span>Package</span>
+                  </h3>
+                  <ul className={styles.TableList}>
+                    <li className={styles.TableItem}>Full Package</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>Up to 500</li>
+                    <li className={styles.TableItem}>1</li>
+                  </ul>
+                </SwiperSlide>
+
+                <SwiperSlide className={styles.TableCol}>
+                  <h3 className={styles.FeatureTitle}>
+                    Enterprise<span>Package</span>
+                  </h3>
+                  <ul className={styles.TableList}>
+                    <li className={styles.TableItem}>Full Package</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>Unlimited</li>
+                    <li className={styles.TableItem}>Unlimited</li>
+                  </ul>
+                </SwiperSlide>
+              </SwiperWrap>
             </div>
           </div>
         </div>
