@@ -21,6 +21,15 @@
 
   border: 2px dashed var(--color-primary-dark);
   opacity: 0.7;
+
+  @include media_lg {
+    width: 300px;
+    height: 300px;
+  }
+
+  @include media_sm {
+    display: none;
+  }
 }
 
 .SectionWrapper {
@@ -32,10 +41,18 @@
   @include title;
 
   color: #fff;
+
+  @include media-sm {
+    text-align: center;
+  }
 }
 
 .Slider {
   margin-top: 70px;
+
+  @include media-sm {
+    margin-top: 50px;
+  }
 }
 
 .Recomendation {
@@ -63,6 +80,10 @@
     line-height: 45px;
     letter-spacing: 0.72px;
   }
+
+  @include media-sm {
+    text-align: center;
+  }
 }
 
 .Persone {
@@ -73,6 +94,12 @@
   font-weight: 500;
   line-height: 160%;
   color: #fff;
+
+  @include media-sm {
+    margin-top: 40px;
+
+    text-align: center;
+  }
 }
 
 .Position {
@@ -82,4 +109,8 @@
   font-style: italic;
   line-height: 160%;
   letter-spacing: -0.45px;
+
+  @include media-sm {
+    text-align: center;
+  }
 }

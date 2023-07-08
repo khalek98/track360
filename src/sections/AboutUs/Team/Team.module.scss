@@ -3,6 +3,10 @@
 
 .Section {
   padding: 130px 0 175px;
+
+  @include media-md {
+    padding: 100px 0;
+  }
 }
 
 .SectionWrapper {
@@ -30,6 +34,18 @@
   display: flex;
   justify-content: center;
   column-gap: 90px;
+
+  @include media-lg {
+    column-gap: 60px;
+  }
+
+  @include media-md {
+    margin-top: 100px;
+
+    flex-direction: column;
+    align-items: center;
+    row-gap: 80px;
+  }
 }
 
 .TeamItem {
@@ -106,6 +122,12 @@
     transition: all 0.3s linear;
     z-index: 1;
   }
+
+  @include media-md {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .TeamLink {
@@ -126,5 +148,10 @@
 
   &:hover {
     color: var(--color-primary-dark);
+  }
+
+  @include media-md {
+    position: static;
+    margin-top: 40px;
   }
 }
