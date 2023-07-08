@@ -3,11 +3,27 @@
 
 .Section {
   padding: 160px 0 140px;
+
+  @include media-lg {
+    padding: 140px 0;
+  }
+
+  @include media-md {
+    padding: 100px 0;
+  }
 }
 
 .SectionWrapper {
   @include solutionsWrapper;
   grid-template-columns: 560px auto;
+
+  @include media-lg {
+    grid-template-columns: 400px auto;
+  }
+
+  @include media-md {
+    grid-template-columns: 1fr;
+  }
 }
 
 .Title {
@@ -22,6 +38,10 @@
   @include solutionsList;
   margin-top: 0;
   max-width: 520px;
+
+  @include media-md {
+    order: 4;
+  }
 }
 
 .ListItem {
@@ -35,6 +55,19 @@
 
   grid-column: 2/3;
   grid-row: 1/5;
+
+  @include media-md {
+    grid-column: unset;
+    grid-row: unset;
+
+    height: 450px;
+
+    order: 3;
+  }
+
+  @include media-xs {
+    height: 350px;
+  }
 }
 
 .Screenshot {
@@ -47,4 +80,28 @@
   height: 668px;
 
   background: url("./Integration.svg") center center/contain no-repeat;
+
+  @include media_xl {
+    left: 0;
+  }
+
+  @include media-md {
+    top: -30px;
+    left: 0;
+
+    height: 110%;
+    width: 100%;
+  }
+
+  @include media-sm {
+    top: -15px;
+  }
+
+  @include media-xs {
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+  }
 }

@@ -12,7 +12,7 @@ const Migration = () => {
       <div className="container">
         <div className={styles.SectionWrapper}>
           <div className={styles.ImgWrapper}>
-            <Image className={styles.Img} src={MigrationImg} alt="Migration" />
+            <div className={styles.Img}></div>
           </div>
 
           <h2 className={styles.Title}>Migration</h2>

@@ -23,6 +23,22 @@
 }
 
 .PopUpWrap {
+  position: relative;
+
+  @include media-md {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  @include media-sm {
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+.PopUp {
   position: fixed;
   top: 0;
   left: 0;
@@ -40,7 +56,9 @@
   animation: fadeInPopUp 0.5s ease-in;
 }
 
-.PopUpInner {
+.PopUpContent {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,9 +66,27 @@
   height: 690px;
 
   border-radius: 10px;
+
+  @include media-md {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    height: 100%;
+    max-height: 900px;
+
+    background-color: #fff;
+
+    overflow: auto;
+  }
+
+  @include media-sm {
+    max-height: 100%;
+    max-width: 570px;
+    margin: 0 auto;
+  }
 }
 
-.PopUp {
+.PopUpFormWrap {
   position: relative;
   padding: 50px 40px;
 
@@ -63,6 +99,15 @@
 
   background: linear-gradient(114.65deg, #202833 39.04%, #000000 99.02%);
   border: 1px solid var(--color-primary);
+
+  @include media-md {
+    padding: 0px 30px 70px;
+
+    width: 100%;
+
+    background: #fff;
+    border: none;
+  }
 }
 
 .PopUpOut {
@@ -89,6 +134,7 @@
   border-radius: 50%;
   border: 2px solid #fff;
 
+  z-index: 1;
   cursor: pointer;
 
   span {
@@ -105,6 +151,14 @@
       transform: translateY(-1px) rotate(-45deg);
     }
   }
+
+  @include media-md {
+    border-color: var(--color-blue-deep);
+
+    span {
+      background-color: var(--color-blue-deep);
+    }
+  }
 }
 
 .PopUpDescr {
@@ -116,12 +170,17 @@
   line-height: 26px;
   letter-spacing: 0.32px;
   color: #fff;
+
+  @include media-md {
+    display: none;
+  }
 }
 
 .RequestWrap {
   padding: 50px 30px 30px 45px;
 
   height: 100%;
+  width: 100%;
   max-width: 410px;
 
   display: flex;
@@ -129,6 +188,12 @@
   align-items: center;
 
   background-color: #fff;
+
+  @include media-md {
+    padding: 70px 30px 0;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .RequestTitle {
@@ -141,6 +206,10 @@
   span {
     color: var(--color-primary-dark);
   }
+
+  @include media-md {
+    text-align: center;
+  }
 }
 
 .RequestList {
@@ -149,6 +218,10 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
+  @include media-md {
+    align-self: flex-start;
+  }
 }
 
 .RequestItem {
@@ -190,9 +263,26 @@
 }
 
 .ImgWrapper {
+  position: relative;
   margin-top: 20px;
 
   width: 100%;
+  height: 100%;
+
+  @include media_md {
+    display: none;
+  }
+}
+
+.Img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: url("./RequestDemo.svg") center center/contain no-repeat;
 }
 
 .Form {
@@ -233,10 +323,16 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #fff;
+  border-radius: 0;
+
   resize: none;
 
   &:focus {
     outline: none;
+  }
+
+  @include media_md {
+    border-bottom-color: var(--color-blue-deep);
   }
 }
 
@@ -249,6 +345,10 @@
   font-family: Poppins;
   font-weight: 500;
   line-height: 20px;
+
+  @include media_md {
+    color: var(--color-blue-deep);
+  }
 }
 
 .Textarea {
@@ -274,6 +374,7 @@
     padding: 2px;
     margin: 0;
 
+    min-width: 15px;
     width: 15px;
     height: 15px;
 
@@ -303,6 +404,20 @@
       outline-offset: max(2px, 0.15em);
     }
   }
+
+  @include media_md {
+    color: var(--color-blue-deep);
+    font-size: 13px;
+    line-height: 15px;
+
+    &[type="checkbox"] {
+      border-color: var(--color-blue-deep);
+
+      &::before {
+        background-color: var(--color-blue-deep);
+      }
+    }
+  }
 }
 
 .FormBtn {
@@ -312,7 +427,14 @@
 
   width: 100%;
   max-width: 300px;
-  height: 50px;
+  min-height: 50px;
+
+  @include media_md {
+    margin-top: 100px;
+    border: none;
+    background-color: var(--color-primary-dark);
+    color: var(--color-blue-deep);
+  }
 }
 
 @keyframes fadeIn {

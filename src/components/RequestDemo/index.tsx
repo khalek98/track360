@@ -65,115 +65,118 @@ const RequestDemo = () => {
 
   return (
     <>
-      <div className={cn(styles.PopUpWrap, { [styles.PopUpOut]: hidePopUp })}>
-        <div className={styles.PopUpInner}>
-          <div className={styles.RequestWrap}>
-            <h2 className={styles.RequestTitle}>
-              See How <br /> <span>Track 360</span> Works
-            </h2>
-
-            <ul className={styles.RequestList}>
-              <li className={styles.RequestItem}>
-                <h3 className={styles.RequestItemTitle}>Experience Efficiency:</h3>
-                <p className={styles.RequestItemDescr}>
-                  See our platform&apos;s effectiveness firsthand.
-                </p>
-              </li>
-
-              <li className={styles.RequestItem}>
-                <h3 className={styles.RequestItemTitle}>Customized Demo:</h3>
-                <p className={styles.RequestItemDescr}>
-                  Tailored walkthrough for your business needs.
-                </p>
-              </li>
-            </ul>
-
-            <div className={styles.ImgWrapper}>
-              <RequestSvg />
-            </div>
-          </div>
-
-          <div className={cn(styles.PopUp)}>
+      <div className={cn(styles.PopUp, { [styles.PopUpOut]: hidePopUp })}>
+        <div className={styles.PopUpWrap}>
+          <div className={styles.PopUpContent}>
             <div className={styles.CloseBtn} onClick={onClosePopUp}>
               <span></span>
               <span></span>
             </div>
-            <p className={styles.PopUpDescr}>
-              Fill out the form below and we will contact you as soon as possible to provide a demo.
-            </p>
+            <div className={styles.RequestWrap}>
+              <h2 className={styles.RequestTitle}>
+                See How <br /> <span>Track 360</span> Works
+              </h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
-              <div className={styles.InputWrapper}>
-                <input
-                  tabIndex={0}
-                  className={styles.Input}
-                  type="text"
-                  placeholder="First Name*"
-                  {...register("firstName", {
-                    required: { value: true, message: "This field is required" },
-                    minLength: { value: 2, message: "Minimum 2 characters" },
-                  })}
-                />
-                {errors.firstName && (
-                  <div className={styles.InputErrorText}>{errors.firstName.message}</div>
-                )}
+              <ul className={styles.RequestList}>
+                <li className={styles.RequestItem}>
+                  <h3 className={styles.RequestItemTitle}>Experience Efficiency:</h3>
+                  <p className={styles.RequestItemDescr}>
+                    See our platform&apos;s effectiveness firsthand.
+                  </p>
+                </li>
+
+                <li className={styles.RequestItem}>
+                  <h3 className={styles.RequestItemTitle}>Customized Demo:</h3>
+                  <p className={styles.RequestItemDescr}>
+                    Tailored walkthrough for your business needs.
+                  </p>
+                </li>
+              </ul>
+
+              <div className={styles.ImgWrapper}>
+                <div className={styles.Img}></div>
               </div>
+            </div>
 
-              <div className={styles.InputWrapper}>
-                <input
-                  tabIndex={0}
-                  className={styles.Input}
-                  type="text"
-                  placeholder="Last Name*"
-                  {...register("lastName", {
-                    required: { value: true, message: "This field is required" },
-                    minLength: { value: 2, message: "Minimum 2 characters" },
-                  })}
-                />
-                {errors.lastName && (
-                  <div className={styles.InputErrorText}>{errors.lastName.message}</div>
-                )}
-              </div>
+            <div className={cn(styles.PopUpFormWrap)}>
+              <p className={styles.PopUpDescr}>
+                Fill out the form below and we will contact you as soon as possible to provide a
+                demo.
+              </p>
 
-              <div className={styles.InputWrapper}>
-                <input
-                  tabIndex={0}
-                  className={styles.Input}
-                  type="email"
-                  placeholder="Email*"
-                  {...register("email", {
-                    required: { value: true, message: "This field is required" },
-                    pattern: { value: /^\S+@\S+$/, message: "Invalid e-mail format" },
-                  })}
-                />
-                {errors.email && (
-                  <div className={styles.InputErrorText}>{errors.email.message}</div>
-                )}
-              </div>
+              <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
+                <div className={styles.InputWrapper}>
+                  <input
+                    tabIndex={0}
+                    className={styles.Input}
+                    type="text"
+                    placeholder="First Name*"
+                    {...register("firstName", {
+                      required: { value: true, message: "This field is required" },
+                      minLength: { value: 2, message: "Minimum 2 characters" },
+                    })}
+                  />
+                  {errors.firstName && (
+                    <div className={styles.InputErrorText}>{errors.firstName.message}</div>
+                  )}
+                </div>
 
-              <div className={styles.InputWrapper}>
-                <input
-                  tabIndex={0}
-                  className={styles.Input}
-                  type="text"
-                  placeholder="Phone Number"
-                  {...register("phone")}
-                />
-              </div>
+                <div className={styles.InputWrapper}>
+                  <input
+                    tabIndex={0}
+                    className={styles.Input}
+                    type="text"
+                    placeholder="Last Name*"
+                    {...register("lastName", {
+                      required: { value: true, message: "This field is required" },
+                      minLength: { value: 2, message: "Minimum 2 characters" },
+                    })}
+                  />
+                  {errors.lastName && (
+                    <div className={styles.InputErrorText}>{errors.lastName.message}</div>
+                  )}
+                </div>
 
-              <label className={styles.CheckBox}>
-                <input
-                  tabIndex={0}
-                  className={styles.CheckBox}
-                  type="checkbox"
-                  {...register("checkbox")}
-                />
-                I agree to receive commercial information regarding Track 360 via email.
-              </label>
-              <button type="submit" className={styles.FormBtn}>
-                Send
-              </button>
-            </form>
+                <div className={styles.InputWrapper}>
+                  <input
+                    tabIndex={0}
+                    className={styles.Input}
+                    type="email"
+                    placeholder="Email*"
+                    {...register("email", {
+                      required: { value: true, message: "This field is required" },
+                      pattern: { value: /^\S+@\S+$/, message: "Invalid e-mail format" },
+                    })}
+                  />
+                  {errors.email && (
+                    <div className={styles.InputErrorText}>{errors.email.message}</div>
+                  )}
+                </div>
+
+                <div className={styles.InputWrapper}>
+                  <input
+                    tabIndex={0}
+                    className={styles.Input}
+                    type="text"
+                    placeholder="Phone Number"
+                    {...register("phone")}
+                  />
+                </div>
+
+                <label className={styles.CheckBox}>
+                  <input
+                    tabIndex={0}
+                    className={styles.CheckBox}
+                    type="checkbox"
+                    {...register("checkbox")}
+                  />
+                  I agree to receive commercial information regarding Track 360 via email.
+                </label>
+                <button type="submit" className={styles.FormBtn}>
+                  Send
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

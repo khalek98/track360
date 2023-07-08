@@ -8,6 +8,7 @@ import Logo from "@/assets/icons/logo.svg";
 
 import { useAppContext } from "@/context/AppContext";
 import { menuList } from "@/utils/menuList";
+import Link from "next/link";
 
 const Footer = () => {
   const { pathname } = useAppContext();
@@ -68,14 +69,14 @@ const Footer = () => {
             <h4 className={styles.FooterTitle}>Terms & Policies</h4>
             <ul className={styles.TermsList}>
               <li className={styles.TermsItem}>
-                <a href="terms" className={styles.TermsLink}>
+                <Link href="/terms" className={styles.TermsLink}>
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li className={styles.TermsItem}>
-                <a href="privacy" className={styles.TermsLink}>
+                <Link href="/privacy" className={styles.TermsLink}>
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
 

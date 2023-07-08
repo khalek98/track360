@@ -34,6 +34,15 @@
 
   display: flex;
   column-gap: 40px;
+
+  @include media_lg {
+    column-gap: 25px;
+  }
+
+  @include media_md {
+    flex-direction: column;
+    row-gap: 30px;
+  }
 }
 
 .Block {
@@ -55,20 +64,44 @@
 
   &:nth-child(1) {
     .BlockImg {
-      background: url("./On-Premise.svg") center center/cover no-repeat;
+      background: url("./On-Premise.svg") center center/contain no-repeat;
     }
   }
 
   &:nth-child(2) {
     .BlockImg {
-      background: url("./SaaS.svg") center center/cover no-repeat;
+      background: url("./SaaS.svg") center center/contain no-repeat;
     }
+  }
+
+  @include media_lg {
+    width: 100%;
+    height: auto;
+  }
+
+  @include media_md {
+    max-width: 500px;
+  }
+
+  @include media_xs {
+    padding: 40px 20px;
+    row-gap: 25px;
   }
 }
 
 .BlockImg {
   height: 130px;
   width: 130px;
+
+  @include media_lg {
+    height: 110px;
+    width: 110px;
+  }
+
+  @include media_xs {
+    height: 80px;
+    width: 80px;
+  }
 }
 
 .BlockTitle {
@@ -76,8 +109,12 @@
   font-size: 40px;
   font-family: Poppins;
   font-weight: 700;
-  line-height: 28px;
   letter-spacing: 0.8px;
+
+  //xs
+  @include media_xs {
+    font-size: 30px;
+  }
 }
 
 .BlockList {
@@ -86,6 +123,10 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
+  @include media_xs {
+    margin-top: 0;
+  }
 }
 
 .BlockItem {

@@ -1,6 +1,6 @@
 import React from "react";
 import cn from "classnames";
-import { Fade, Zoom } from "react-reveal";
+import { Fade } from "react-reveal";
 
 import styles from "./Main.module.scss";
 import ArrowLink from "@/components/ArrowLink";

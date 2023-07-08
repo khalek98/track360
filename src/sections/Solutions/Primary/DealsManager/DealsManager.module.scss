@@ -7,6 +7,10 @@
   @include media_xl {
     padding-top: 145px;
   }
+
+  @include media-md {
+    padding-top: 100px;
+  }
 }
 
 .SectionWrapper {
@@ -26,6 +30,12 @@
 .List {
   @include solutionsListRight;
   padding-left: 20px;
+
+  @include media-md {
+    padding-left: 0;
+
+    order: 4;
+  }
 }
 
 .ListItem {
@@ -39,6 +49,20 @@
 
   grid-column: 1/2;
   grid-row: 1/4;
+
+  @include media-md {
+    margin-top: 0;
+
+    height: 450px;
+
+    grid-column: unset;
+    grid-row: unset;
+    order: 3;
+  }
+
+  @include media-xs {
+    height: 350px;
+  }
 }
 
 .Screenshot {
@@ -56,5 +80,22 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+  }
+
+  @include media-md {
+    top: 0;
+    left: 0;
+    transform: none;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-xs {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 130%;
   }
 }

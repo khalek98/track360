@@ -7,6 +7,10 @@
   @include media_xl {
     padding-top: 130px;
   }
+
+  @include media-sm {
+    padding-top: 100px;
+  }
 }
 
 .SectionWrapper {
@@ -24,6 +28,10 @@
 
 .List {
   @include solutionsListRight;
+
+  @include media-md {
+    order: 4;
+  }
 }
 
 .ListItem {
@@ -53,6 +61,19 @@
   &:hover {
     background-color: var(--color-primary-dark);
   }
+
+  @include media-md {
+    grid-column: unset;
+    order: 5;
+  }
+
+  @include media-xs {
+    justify-self: center;
+    max-width: 300px;
+    width: 100%;
+
+    background-color: var(--color-primary-dark);
+  }
 }
 
 .ImgWrapper {
@@ -64,9 +85,18 @@
   grid-column: 1/2;
   grid-row: 1/5;
 
-  @include media-lg {
+  @include media-md {
+    margin-top: 0;
+
+    height: 450px;
+
     grid-column: unset;
     grid-row: unset;
+    order: 3;
+  }
+
+  @include media-xs {
+    height: 350px;
   }
 }
 
@@ -87,5 +117,19 @@
 
     height: 609px;
     width: 632px;
+  }
+
+  @include media-md {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 115%;
+    height: 115%;
+  }
+
+  @include media-xs {
+    top: 15px;
+    width: 135%;
   }
 }

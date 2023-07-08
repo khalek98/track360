@@ -7,6 +7,10 @@
   @include media-xl {
     padding-top: 160px;
   }
+
+  @include media-md {
+    padding-top: 100px;
+  }
 }
 
 .SectionWrapper {
@@ -28,6 +32,10 @@
   @include solutionsList;
   margin-top: 0;
   max-width: 450px;
+
+  @include media-md {
+    order: 4;
+  }
 }
 
 .ListItem {
@@ -41,6 +49,19 @@
 
   grid-column: 2/3;
   grid-row: 1/4;
+
+  @include media-md {
+    height: 450px;
+
+    grid-column: unset;
+    grid-row: unset;
+
+    order: 3;
+  }
+
+  @include media-xs {
+    height: 350px;
+  }
 }
 
 .Screenshot {
@@ -61,5 +82,22 @@
 
     width: 617px;
     height: 558px;
+  }
+
+  @include media-md {
+    top: 0;
+    left: 0;
+    transform: none;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-xs {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 125%;
   }
 }

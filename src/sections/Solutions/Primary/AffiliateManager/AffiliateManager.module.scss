@@ -29,7 +29,7 @@
 .List {
   @include solutionsList;
 
-  @include media-lg {
+  @include media-md {
     order: 5;
   }
 }
@@ -47,7 +47,7 @@
   grid-column: 2/3;
   grid-row: 1/4;
 
-  @include media-lg {
+  @include media-md {
     grid-column: unset;
     grid-row: unset;
     height: 450px;
@@ -75,7 +75,7 @@
     height: 395px;
   }
 
-  @include media-lg {
+  @include media-md {
     width: 720px;
     height: 335px;
   }
@@ -95,7 +95,7 @@
 
   z-index: 2;
 
-  @include media-lg {
+  @include media-md {
     top: 285px;
     left: -20px;
   }

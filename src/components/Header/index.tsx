@@ -21,6 +21,10 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const { pathname, setShowRequestDemo } = useAppContext();
 
   useEffect(() => {
+    if (window.scrollY > 1) {
+      setFixedHeader(true);
+    }
+
     window.addEventListener("scroll", () => {
       if (window.scrollY > 1) {
         setFixedHeader(true);
