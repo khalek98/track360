@@ -75,13 +75,17 @@
   justify-content: space-between;
   column-gap: 20px;
 
-  @include media-sm {
+  @include media-xl {
     display: none;
   }
 }
 
 .PackagesContentMobile {
   display: none;
+
+  @include media-xl {
+    display: block;
+  }
 
   @include media-sm {
     width: 100vw;
@@ -107,7 +111,7 @@
   justify-content: center;
   column-gap: 15px;
 
-  @include media-sm {
+  @include media-xl {
     display: flex;
   }
 }
@@ -177,7 +181,7 @@
   @include media-sm {
     padding: 40px 15px 20px;
 
-    height: 760px;
+    height: 780px;
 
     &:nth-child(1) {
       .DividerActive {
@@ -207,6 +211,8 @@
 
 .PackageDescr {
   margin-top: 12px;
+
+  max-width: 260px;
 
   color: #fff;
   text-align: center;
@@ -538,7 +544,7 @@
 
   width: 100%;
 
-  @include media_sm {
+  @include media_md {
     position: relative;
     margin-top: 100px;
 
@@ -551,29 +557,43 @@
   grid-template-columns: 390px 1fr;
   justify-content: space-between;
 
-  @include media-sm {
+  @include media-lg {
+    grid-template-columns: 350px 1fr;
+  }
+
+  @include media-md {
     position: absolute;
     top: 0;
-    left: -30px;
+    left: 0;
 
-    width: 100vw;
+    width: 100%;
 
     grid-template-columns: 55% 45%;
+
+    overflow: hidden;
+  }
+
+  @include media-sm {
+    left: -50px;
+
+    width: 100vw;
   }
 
   @include media-xs {
+    left: -30px;
+
     grid-template-columns: minmax(190px, 100%) minmax(130px, 200px);
   }
 }
 
 .TableStatic {
-  @include media-sm {
+  @include media-md {
     background-color: #303740;
   }
 }
 
 .TableStatic > .TableList {
-  @include media-sm {
+  @include media-md {
     position: relative;
     padding: 20px 15px 25px 25px;
 
@@ -592,7 +612,7 @@
 }
 
 .TableStatic .TableItem {
-  @include media-sm {
+  @include media-md {
     font-size: 14px;
     font-weight: 400;
     line-height: 116%;
@@ -605,7 +625,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  @include media-sm {
+  @include media-md {
     display: none;
   }
 }
@@ -613,8 +633,10 @@
 .TableInnerMobile {
   display: none;
 
-  @include media-sm {
+  @include media-md {
     display: block;
+
+    border-right: 1px solid rgba(217, 217, 217, 0.1);
 
     &::before {
       content: "";
@@ -644,7 +666,7 @@
   font-family: Poppins;
   letter-spacing: 0.4px;
 
-  @include media_sm {
+  @include media_md {
     margin: 23px 15px 23px 25px;
 
     height: auto;
@@ -670,7 +692,7 @@
     font-weight: 500;
   }
 
-  @include media_sm {
+  @include media_md {
     margin: 23px 20px 23px;
 
     span {
@@ -690,7 +712,7 @@
 
   list-style-type: none;
 
-  @include media_sm {
+  @include media_md {
     margin-top: 0;
     padding: 20px 20px 25px;
   }
@@ -711,7 +733,7 @@
 
   border-bottom: 1px solid var(--color-primary);
 
-  @include media_sm {
+  @include media_md {
     border-bottom: none;
     height: 45px;
   }
@@ -733,6 +755,7 @@
   border-radius: 0;
 
   background-color: #303740;
+  cursor: pointer;
 }
 
 .TablePagItemActive {

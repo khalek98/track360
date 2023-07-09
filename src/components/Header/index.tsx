@@ -3,6 +3,7 @@ import cn from "classnames";
 import Link from "next/link";
 
 import styles from "./Header.module.scss";
+import footerStyles from "../Footer/Footer.module.scss";
 
 import Logo from "@/assets/icons/logo.svg";
 import ArrowSvg from "./MenuArrow.svg";
@@ -15,10 +16,11 @@ interface IHeaderProps {
 
 const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const [fixedHeader, setFixedHeader] = useState<boolean>(false);
-  const [showSubmenu, setShowSubmenu] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [showSubmenu, setShowSubmenu] = useState<boolean>(false);
+  const [showContactUMenu, setShowContactUsMenu] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const { pathname, setShowRequestDemo } = useAppContext();
+  const { pathname, setShowRequestDemo, setShowContactUs } = useAppContext();
 
   useEffect(() => {
     if (window.scrollY > 1) {
@@ -76,6 +78,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const onCloseMenu = () => {
     setOpenMenu(false);
     setShowSubmenu(false);
+    setShowContactUsMenu(false);
   };
 
   const onToggleMenu = () => {
@@ -171,6 +174,55 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   )}
                 </li>
               ))}
+
+              <li className={cn(styles.MenuItem, styles.MenuItemMobile)}>
+                <div
+                  onClick={() => setShowContactUsMenu(!showContactUMenu)}
+                  className={cn(styles.MenuLink)}
+                >
+                  Contact Us
+                  <ArrowSvg
+                    className={cn(styles.Arrow, { [styles.ArrowActive]: showContactUMenu })}
+                  />
+                </div>
+
+                {showContactUMenu && (
+                  <ul className={cn(footerStyles.ContactsList, styles.ContactsList)}>
+                    <li className={footerStyles.ContactsItem}>
+                      <h5 className={footerStyles.ContactTitle}>Information & Sales:</h5>
+                      <a href="mailto:sales@proline.ltd" className={footerStyles.Mail}>
+                        sales@proline.ltd
+                      </a>
+                    </li>
+                    <li className={footerStyles.ContactsItem}>
+                      <h5 className={footerStyles.ContactTitle}>Address:</h5>
+                      <address className={footerStyles.Address}>
+                        Proline Technologies Ltd Levi Eshkol 68, Kiryat Ono, Israel
+                      </address>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <div className={styles.MobileBtnGroup}>
+                <button
+                  onClick={() => {
+                    onCloseMenu();
+                    setShowRequestDemo(true);
+                  }}
+                  className={cn(styles.MobileBtn, styles.BtnRequest)}
+                >
+                  Request Demo
+                </button>
+                <button
+                  onClick={() => {
+                    onCloseMenu();
+                    setShowContactUs(true);
+                  }}
+                  className={cn(styles.MobileBtn, styles.BtnContact)}
+                >
+                  Contact Us
+                </button>
+              </div>
             </ul>
           </nav>
 

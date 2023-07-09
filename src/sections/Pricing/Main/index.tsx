@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import cn from "classnames";
 import { Swiper as SwiperWrap, SwiperSlide } from "swiper/react";
 import SwiperClass, { Pagination } from "swiper";
-
-// import Pagination from "swiper/modules/pagination";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,7 +15,21 @@ const Main = () => {
   const { setShowRequestDemo } = useAppContext();
   const [showFeeList, setShowFeeList] = React.useState<string[]>([]);
   const [swiper, setSwiper] = React.useState<SwiperClass | null>(null);
-  const [activePackageSlide, setActivePackageSlide] = React.useState(2);
+  const [activePackageSlide, setActivePackageSlide] = React.useState(0);
+  const [innerWidth, setInnerWidth] = React.useState<number>(0);
+
+  useEffect(() => {
+    setInnerWidth(window.innerWidth);
+    window.addEventListener("resize", () => {
+      setInnerWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setInnerWidth(window.innerWidth);
+      });
+    };
+  }, []);
 
   const onSetShowFeeList = (id: string) => {
     if (showFeeList.includes(id)) {
@@ -129,6 +141,25 @@ const Main = () => {
             slidesPerView={1.2}
             centeredSlides={true}
             spaceBetween={15}
+            breakpoints={{
+              1200: {
+                initialSlide: 0,
+                centeredSlides: false,
+                slidesPerView: 2.5,
+                spaceBetween: 30,
+              },
+
+              992: {
+                slidesPerView: 2.2,
+                centeredSlides: false,
+                spaceBetween: 30,
+              },
+              768: {
+                slidesPerView: 1.8,
+                centeredSlides: false,
+                spaceBetween: 15,
+              },
+            }}
             className={cn(styles.Packages, styles.PackagesContentMobile, "mySwiper")}
           >
             {pricePackageArr.map(

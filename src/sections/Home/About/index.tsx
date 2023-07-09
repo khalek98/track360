@@ -23,7 +23,7 @@ const About = () => {
             </p>
           </Fade>
 
-          <Fade bottom delay={500}>
+          <Fade bottom>
             <p className={cn(styles.Text)}>
               Our mission is to <span>empower</span> clients like you to harness the true power of
               affiliate marketing, driving business growth and reaching new customers. With our
@@ -34,7 +34,6 @@ const About = () => {
 
           <Fade right duration={1000}>
             <div className={styles.ImgWrapper}>
-              {/* <AboutImg /> */}
               <div className={styles.Screenshot}></div>
             </div>
           </Fade>

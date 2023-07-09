@@ -141,6 +141,14 @@
   row-gap: 40px;
 }
 
+.MenuItemMobile {
+  display: none;
+
+  @include media-md {
+    display: flex;
+  }
+}
+
 .MenuLink {
   position: relative;
 
@@ -358,6 +366,45 @@
   @include media-md {
     font-size: 18px;
     line-height: normal;
+  }
+}
+
+.ContactsList {
+  margin-top: 30px;
+}
+
+.MobileBtnGroup {
+  display: none;
+
+  @include media-md {
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+
+    width: 100%;
+  }
+}
+
+.MobileBtn {
+  @include btnOnBlack;
+  padding: 20px 0;
+  max-width: 400px;
+  width: 100%;
+}
+
+.BtnRequest {
+  background-color: var(--color-primary);
+  color: var(--color-deep-blue);
+}
+
+.BtnContact {
+  &:hover {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
   }
 }
 
