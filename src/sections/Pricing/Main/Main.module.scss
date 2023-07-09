@@ -85,6 +85,7 @@
 
   @include media-xl {
     display: block;
+    touch-action: pan-y;
   }
 
   @include media-sm {

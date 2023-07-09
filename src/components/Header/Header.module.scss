@@ -2,7 +2,7 @@
 @import "@/styles/_mixins.scss";
 
 .Header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 25px 0;
@@ -29,8 +29,6 @@
 }
 
 .HeaderFixed {
-  position: fixed;
-
   &:before {
     opacity: 1;
   }

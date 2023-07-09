@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { FC } from "react";
 
 import styles from "./CookieBar.module.scss";
 

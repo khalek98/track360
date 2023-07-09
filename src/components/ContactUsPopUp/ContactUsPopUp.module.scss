@@ -62,11 +62,72 @@
 
   animation: fadeInPopUp 0.5s ease-in;
 
-  //xs
   @include media-xs {
     width: 100%;
     height: auto;
   }
+}
+
+.PopUpSend {
+  padding: 110px 40px 70px;
+  height: auto;
+
+  @include media-xs {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.SendWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SendImg {
+  width: 134px;
+  height: 90px;
+
+  background: url("../../assets/icons/sendMail.svg") center center/contain no-repeat;
+}
+
+.SendTitle {
+  margin-top: 60px;
+
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.SendMessage {
+  margin-top: 20px;
+
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.SendBackLink {
+  margin-top: 87px;
+
+  color: #fff;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.36px;
+  text-decoration-line: underline;
+
+  cursor: pointer;
 }
 
 .PopUpOut {

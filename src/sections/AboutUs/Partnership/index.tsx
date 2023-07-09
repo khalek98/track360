@@ -5,6 +5,7 @@ import styles from "./Partnership.module.scss";
 
 import MailSVG from "./mail.svg";
 import LocationSVG from "./location.svg";
+import { useAppContext } from "@/context/AppContext";
 
 interface IForm {
   name: string;
@@ -16,19 +17,36 @@ interface IForm {
 }
 
 const Partnership = () => {
+  const { setSendForm, setShowRequestDemo } = useAppContext();
   const {
     handleSubmit,
     reset,
     register,
     formState: { errors },
+    setValue,
   } = useForm<IForm>({
     mode: "onSubmit",
     reValidateMode: "onChange",
   });
 
   const onSubmit = (value: IForm) => {
-    console.log(value);
-    reset();
+    setValue("name", value.name);
+    setValue("email", value.email);
+    setValue("message", value.message);
+
+    fetch("/mail.php", {
+      method: "POST",
+      body: JSON.stringify(value),
+    }).then((res) => {
+      setShowRequestDemo(true);
+
+      if (res.ok) {
+        setSendForm("success");
+        reset();
+      } else {
+        setSendForm("error");
+      }
+    });
   };
 
   return (
