@@ -30,13 +30,20 @@ const Footer = () => {
 
             <nav className={cn(styles.Nav)}>
               <ul className={styles.Menu}>
-                {menuList.map(({ menuLink, menuName }) => (
+                {menuList.map(({ menuLink, menuName }, index) => (
                   <li className={styles.MenuItem} key={menuName}>
                     <a
                       href={menuLink}
-                      className={cn(styles.MenuLink, {
-                        [styles.MenuLinkActive]: pathname === menuLink,
-                      })}
+                      className={cn(
+                        styles.MenuLink,
+                        {
+                          [styles.MenuLinkActive]: pathname === menuLink,
+                        },
+                        {
+                          [styles.MenuLinkActive]:
+                            index === 1 && pathname === "/solutions/secondary",
+                        },
+                      )}
                     >
                       {menuName}
                     </a>
