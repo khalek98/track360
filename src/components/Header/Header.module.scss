@@ -301,7 +301,7 @@
 
   transition: all 0.3s ease-in-out;
   opacity: 1;
-  visibility: visible;
+  visibility: hidden;
 
   animation: fadeIn 0.3s ease-in-out;
 
@@ -325,6 +325,7 @@
 
 .SubmenuActive {
   display: flex;
+  visibility: visible !important;
 
   @include media-md {
     display: grid;

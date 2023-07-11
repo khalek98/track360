@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, use, useEffect, useRef, useState } from "react";
 import cn from "classnames";
 import Link from "next/link";
 
@@ -21,18 +21,23 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
   const [showContactUMenu, setShowContactUsMenu] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const { pathname, setShowRequestDemo, setShowContactUs } = useAppContext();
+  const [partnershipActive, setPartnershipActive] = useState<boolean>(false);
 
   useEffect(() => {
+    const partnershipSection = document.querySelector("#partnership") as HTMLElement;
+
     if (window.scrollY > 1) {
       setFixedHeader(true);
     }
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", (e) => {
       if (window.scrollY > 1) {
         setFixedHeader(true);
       } else {
         setFixedHeader(false);
       }
+
+      setPartnershipActive(window.scrollY + 1 >= partnershipSection?.offsetTop);
     });
 
     return () => {
@@ -113,7 +118,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     !isMobile && index === 1 ? setShowSubmenu(true) : setShowSubmenu(false);
                   }}
                 >
-                  <a
+                  <Link
                     href={menuLink}
                     onClick={() => {
                       index !== 1 && onCloseMenu();
@@ -121,11 +126,15 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     className={cn(
                       styles.MenuLink,
                       {
-                        [styles.MenuLinkActive]: pathname === menuLink,
+                        [styles.MenuLinkActive]: pathname === menuLink && !partnershipActive,
                       },
                       { [styles.MenuLinkActive]: index === 1 && showSubmenu },
                       {
                         [styles.MenuLinkActive]: index === 1 && pathname === "/solutions/secondary",
+                      },
+                      {
+                        [styles.MenuLinkActive]:
+                          partnershipActive && menuLink === "/about#partnership",
                       },
                     )}
                   >
@@ -139,7 +148,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                         className={cn(styles.Arrow, { [styles.ArrowActive]: showSubmenu })}
                       />
                     )}
-                  </a>
+                  </Link>
 
                   {index === 1 && (
                     <nav

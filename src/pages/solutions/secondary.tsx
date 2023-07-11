@@ -11,6 +11,7 @@ const SolutionsSecondary = () => {
   return (
     <>
       <Head>
+        <link rel="manifest" href="../favicons/manifest.json" />
         <link rel="icon" href="../favicons/favicon.svg" type="image/svg+xml" />
         <title>Our Solutions | Track 360</title>
       </Head>

@@ -18,8 +18,8 @@ export const AppContextProvider: FC<AppContextProps> = ({ children }) => {
   const [showRequestDemo, setShowRequestDemo] = useState<boolean>(false);
 
   useEffect(() => {
-    setPathname(router.pathname);
-  }, [router.pathname]);
+    setPathname(router.asPath);
+  }, [router.asPath]);
 
   return (
     <AppContext.Provider
