@@ -74,6 +74,11 @@
     background: #ffffff;
     box-shadow: 3px 4px 18px 0px rgba(72, 198, 239, 0.2);
   }
+
+  @include media-xs {
+    height: 120px;
+    width: 120px;
+  }
 }
 
 .SolutionsTitle {
@@ -88,5 +93,9 @@
 
   @include media-xl {
     font-size: 15px;
+  }
+
+  @include media-xs {
+    font-size: 14px;
   }
 }

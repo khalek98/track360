@@ -85,7 +85,6 @@
 
   @include media-xl {
     display: block;
-    touch-action: pan-y;
   }
 
   @include media-sm {
@@ -180,9 +179,10 @@
   }
 
   @include media-sm {
-    padding: 40px 15px 20px;
+    padding: 40px 15px;
 
-    height: 780px;
+    height: auto;
+    touch-action: pan-y;
 
     &:nth-child(1) {
       .DividerActive {
@@ -294,6 +294,7 @@
 .IncludingItem {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .IncludingTitle {

@@ -43,6 +43,10 @@
     justify-content: center;
     gap: 30px;
   }
+
+  @include media-xs {
+    gap: 20px;
+  }
 }
 
 .SolutionsItem {
@@ -83,6 +87,15 @@
       display: none;
     }
   }
+
+  @include media-xs {
+    padding: 20px 10px;
+
+    width: 120px;
+    height: 120px;
+    min-height: unset;
+    row-gap: 8px;
+  }
 }
 
 .SolutionsTitle {
@@ -93,6 +106,10 @@
   letter-spacing: 0.45px;
   text-transform: capitalize;
   color: #ffffff;
+
+  @include media-xs {
+    font-size: 14px;
+  }
 }
 
 .SolutionsLink {
