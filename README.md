@@ -2,7 +2,7 @@
 
 ## Getting started
 
-The minimum Node.js version ` 12.22.0`
+The minimum Node.js version `12.22.0`
 
 ```
 yarn install - install all dependencies
