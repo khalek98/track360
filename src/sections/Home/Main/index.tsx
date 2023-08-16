@@ -17,7 +17,7 @@ const Main = () => {
       <div className="container">
         <div className={styles.MainWrapper}>
           <h1 className={styles.Title}>
-            Maximize <span>Your Affiliate</span> Success
+            Maximize <span>Your</span> Success
           </h1>
           <p className={styles.Text}>
             Track 360 is the most feature-rich, enabling <span>affiliate management software</span>{" "}
