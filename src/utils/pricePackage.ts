@@ -35,7 +35,7 @@ export const pricePackageArr: pricePackage[] = [
     packageTitle: "Start Up",
     packageDescr: "Suitable for small businesses with a limited budget.",
     priceMO: {
-      curr: "$",
+      curr: "€",
       value: "199",
       months: true,
       descr: "(Prepaid for 3 months)",
@@ -66,7 +66,7 @@ export const pricePackageArr: pricePackage[] = [
     packageTitle: "Standard",
     packageDescr: "Suitable for medium-sized businesses.",
     priceMO: {
-      curr: "$",
+      curr: "€",
       value: "1,450",
       months: true,
     },
@@ -113,7 +113,7 @@ export const pricePackageArr: pricePackage[] = [
     packageTitle: "Premium",
     packageDescr: "Suitable for larger businesses with more complex needs.",
     priceMO: {
-      curr: "$",
+      curr: "€",
       value: "2,950",
       months: true,
     },

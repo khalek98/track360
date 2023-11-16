@@ -345,7 +345,7 @@
 
 .IncludingText > .Currency {
   &::before {
-    content: "$";
+    content: "€";
     position: absolute;
     top: -3px;
     left: -9px;
@@ -397,7 +397,7 @@
 
 .Dollar {
   &::before {
-    content: "$";
+    content: "€";
     position: absolute;
     left: -9px;
     top: -3px;

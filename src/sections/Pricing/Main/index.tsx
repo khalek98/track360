@@ -268,8 +268,8 @@ const Main = () => {
           </ul>
 
           <p className={styles.NoteAfterPrice}>
-            All packages include 10M impressions/ mo & 4M clicks/ mo. Above, $0.06 per additional
-            1000 impressions & $0.5 per additional 1000 clicks.
+            All packages include 10M impressions/ mo & 4M clicks/ mo. Above, €0.06 per additional
+            1000 impressions & €0.5 per additional 1000 clicks.
           </p>
 
           <div className={styles.NoteAfterPrice}>
@@ -304,7 +304,7 @@ const Main = () => {
                   <ul className={styles.TableList}>
                     <li className={styles.TableItem}>Full Package</li>
                     <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>+ $700/mo</li>
+                    <li className={styles.TableItem}>+ €700/mo</li>
                     <li className={styles.TableItem}>N/A</li>
                     <li className={styles.TableItem}>Up to 3</li>
                     <li className={styles.TableItem}>1</li>
@@ -318,8 +318,8 @@ const Main = () => {
                   <ul className={styles.TableList}>
                     <li className={styles.TableItem}>Full Package</li>
                     <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>+ $250/mo</li>
-                    <li className={styles.TableItem}>+ $250/mo</li>
+                    <li className={styles.TableItem}>+ €250/mo</li>
+                    <li className={styles.TableItem}>+ €250/mo</li>
                     <li className={styles.TableItem}>Up to 50</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
@@ -373,7 +373,7 @@ const Main = () => {
                   <ul className={styles.TableList}>
                     <li className={styles.TableItem}>Full Package</li>
                     <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>+ $700/mo</li>
+                    <li className={styles.TableItem}>+ €700/mo</li>
                     <li className={styles.TableItem}>N/A</li>
                     <li className={styles.TableItem}>Up to 3</li>
                     <li className={styles.TableItem}>1</li>
@@ -387,8 +387,8 @@ const Main = () => {
                   <ul className={styles.TableList}>
                     <li className={styles.TableItem}>Full Package</li>
                     <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>+ $250/mo</li>
-                    <li className={styles.TableItem}>+ $250/mo</li>
+                    <li className={styles.TableItem}>+ €250/mo</li>
+                    <li className={styles.TableItem}>+ €250/mo</li>
                     <li className={styles.TableItem}>Up to 50</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
