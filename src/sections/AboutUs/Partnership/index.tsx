@@ -60,7 +60,7 @@ const Partnership = () => {
           <p className={styles.Text}>
             <Trans
               key={"partnershipText1"}
-              defaults={t("partnershipText1")}
+              defaults={t("partnershipText1", { ns: "about" })}
               components={{ span: <span /> }}
             />
           </p>
