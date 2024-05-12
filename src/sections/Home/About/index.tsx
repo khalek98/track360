@@ -33,7 +33,7 @@ const About = () => {
             ></p>
           </Fade>
 
-          <Fade className={styles.ImgWrapper} direction="right" duration={1000}>
+          <Fade triggerOnce className={styles.ImgWrapper} direction="right" duration={1000}>
             <div className={styles.Screenshot}></div>
           </Fade>
         </div>

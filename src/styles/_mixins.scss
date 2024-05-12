@@ -97,10 +97,10 @@
     line-height: 54px;
   }
 
-  @include media-md {
-    font-size: 60px;
-    line-height: 70px;
-  }
+  // @include media-md {
+  //   font-size: 60px;
+  //   line-height: 70px;
+  // }
 }
 
 @mixin solutionsTitle {

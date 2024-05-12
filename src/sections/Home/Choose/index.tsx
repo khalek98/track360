@@ -36,7 +36,7 @@ const Choose = () => {
                     <ImgSVG />
                   </div>
                 </Zoom>
-                <Fade direction="right" delay={100 + i * 10}>
+                <Fade triggerOnce direction="right" delay={100 + i * 10}>
                   <div className={styles.ChooseItemText}>
                     <h3
                       className={styles.ChooseTitle}
