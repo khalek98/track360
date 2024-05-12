@@ -154,7 +154,7 @@
       margin-top: 145px !important;
     }
     .DividerActive {
-      margin-top: 33px !important;
+      margin-top: 30px !important;
     }
   }
 
@@ -214,6 +214,7 @@
   margin-top: 12px;
 
   max-width: 260px;
+  height: 50px;
 
   color: #fff;
   text-align: center;
@@ -269,7 +270,7 @@
   letter-spacing: 0.48px;
 
   background: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  // border: 2px solid var(--color-primary);
 
   &:hover {
     background-color: transparent;
@@ -278,6 +279,18 @@
 
   @include media_sm {
     font-size: 16px;
+  }
+
+  &.Pt {
+    margin-top: 65px;
+
+    @include media_xl {
+      margin-top: 55px;
+    }
+
+    @include media_sm {
+      margin-top: 60px;
+    }
   }
 }
 
@@ -376,11 +389,12 @@
   height: auto;
 
   visibility: visible;
-  overflow: auto;
+  overflow: visible;
 }
 
 .FeeItem {
   display: none;
+  width: max-content;
 
   color: #fff;
   font-family: Poppins;
@@ -451,6 +465,24 @@
     span {
       font-size: 48px;
       letter-spacing: 0.96px;
+    }
+  }
+
+  &.Pt {
+    span {
+      font-size: 28px;
+    }
+
+    @include media_xl {
+      span {
+        font-size: 38px;
+      }
+    }
+
+    @include media-sm {
+      span {
+        font-size: 36px;
+      }
     }
   }
 }

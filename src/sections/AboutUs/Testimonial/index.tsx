@@ -1,14 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Testimonial.module.scss";
 
 const Testimonial = () => {
+  const { t } = useTranslation("about");
+
   return (
     <section className={styles.Section}>
       <div className={styles.CircleDashed}></div>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <h2 className={styles.Title}>What our client says</h2>
+          <h2 className={styles.Title}>{t("What our client says")}</h2>
 
           <div className={styles.Slider}>
             <div className={styles.SliderInner}>

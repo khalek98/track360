@@ -1,9 +1,11 @@
 import React from "react";
 import { Fade } from "react-reveal";
+import { useTranslation } from "react-i18next";
 
 import styles from "./DealsManager.module.scss";
 
 const DealsManager = () => {
+  const { t } = useTranslation("solutions");
   return (
     <section id="deals" className={styles.Section}>
       <div className="container">
@@ -14,38 +16,29 @@ const DealsManager = () => {
             </div>
           </Fade>
 
-          <h2 className={styles.Title}>Deals Manager</h2>
+          <h2 className={styles.Title}>{t("primary.deals.title")}</h2>
           <Fade bottom>
-            <p className={styles.Text}>
-              Track 360’s deal manager is unrivaled in terms of capabilities. It{" "}
-              <span>supports any plan</span> the operator wishes to create, and can{" "}
-              <span>calculate based</span> on any KPI provided.
-            </p>
+            <p
+              className={styles.Text}
+              dangerouslySetInnerHTML={{ __html: t("primary.deals.descr") }}
+            ></p>
           </Fade>
 
           <ul className={styles.List}>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>Multi-level affiliates and sub-affiliate deals;</li>
+              <li className={styles.ListItem}>{t("primary.deals.solutionList.0")}</li>
             </Fade>
             <Fade bottom delay={200}>
-              <li className={styles.ListItem}>
-                Supports any type of commission plan – percentage based, flat-fee, tiered,
-                recurring, CPA/ CPL, hybrid, or customized;
-              </li>
+              <li className={styles.ListItem}>{t("primary.deals.solutionList.1")}</li>
             </Fade>
             <Fade bottom delay={300}>
-              <li className={styles.ListItem}>
-                Advanced decision tree to create desirable formulas, based on conditions such as
-                activity, geo, and targets;
-              </li>
+              <li className={styles.ListItem}>{t("primary.deals.solutionList.2")}</li>
             </Fade>
             <Fade bottom delay={400}>
-              <li className={styles.ListItem}>
-                Supports Multiple Campaigns with different Deals per Campaigns/ Affiliates;
-              </li>
+              <li className={styles.ListItem}>{t("primary.deals.solutionList.3")}</li>
             </Fade>
             <Fade bottom delay={500}>
-              <li className={styles.ListItem}>Deals can be calculated according to any KPI.</li>
+              <li className={styles.ListItem}>{t("primary.deals.solutionList.4")}</li>
             </Fade>
           </ul>
         </div>

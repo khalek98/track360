@@ -1,20 +1,93 @@
-import React, { FC, use, useEffect, useRef, useState } from "react";
+// @ts-nocheck
+import React, { FC, useEffect, useState } from "react";
 import cn from "classnames";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Header.module.scss";
 import footerStyles from "../Footer/Footer.module.scss";
 
 import Logo from "@/assets/icons/logo.svg";
 import ArrowSvg from "./MenuArrow.svg";
-import { menuList, submenuList } from "@/utils/menuList";
+import { IMenuList } from "@/utils/menuList";
 import { useAppContext } from "@/context/AppContext";
 
-interface IHeaderProps {
+type IHeaderProps = {
   darkMode?: boolean;
-}
+};
 
 const Header: FC<IHeaderProps> = ({ darkMode }) => {
+  const { t } = useTranslation(["buttons", "footer", "home"]);
+
+  const menuList: IMenuList[] = [
+    {
+      menuName: t("menu.home", { ns: "home" }),
+      menuLink: "/",
+    },
+    {
+      menuName: t("menu.solutions", { ns: "home" }),
+      menuLink: "/solutions/primary",
+    },
+    {
+      menuName: t("menu.pricing", { ns: "home" }),
+      menuLink: "/pricing",
+    },
+    {
+      menuName: t("menu.partnership", { ns: "home" }),
+      menuLink: "/about#partnership",
+    },
+    {
+      menuName: t("menu.about", { ns: "home" }),
+      menuLink: "/about",
+    },
+  ];
+  const submenuList: IMenuList[] = [
+    {
+      menuName: t("menu.affiliate", { ns: "home" }),
+      menuLink: "/solutions/primary#affiliate",
+    },
+    {
+      menuName: t("menu.reporting", { ns: "home" }),
+      menuLink: "/solutions/primary#reporting",
+    },
+    {
+      menuName: t("menu.compliance", { ns: "home" }),
+      menuLink: "/solutions/primary#compliance",
+    },
+    {
+      menuName: t("menu.communicator", { ns: "home" }),
+      menuLink: "/solutions/primary#communicator",
+    },
+    {
+      menuName: t("menu.marketing", { ns: "home" }),
+      menuLink: "/solutions/primary#marketing",
+    },
+    {
+      menuName: t("menu.deals", { ns: "home" }),
+      menuLink: "/solutions/primary#deals",
+    },
+    {
+      menuName: t("menu.payment", { ns: "home" }),
+      menuLink: "/solutions/primary#payment",
+    },
+    {
+      menuName: t("menu.organization", { ns: "home" }),
+      menuLink: "/solutions/primary#organization",
+    },
+    {
+      menuName: t("menu.installation", { ns: "home" }),
+      menuLink: "/solutions/secondary#installations",
+    },
+    {
+      menuName: t("menu.migration", { ns: "home" }),
+      menuLink: "/solutions/secondary#migration",
+    },
+    {
+      menuName: t("menu.integration", { ns: "home" }),
+      menuLink: "/solutions/secondary#integration",
+    },
+  ];
+
   const [fixedHeader, setFixedHeader] = useState<boolean>(false);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [showSubmenu, setShowSubmenu] = useState<boolean>(false);
@@ -139,7 +212,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                     )}
                   >
                     {menuName}
-                    {menuName === "Our Solutions" && (
+                    {menuLink === "/solutions/primary" && (
                       <ArrowSvg
                         onClick={(e: React.SyntheticEvent) => {
                           e.preventDefault();
@@ -189,7 +262,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   onClick={() => setShowContactUsMenu(!showContactUMenu)}
                   className={cn(styles.MenuLink)}
                 >
-                  Contact Us
+                  {t("contactUs")}
                   <ArrowSvg
                     className={cn(styles.Arrow, { [styles.ArrowActive]: showContactUMenu })}
                   />
@@ -198,13 +271,13 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                 {showContactUMenu && (
                   <ul className={cn(footerStyles.ContactsList, styles.ContactsList)}>
                     <li className={footerStyles.ContactsItem}>
-                      <h5 className={footerStyles.ContactTitle}>Information & Sales:</h5>
+                      <h5 className={footerStyles.ContactTitle}>{t("footer:mailTitle")}</h5>
                       <a href="mailto:sales@proline.ltd" className={footerStyles.Mail}>
                         sales@proline.ltd
                       </a>
                     </li>
                     <li className={footerStyles.ContactsItem}>
-                      <h5 className={footerStyles.ContactTitle}>Address:</h5>
+                      <h5 className={footerStyles.ContactTitle}>{t("footer:addressTitle")}</h5>
                       <address className={footerStyles.Address}>
                         Proline Technologies Ltd Levi Eshkol 68, Kiryat Ono, Israel
                       </address>
@@ -220,7 +293,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   }}
                   className={cn(styles.MobileBtn, styles.BtnRequest)}
                 >
-                  Request Demo
+                  {t("requestDemo")}
                 </button>
                 <button
                   onClick={() => {
@@ -229,14 +302,14 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   }}
                   className={cn(styles.MobileBtn, styles.BtnContact)}
                 >
-                  Contact Us
+                  {t("contactUs")}
                 </button>
               </div>
             </ul>
           </nav>
 
           <button onClick={() => setShowRequestDemo(true)} className={cn(styles.Button)}>
-            Request Demo
+            {t("requestDemo")}
           </button>
 
           <button

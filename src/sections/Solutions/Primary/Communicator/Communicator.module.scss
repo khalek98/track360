@@ -48,8 +48,9 @@
 
   grid-column: 2/3;
 
-  width: 240px;
-  height: 60px;
+  padding: 16px 32px;
+  width: max-content;
+  height: auto;
 
   font-family: "Poppins";
   font-weight: 600;
@@ -59,10 +60,10 @@
   color: #161c23;
 
   background-color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary-dark);
 
   &:hover {
     background-color: transparent;
-    border: 2px solid var(--color-primary-dark);
   }
 
   @include media-md {

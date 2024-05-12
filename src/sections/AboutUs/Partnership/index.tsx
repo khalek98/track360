@@ -6,6 +6,7 @@ import styles from "./Partnership.module.scss";
 import MailSVG from "./mail.svg";
 import LocationSVG from "./location.svg";
 import { useAppContext } from "@/context/AppContext";
+import { Trans, useTranslation } from "react-i18next";
 
 interface IForm {
   name: string;
@@ -18,6 +19,7 @@ interface IForm {
 
 const Partnership = () => {
   const { setSendForm, setShowRequestDemo } = useAppContext();
+  const { t } = useTranslation(["about", "forms"]);
   const {
     handleSubmit,
     reset,
@@ -53,21 +55,22 @@ const Partnership = () => {
     <section id="partnership" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <h2 className={styles.Title}>Partnerships</h2>
+          <h2 className={styles.Title}>{t("Partnerships")}</h2>
           <p className={styles.Text}>
-            Strategic <span>partnerships</span> play an intricate role in our success.
+            <Trans
+              key={"partnershipText1"}
+              defaults={t("partnershipText1")}
+              components={{ span: <span /> }}
+            />
           </p>
 
-          <p className={styles.Text}>
-            If you have referrals, know of operators that could benefit from the Track 360 solution,
-            we would be happy to receive the introduction and reward you for your contribution.
-          </p>
+          <p className={styles.Text}>{t("partnershipText2")}</p>
 
           <ul className={styles.ContactsWrap}>
             <li className={styles.ContactItem}>
               <MailSVG className={styles.ContactSvg} />
               <div className={styles.ContactItemWrap}>
-                <div className={styles.ContactTitle}>Information & Sales:</div>
+                <div className={styles.ContactTitle}>{t("footer:mailTitle")}</div>
                 <a className={styles.Contact} href="mailto:sales@proline.ltd">
                   sales@proline.ltd
                 </a>
@@ -78,7 +81,7 @@ const Partnership = () => {
               <LocationSVG className={styles.ContactSvg} />
 
               <div className={styles.ContactItemWrap}>
-                <div className={styles.ContactTitle}>Office Location:</div>
+                <div className={styles.ContactTitle}>{t("footer:officeLocation")}</div>
                 <address className={styles.Contact}>Levi Eshkol 68, Kiryat Ono, Israel</address>
               </div>
             </li>
@@ -87,14 +90,14 @@ const Partnership = () => {
           <div className={styles.ContactForm}>
             <div className={styles.BluredBG}></div>
             <div className={styles.DoashedBG}></div>
-            <h3 className={styles.ContactFormTitle}>Send us a message</h3>
+            <h3 className={styles.ContactFormTitle}>{t("Send us a message", { ns: "forms" })}</h3>
             <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
               <div className={styles.InputWrapper}>
                 <input
                   tabIndex={0}
                   className={styles.Input}
                   type="text"
-                  placeholder="Name*"
+                  placeholder={t("Name", { ns: "forms" }) + "*"}
                   {...register("name", {
                     required: { value: true, message: "This field is required" },
                     minLength: { value: 2, message: "Minimum 2 characters" },
@@ -108,7 +111,7 @@ const Partnership = () => {
                   tabIndex={0}
                   className={styles.Input}
                   type="email"
-                  placeholder="Email*"
+                  placeholder={t("Email", { ns: "forms" }) + "*"}
                   {...register("email", {
                     required: { value: true, message: "This field is required" },
                     pattern: { value: /^\S+@\S+$/, message: "Invalid e-mail format" },
@@ -124,7 +127,7 @@ const Partnership = () => {
                   tabIndex={0}
                   className={styles.Input}
                   type="text"
-                  placeholder="Phone Number"
+                  placeholder={t("Phone Number", { ns: "forms" })}
                   {...register("phone")}
                 />
               </div>
@@ -133,14 +136,14 @@ const Partnership = () => {
                 tabIndex={0}
                 className={styles.Input}
                 type="text"
-                placeholder="Subject"
+                placeholder={t("Subject", { ns: "forms" })}
                 {...register("subject")}
               />
 
               <div className={styles.InputWrapper}>
                 <textarea
                   className={styles.Textarea}
-                  placeholder="Message*"
+                  placeholder={t("Message", { ns: "forms" }) + "*"}
                   {...register("message", {
                     required: { value: true, message: "This field is required" },
                     minLength: { value: 5, message: "Minimum 5 characters" },
@@ -157,10 +160,10 @@ const Partnership = () => {
                   type="checkbox"
                   {...register("checkbox")}
                 />
-                I agree to receive commercial information regarding Track 360 via email.
+                {t("forms:agreeLable")}
               </label>
               <button type="submit" className={styles.FormBtn}>
-                Send
+                {t("Send", { ns: "buttons" })}
               </button>
             </form>
           </div>

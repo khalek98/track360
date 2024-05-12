@@ -1,0 +1,159 @@
+{
+  "primary": {
+    "head": "Nossas Soluções",
+    "main": {
+      "title": "Soluções",
+      "subtitle": "Track 360",
+      "text1": "O Track 360 se destaca como o melhor <span>software de gestão de afiliados</span> disponível atualmente, oferecendo uma ampla gama de recursos. Experimente um nível incomparável de funcionalidade, capacitando você a realizar uma infinidade de ações como nunca antes.",
+      "text2": "Além disso, o Track 360 oferece relatórios profundamente detalhados, permitindo que você descubra o <span>verdadeiro valor de seus afiliados!</span>"
+    },
+    "affiliate": {
+      "title": "Gerenciador de Afiliados",
+      "descr": "Este é o seu painel principal, onde você pode visualizar e realizar as atividades mais comuns de gerenciamento de afiliados.<br /><span>Aqui você tem fácil acesso às métricas de desempenho de seus afiliados.</span>",
+      "solutionList": [
+        "Dados sobre cliques, receita e outras métricas;",
+        "Visualizar e aplicar estruturas de comissão;",
+        "Processo de integração flexível e KYC;",
+        "Informações de pagamento e Extrato de Afiliado;",
+        "Adicionar notas e Histórico de Notas;",
+        "API de registro de contas personalizável."
+      ]
+    },
+    "reporting": {
+      "title": "Relatórios",
+      "descr": "O recurso de relatórios <span>customizáveis do Track 360</span> é incomparável em termos de profundidade e capacidades, com insights detalhados sobre o desempenho dos afiliados, para que você possa determinar seu real valor para o seu negócio e tomar <span>decisões informadas</span> em relação ao seu orçamento.",
+      "solutionList": [
+        "Agregação Rápida - visualize relatórios por datas, Afiliados, Geografias, Funcionários, etc;",
+        "Exportação para Pdf, Excel, E-mail e API;",
+        "Customizável - qualquer KPI pode ser incluído;",
+        "Análise de ROI - calcule o retorno sobre o investimento de cada afiliado e seu programa de pagamento individual para que você possa otimizar seus gastos com marketing."
+      ]
+    },
+    "marketing": {
+      "title": "Ferramentas de Marketing",
+      "descr": "O Track 360 inclui uma variedade de <span>ferramentas de marketing</span> para equipar seus afiliados, para que eles possam <span>promover efetivamente seu negócio.</span>",
+      "solutionList": [
+        "Banners, vídeos, widgets, páginas de destino, links profundos;",
+        "Serviço de anúncios (de acordo com a regulamentação baseada em geografia);",
+        "Integrações de rastreamento móvel;",
+        "API de Registro de Leads;",
+        "Mostrar/ Ocultar Criativos para Grupos Selecionados de Afiliados;",
+        "Ativar/ desativar automaticamente criativos de acordo com datas de expiração, como promoções de feriados;",
+        "Modelos de e-mail para Gerente de Afiliados;",
+        "Marcas d'água para avisos de risco/ fins de conformidade."
+      ]
+    },
+    "deals": {
+      "title": "Gerenciador de Negócios",
+      "descr": "O gerenciador de negócios do Track 360 é incomparável em termos de capacidades. Ele <span>suporta qualquer plano</span> que o operador deseje criar e pode <span>calcular com base</span> em qualquer KPI fornecido.",
+      "solutionList": [
+        "Afiliados de vários níveis e negócios de sub-afiliados;",
+        "Suporta qualquer tipo de plano de comissão - baseado em porcentagem, taxa fixa, escalonado, recorrente, CPA/ CPL, híbrido ou personalizado;",
+        "Árvore de decisão avançada para criar fórmulas desejáveis, com base em condições como atividade, geografia e metas;",
+        "Suporta Múltiplas Campanhas com Diferentes Negócios por Campanhas/ Afiliados;",
+        "Negócios podem ser calculados de acordo com qualquer KPI."
+      ]
+    },
+    "payment": {
+      "title": "Módulo de Pagamento",
+      "descr1": "O módulo de pagamento do Track 360 permite que os operadores <span>administrem pagamentos em massa</span> para seus afiliados de forma eficiente, precisa e segura, fornecendo ao mesmo tempo <span>flexibilidade e conformidade com leis fiscais e regulamentos.</span>",
+      "descr2": "Otimize seus processos de pagamento e gerencie facilmente <span>comissões, bônus, créditos e débitos.</span>",
+      "solutionList": [
+        "Multi-moeda com base no pedido do afiliado;",
+        "Demonstrativos financeiros resumindo todos os dados;",
+        "Módulos semanais/ mensais - mantenha-se organizado e eficiente;",
+        "Módulo ad hoc - flexível e versátil, para pagamentos singulares ou irregulares;",
+        "Processo de aprovação de comissão de acordo com a política estabelecida;",
+        "Processo de execução de pagamento;",
+        "Integração com PSPs;",
+        "Relatórios e Aprovação de Gerenciamento de Risco."
+      ]
+    },
+    "compliance": {
+      "title": "Conformidade",
+      "descr": "O Track 360 permite que você gerencie sua conformidade com <span>vários regulamentos</span> e <span>diretrizes relacionadas</span> ao seu marketing de afiliados.",
+      "solutionList": [
+        "Modelos padrão para acordos de afiliados que incluem termos e condições legais necessários;",
+        "Requisitos de divulgação estabelecidos pela FTC e outros órgãos reguladores;",
+        "Integração de afiliados KYC/ KYP - com base na regulamentação/necessidades da marca, nós GEO e GEO de tráfego;",
+        "Ferramentas de monitoramento para rastrear a atividade dos afiliados e garantir que seus afiliados estejam cumprindo seus termos;",
+        "Relatórios de conformidade que destacam qualquer problema potencial de conformidade;",
+        "Geotargeting para regulamentações locais de regiões ou países específicos, como o GDPR na UE."
+      ]
+    },
+    "organization": {
+      "title": "Gerenciador de Organização",
+      "descr": "O Track 360 é projetado para suportar as <span>estruturas de organização complexas</span> de grandes empresas multi-marca com presença global.",
+      "solutionList": [
+        "Múltiplas marcas com uma única conta de cliente;",
+        "Equipes e departamentos hierárquicos - delegue tarefas e garanta que cada equipe tenha os recursos necessários;",
+        "Gerenciamento de funcionários - atribua funções e permissões a cada funcionário com base em responsabilidades e nível de acesso;",
+        "Controle Geográfico - otimize seus programas para diferentes mercados."
+      ]
+    },
+    "communicator": {
+      "title": "Comunicador",
+      "descr": "O Track 360 fornece várias formas de se comunicar com seus afiliados registrados, seja para anunciar promoções, atualizações, suporte ou qualquer outra coisa que precise ser transmitida. Você pode fazer isso via:",
+      "solutionList": [
+        "E-mail direto;",
+        "Chat e mensagens na plataforma;",
+        "Boletins informativos e notificações;",
+        "Centro de recursos com recursos de treinamento."
+      ]
+    }
+  },
+  "secondary": {
+    "head": "Nossas Soluções",
+    "installations": {
+      "title": "Instalações",
+      "descr": "Os clientes do Track 360 podem escolher entre 2 tipos de instalação, <span>On-premise</span> ou <span>SaaS</span>, onde nós da Proline cuidamos e gerenciamos em nossos servidores seguros. Isso depende das suas preferências de personalização e das capacidades de infraestrutura de TI da sua organização.",
+      "blocks": [
+        {
+          "title": "On-Premise",
+          "items": [
+            "Executado nos servidores próprios da organização, acessados através da rede interna;",
+            "Maior opções de personalização;",
+            "Controle direto sobre segurança de dados, backups e medidas de conformidade;",
+            "Mais controle sobre configurações, integrações e práticas de manipulação de dados."
+          ]
+        },
+        {
+          "title": "SaaS",
+          "items": [
+            "Totalmente gerenciado, sem problemas com Manutenção de Hardware;",
+            "Atualizações de Software ou Patches de Segurança;",
+            "Desempenho e tempo de atividade ótimos;",
+            "Altamente escalável;",
+            "Implantação rápida."
+          ]
+        }
+      ]
+    },
+    "migration": {
+      "title": "Migração",
+      "descr1": "Os clientes interessados em migrar para o Track 360 podem ficar tranquilos sabendo que a transição será <span>suave, rápida e sem complicações.</span>",
+      "descr2": "Tudo o que você precisa fazer é transferir os seguintes dados, e nossa <span>automação e especialistas cuidarão do resto!</span>",
+      "solutionList": [
+        "Histórico do cliente;",
+        "Comissões;",
+        "Detalhes de pagamento dos afiliados;",
+        "Pagamentos;",
+        "Relatórios;",
+        "Estrutura de negócios de cada afiliado."
+      ]
+    },
+    "integrations": {
+      "title": "Integração",
+      "descr1": "O Track 360 é flexível e personalizável, e pode atender tanto a <span>integrações rápidas e simples</span>, quanto a integrações complexas de dados. Para clientes de dados estruturados, o Track 360 pode sintetizar para a terminologia e KPIs do cliente sem escrever código ou programação.",
+      "descr2": "Para integrações mais complexas, a equipe de integração do Track 360 pode <span>ajustar dados brutos e combinar a plataforma</span> para uma integração rápida e eficiente.",
+      "solutionList": [
+        "Lê dados de vários bancos de dados;",
+        "Eventos de retorno;",
+        "Empurrões e Puxões;",
+        "Arquivos e API;",
+        "Uploads de arquivos;",
+        "Filas de mensagens."
+      ]
+    }
+  }
+}

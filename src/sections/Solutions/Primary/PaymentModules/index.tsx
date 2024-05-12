@@ -1,9 +1,12 @@
 import React from "react";
 import { Fade, Zoom } from "react-reveal";
+import { useTranslation } from "react-i18next";
 
 import styles from "./PaymentModules.module.scss";
 
 const PaymentModules = () => {
+  const { t } = useTranslation("solutions");
+
   return (
     <section id="payment" className={styles.Section}>
       <div className="container">
@@ -14,51 +17,44 @@ const PaymentModules = () => {
             </div>
           </Zoom>
 
-          <h2 className={styles.Title}>Payment Module</h2>
+          <h2 className={styles.Title}>{t("primary.payment.title")}</h2>
           <Fade left>
-            <p className={styles.Text}>
-              Track 360’s payment module allow operators to <span>manage mass payments</span> to
-              their affiliates efficiently, accurately, and securely, while providing{" "}
-              <span>flexibility and compliance with tax laws and regulation.</span>
-            </p>
+            <p
+              className={styles.Text}
+              dangerouslySetInnerHTML={{ __html: t("primary.payment.descr1") }}
+            ></p>
           </Fade>
           <Fade left delay={300}>
-            <p className={styles.Text}>
-              Streamline your payment processes and easily{" "}
-              <span>manage commissions, bonuses, credits, and debits.</span>
-            </p>
+            <p
+              className={styles.Text}
+              dangerouslySetInnerHTML={{ __html: t("primary.payment.descr2") }}
+            ></p>
           </Fade>
 
           <ul className={styles.List}>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>Multi-currency based on affiliate request;</li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.0")}</li>
             </Fade>
             <Fade bottom delay={200}>
-              <li className={styles.ListItem}>Financial statements summarizing all data;</li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.1")}</li>
             </Fade>
             <Fade bottom delay={300}>
-              <li className={styles.ListItem}>
-                Weekly/ Monthly modules – stay organized and efficient;
-              </li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.2")}</li>
             </Fade>
             <Fade bottom delay={400}>
-              <li className={styles.ListItem}>
-                Ad hoc module – flexible and versatile, for singular or irregular payments;
-              </li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.3")}</li>
             </Fade>
             <Fade bottom delay={500}>
-              <li className={styles.ListItem}>
-                Commission approval process according to set policy;
-              </li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.4")}</li>
             </Fade>
             <Fade bottom delay={600}>
-              <li className={styles.ListItem}>Payment execution process;</li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.5")}</li>
             </Fade>
             <Fade bottom delay={700}>
-              <li className={styles.ListItem}>Integration to PSPs;</li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.6")}</li>
             </Fade>
             <Fade bottom delay={800}>
-              <li className={styles.ListItem}>Risk Management Reports and Approval.</li>
+              <li className={styles.ListItem}>{t("primary.payment.solutionList.7")}</li>
             </Fade>
           </ul>
         </div>

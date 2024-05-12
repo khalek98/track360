@@ -2,16 +2,41 @@ import React from "react";
 import cn from "classnames";
 import NextLink from "next/link";
 import { animateScroll as scroll } from "react-scroll";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Footer.module.scss";
 import Logo from "@/assets/icons/logo.svg";
 
 import { useAppContext } from "@/context/AppContext";
-import { menuList } from "@/utils/menuList";
-import Link from "next/link";
+import { IMenuList } from "@/utils/menuList";
 
 const Footer = () => {
+  const { t } = useTranslation(["footer", "home"]);
   const { pathname } = useAppContext();
+
+  const menuList: IMenuList[] = [
+    {
+      menuName: t("menu.home", { ns: "home" }),
+      menuLink: "/",
+    },
+    {
+      menuName: t("menu.solutions", { ns: "home" }),
+      menuLink: "/solutions/primary",
+    },
+    {
+      menuName: t("menu.pricing", { ns: "home" }),
+      menuLink: "/pricing",
+    },
+    {
+      menuName: t("menu.partnership", { ns: "home" }),
+      menuLink: "/about#partnership",
+    },
+    {
+      menuName: t("menu.about", { ns: "home" }),
+      menuLink: "/about",
+    },
+  ];
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -26,7 +51,7 @@ const Footer = () => {
           </NextLink>
 
           <div className={styles.MenuWrapper}>
-            <h4 className={styles.FooterTitle}>Menu</h4>
+            <h4 className={styles.FooterTitle}>{t("menuTitle")}</h4>
 
             <nav className={cn(styles.Nav)}>
               <ul className={styles.Menu}>
@@ -54,17 +79,17 @@ const Footer = () => {
           </div>
 
           <div className={styles.ContactsWrapper}>
-            <h4 className={styles.FooterTitle}>Contacts</h4>
+            <h4 className={styles.FooterTitle}>{t("contactTitle")}</h4>
 
             <ul className={styles.ContactsList}>
               <li className={styles.ContactsItem}>
-                <h5 className={styles.ContactTitle}>Information & Sales:</h5>
+                <h5 className={styles.ContactTitle}>{t("mailTitle")}</h5>
                 <a href="mailto:sales@proline.ltd" className={styles.Mail}>
                   sales@proline.ltd
                 </a>
               </li>
               <li className={styles.ContactsItem}>
-                <h5 className={styles.ContactTitle}>Address:</h5>
+                <h5 className={styles.ContactTitle}>{t("addressTitle")}</h5>
                 <address className={styles.Address}>
                   Proline Technologies Ltd Levi Eshkol 68, Kiryat Ono, Israel
                 </address>
@@ -73,21 +98,23 @@ const Footer = () => {
           </div>
 
           <div className={styles.TermsWrapper}>
-            <h4 className={styles.FooterTitle}>Terms & Policies</h4>
+            <h4 className={styles.FooterTitle}>{t("termsTitle")}</h4>
             <ul className={styles.TermsList}>
               <li className={styles.TermsItem}>
                 <Link href="/terms" className={styles.TermsLink}>
-                  Terms of Service
+                  {t("terms")}
                 </Link>
               </li>
               <li className={styles.TermsItem}>
                 <Link href="/privacy" className={styles.TermsLink}>
-                  Privacy Policy
+                  {t("privacy")}
                 </Link>
               </li>
             </ul>
 
-            <div className={styles.Label}>©Track360 by Proline Ltd 2023</div>
+            <div className={styles.Label}>
+              ©{t("copyright")} {new Date().getFullYear()}
+            </div>
           </div>
 
           <div onClick={scrollToTop} className={styles.Arrow}></div>

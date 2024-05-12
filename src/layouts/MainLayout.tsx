@@ -1,10 +1,12 @@
 import React, { FC } from "react";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import { Footer, Header } from "@/components";
 import { useAppContext } from "@/context/AppContext";
 import ContactUsPopUp from "@/components/ContactUsPopUp/indes";
 import RequestDemo from "@/components/RequestDemo";
+const Header = dynamic(() => import("@/components/Header"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 interface ILayoutProps {
   children: React.ReactNode;

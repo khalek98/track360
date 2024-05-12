@@ -1,10 +1,13 @@
 import React from "react";
 import cn from "classnames";
+import { Trans, useTranslation } from "react-i18next";
 
 import styles from "./Main.module.scss";
 import ArrowLink from "@/components/ArrowLink";
 
 const Main = () => {
+  const { t } = useTranslation("about");
+
   return (
     <section className={styles.Main}>
       <div className={cn(styles.CircleeDashed, styles.CircleeDashed_1)}>
@@ -18,19 +21,23 @@ const Main = () => {
       <ArrowLink arrowLink="team" />
       <div className="container">
         <div className={styles.MainWrapper}>
-          <h1 className={styles.Subtitle}>who we are</h1>
+          <h1 className={styles.Subtitle}>{"who we are"}</h1>
           <h2 className={styles.Title}>
-            About <span>Track 360</span>
+            {t("About")} <span>Track 360</span>
           </h2>
           <p className={styles.Text}>
-            Track 360 is powered by<span className={styles.SpanStyled}>Proline Ltd</span>, based in
-            Tel Aviv, Israel. Established in 2017, Proline&apos;s Team has over{" "}
-            <span>20 years of R&D and online marketing experience.</span>
+            <Trans
+              key={"mainDescr1"}
+              defaults={t("mainDescr1")}
+              components={{ span_white: <span className={styles.SpanStyled} />, span: <span /> }}
+            />
           </p>
           <p className={styles.Text}>
-            Comprised of experienced marketers and software developers, Proline is dedicated to
-            providing the best and most feature-rich{" "}
-            <span className={styles.SpanStyled}>affiliate software</span> on the market.
+            <Trans
+              key={"mainDescr2"}
+              defaults={t("mainDescr2")}
+              components={{ span_white: <span className={styles.SpanStyled} />, span: <span /> }}
+            />
           </p>
         </div>
       </div>

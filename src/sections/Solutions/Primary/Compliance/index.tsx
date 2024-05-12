@@ -1,9 +1,12 @@
 import React from "react";
 import { Fade } from "react-reveal";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Compliance.module.scss";
 
 const Compliance = () => {
+  const { t } = useTranslation("solutions");
+
   return (
     <section id="compliance" className={styles.Section}>
       <div className="container">
@@ -15,50 +18,34 @@ const Compliance = () => {
           </Fade>
 
           <Fade right>
-            <h2 className={styles.Title}>Compliance</h2>
+            <h2 className={styles.Title}>{t("primary.compliance.title")}</h2>
           </Fade>
 
           <Fade right>
-            <p className={styles.Text}>
-              Track 360 lets you manage your compliance with <span>various regulations</span> and{" "}
-              <span>guidelines related</span> to your affiliate marketing.
-            </p>
+            <p
+              className={styles.Text}
+              dangerouslySetInnerHTML={{ __html: t("primary.compliance.descr") }}
+            ></p>
           </Fade>
 
           <ul className={styles.List}>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>
-                Standard templates for affiliate agreements that include necessary legal terms and
-                conditions;
-              </li>
+              <li className={styles.ListItem}>{t("primary.compliance.solutionList.0")}</li>
             </Fade>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>
-                Disclosure requirements set by the FTC and other regulatory bodies;
-              </li>
+              <li className={styles.ListItem}>{t("primary.compliance.solutionList.1")}</li>
             </Fade>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>
-                KYC/ KYP affiliate onboarding - based on brand regulation/requirements, we GEO and
-                traffic GEO;
-              </li>
+              <li className={styles.ListItem}>{t("primary.compliance.solutionList.2")}</li>
             </Fade>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>
-                Monitoring tools to track affiliate activity and ensure that your affiliates are
-                complying with their terms;
-              </li>
+              <li className={styles.ListItem}>{t("primary.compliance.solutionList.3")}</li>
             </Fade>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>
-                Compliance reports that highlight any potential compliance issue;
-              </li>
+              <li className={styles.ListItem}>{t("primary.compliance.solutionList.4")}</li>
             </Fade>{" "}
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>
-                Geo-targeting for local regulations of specific regions or countries, such as GDPR
-                in EU.
-              </li>
+              <li className={styles.ListItem}>{t("primary.compliance.solutionList.5")}</li>
             </Fade>
           </ul>
         </div>

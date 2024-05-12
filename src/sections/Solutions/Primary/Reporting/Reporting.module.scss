@@ -42,11 +42,10 @@
   @include btn;
 
   margin-top: 20px;
+  padding: 15px 35px;
+  width: max-content;
 
   grid-column: 2/3;
-
-  width: 240px;
-  height: 60px;
 
   font-family: "Poppins";
   font-weight: 600;

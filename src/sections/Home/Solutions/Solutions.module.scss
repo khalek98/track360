@@ -46,7 +46,7 @@
 
 .SolutionsItem {
   padding: 15px 25px;
-  height: 130px;
+  height: 100%;
   width: 130px;
 
   display: flex;
@@ -68,7 +68,6 @@
   }
 
   @include media-md {
-    height: 140px;
     width: 140px;
 
     background: #ffffff;
@@ -76,7 +75,6 @@
   }
 
   @include media-xs {
-    height: 120px;
     width: 120px;
   }
 }

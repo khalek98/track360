@@ -1,0 +1,160 @@
+{
+  "primary": {
+    "head": "Our Solutions",
+    "main": {
+      "title": "Solutions",
+      "subtitle": "Track 360",
+      "text1": "Track 360 stands as the ultimate <span>affiliate management software</span> available today, offering an extensive range of features. Experience an unparalleled level of functionality, empowering you to carry out a multitude of actions like never before.",
+      "text2": "Moreover, Track 360 delivers profoundly detailed reports, enabling you to uncover the <span>true value of your affiliates!</span>"
+    },
+    "affiliate": {
+      "title": "Affiliate Manager",
+      "descr": "This is your main dashboard, where you can view and perform the most common activities of your affiliate management.<br /><span>Here you have easy access to the performance metrics of your affiliates.</span>",
+      "solutionList": [
+        "Data on clicks, revenue and other metrics;",
+        "View and apply commission structures;",
+        "Flexible onboarding and KYC process;",
+        "Payment info & Affiliate Statement;",
+        "Add notes & Notes History;",
+        "Customizable accounts registration API."
+      ]
+    },
+    "reporting": {
+      "title": "Reporting",
+      "descr": "Track 360’s <span>customizable reporting feature</span> is unrivaled in terms of depth and capabilities, with detailed insights into the performance of affiliates, so that you can determine their real value to your business and make <span>informed decisions</span> regarding your budget.",
+      "solutionList": [
+        "Fast Aggregation – view reports by dates, Affiliates, Geos, Employees, etc;",
+        "Export to Pdf, Excel, Email, and API;",
+        "Customizable - any KPI can be included;",
+        "ROI Analysis - calculate the return on investment on each affiliate and their individual payout program so that you can optimize your marketing spend."
+      ]
+    },
+    "marketing": {
+      "title": "Marketing tools",
+      "descr": "Track 360 includes a range of <span>marketing tools</span> to equip your affiliates with, so that they can effectively <span>promote your business.</span>",
+      "solutionList": [
+        "Banners, videos, widgets, landing pages, deep links;",
+        "Ad serving (according to geo-based regulation);",
+        "Mobile tracking integrations;",
+        "Lead Registration API;",
+        "Show/ Hide Creatives to Selected Groups of Affiliates;",
+        "Auto enable/ disable creatives according to expiry dates such as for holiday promotions;",
+        "Email templates for Affiliate Manager;",
+        "Water marks for risk warnings/ compliance purposes."
+      ]
+    },
+    "deals": {
+      "title": "Deals Manager",
+      "descr": "Track 360’s deal manager is unrivaled in terms of capabilities. It  <span>supports any plan</span> the operator wishes to create, and can <span>calculate based</span> on any KPI provided.",
+      "solutionList": [
+        "Multi-level affiliates and sub-affiliate deals;",
+        "Supports any type of commission plan – percentage based, flat-fee, tiered, recurring, CPA/ CPL, hybrid, or customized;",
+        "Advanced decision tree to create desirable formulas, based on conditions such as activity, geo, and targets;",
+        "Supports Multiple Campaigns with different Deals per Campaigns/ Affiliates;",
+        "Deals can be calculated according to any KPI."
+      ]
+    },
+    "payment": {
+      "title": "Payment Module",
+      "descr1": "Track 360’s payment module allow operators to <span>manage mass payments</span> to their affiliates efficiently, accurately, and securely, while providing <span>flexibility and compliance with tax laws and regulation.</span>",
+      "descr2": "Streamline your payment processes and easily <span>manage commissions, bonuses, credits, and debits.</span>",
+      "solutionList": [
+        "Multi-currency based on affiliate request;",
+        "Financial statements summarizing all data;",
+        "Weekly/ Monthly modules – stay organized and efficient;",
+        "Ad hoc module – flexible and versatile, for singular or irregular payments;",
+        "Commission approval process according to set policy;",
+        "Payment execution process;",
+        "Integration to PSPs;",
+        "Risk Management Reports and Approval."
+      ]
+    },
+    "compliance": {
+      "title": "Compliance",
+      "descr": "Track 360 lets you manage your compliance with <span>various regulations</span> and <span>guidelines related</span> to your affiliate marketing.",
+      "solutionList": [
+        "Standard templates for affiliate agreements that include necessary legal terms and conditions;",
+        "Disclosure requirements set by the FTC and other regulatory bodies;",
+        "KYC/ KYP affiliate onboarding - based on brand regulation/requirements, we GEO and traffic GEO;",
+        "Monitoring tools to track affiliate activity and ensure that your affiliates are complying with their terms;",
+        "Compliance reports that highlight any potential compliance issue;",
+        "Geo-targeting for local regulations of specific regions or countries, such as GDPR in EU."
+      ]
+    },
+    "organization": {
+      "title": "Organization Manager",
+      "descr": "Track 360 is designed to support the <span>complex organization structures</span> of large, multi-brand companies with global presence.",
+      "solutionList": [
+        "Multiple brands with single client account;",
+        "Hierarchical Teams and departments – delegate tasks and ensure each team has resources needed;",
+        "Employee management – assign roles and permissions to each employee based on responsibilities and access level;",
+        "Geo Control – optimize your programs for different markets."
+      ]
+    },
+    "communicator": {
+      "title": "Communicator",
+      "descr": "Track 360 provides various ways to communicate with your registered affiliates, whether you want to announce promotions, updates, support, or   anything else that needs to be conveyed. You can do so via:",
+      "solutionList": [
+        "Direct Email;",
+        "In-platform chat & messaging;",
+        "Newsletters & Notifications;",
+        "Resource center with training resources."
+      ]
+    }
+  },
+  "secondary": {
+    "head": "Our Solutions",
+    "installations": {
+      "title": "Installations",
+      "descr": "Track 360 clients can choose between 2 installations, <span>On-premise</span>, or <span>SaaS</span> where we at Proline hold and manage in our secured servers. This depends on your customization preferences, and your organization’s IT infrastructure capabilities.",
+      "blocks": [
+        {
+          "title": "On-Premise",
+          "items": [
+            "Runs on organization’s own servers, accessed through internal network;",
+            "Greater customization options;",
+            "Direct control over data security, backups, and compliance measures;",
+            "More control over configurations, integrations, and data handling practices."
+          ]
+        },
+        {
+          "title": "SaaS",
+          "items": [
+            "Fully Managed, Hassle-free from Hardware Maintenance;",
+            "Software Updates, or Security Patches;",
+            "Optimal Performance and Up-time;",
+            "Highly Scalable;",
+            "Rapid Deployment."
+          ]
+        }
+      ]
+    },
+
+    "migration": {
+      "title": "Migration",
+      "descr1": "Clients interested in migrating to Track 360 can rest assured that the transition will be <span>smooth, quick, and hassle-free.</span>",
+      "descr2": "All you have to do is transit the following data, and our <span>automation and experts handle the rest!</span>",
+      "solutionList": [
+        "Client History;",
+        "Commissions;",
+        "Affiliates payment details;",
+        "Payments;",
+        "Reports;",
+        "Deal structure of each affiliate."
+      ]
+    },
+    "integrations": {
+      "title": "Integration",
+      "descr1": "Track 360 is flexible and customizable, and can cater to both <span>quick and simple integrations</span>, as well as complex data integrations. For structured data clients, Track 360 can synthesize to client’s terminology and KPIs free of code writing or programming.",
+      "descr2": "For more complex integration, the Track 360 integration team can <span>tweak raw data and match the platform</span> for quick and efficient integration.",
+      "solutionList": [
+        "Reads data from various databases;",
+        "Postback events;",
+        "Push & Pulls;",
+        "Files & API;",
+        "File uploads;",
+        "Message queues."
+      ]
+    }
+  }
+}

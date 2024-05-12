@@ -1,9 +1,12 @@
 import React from "react";
 import { Fade, Zoom } from "react-reveal";
+import { useTranslation } from "react-i18next";
 
 import styles from "./OrganizationManager.module.scss";
 
 const OrganizationManager = () => {
+  const { t } = useTranslation("solutions");
+
   return (
     <section id="organization" className={styles.Section}>
       <div className="container">
@@ -15,36 +18,28 @@ const OrganizationManager = () => {
           </Fade>
 
           <Fade>
-            <h2 className={styles.Title}>Organization Manager</h2>
+            <h2 className={styles.Title}>{t("primary.organization.title")}</h2>
           </Fade>
 
           <Zoom>
-            <p className={styles.Text}>
-              Track 360 is designed to support the <span>complex organization structures</span> of
-              large, multi-brand companies with global presence.
-            </p>
+            <p
+              className={styles.Text}
+              dangerouslySetInnerHTML={{ __html: t("primary.organization.descr") }}
+            ></p>
           </Zoom>
 
           <ul className={styles.List}>
             <Zoom delay={100}>
-              <li className={styles.ListItem}>Multiple brands with single client account;</li>
+              <li className={styles.ListItem}>{t("primary.organization.solutionList.0")}</li>
             </Zoom>
             <Zoom delay={200}>
-              <li className={styles.ListItem}>
-                Hierarchical Teams and departments – delegate tasks and ensure each team has
-                resources needed;
-              </li>
+              <li className={styles.ListItem}>{t("primary.organization.solutionList.1")}</li>
             </Zoom>
             <Zoom delay={300}>
-              <li className={styles.ListItem}>
-                Employee management – assign roles and permissions to each employee based on
-                responsibilities and access level;
-              </li>
+              <li className={styles.ListItem}>{t("primary.organization.solutionList.2")}</li>
             </Zoom>
             <Zoom delay={400}>
-              <li className={styles.ListItem}>
-                Geo Control – optimize your programs for different markets.
-              </li>
+              <li className={styles.ListItem}>{t("primary.organization.solutionList.3")}</li>
             </Zoom>
           </ul>
         </div>

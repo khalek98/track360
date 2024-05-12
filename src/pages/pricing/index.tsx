@@ -1,10 +1,11 @@
 import Head from "next/head";
 import React from "react";
+import dynamic from "next/dynamic";
 
-import MainLayout from "@/layouts/MainLayout";
 import Main from "@/sections/Pricing/Main";
 import Trigger from "@/sections/Pricing/Trigger";
-import Solutions from "@/sections/Pricing/Solutions";
+const MainLayout = dynamic(() => import("@/layouts/MainLayout"));
+const Solutions = dynamic(() => import("@/sections/Pricing/Solutions"));
 
 const PricingPage = () => {
   return (
@@ -17,7 +18,7 @@ const PricingPage = () => {
             }
           `}
         </style>
-        <title>Track 360 | Pricing</title>
+        <title>Pricing | Track 360</title>
       </Head>
       <MainLayout>
         <Main />

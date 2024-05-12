@@ -38,6 +38,7 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: #ffffff;
+  text-transform: capitalize;
 
   span {
     color: var(--color-primary);
@@ -189,7 +190,7 @@
 
   color: var(--color-primary-dark);
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   font-family: Montserrat;
   font-weight: 600;
   line-height: 22px;
@@ -298,7 +299,7 @@
 
   color: var(--color-primary);
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   font-family: Montserrat;
   font-weight: 500;
   line-height: 23px;

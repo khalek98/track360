@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import cn from "classnames";
-import { Fade } from "react-reveal";
+import { Trans, useTranslation } from "react-i18next";
 
 import styles from "./RequestDemo.module.scss";
-
-import RequestSvg from "./RequestDemo.svg";
-import { SendFormType } from "@/@types/ContextTypes";
 
 import { useAppContext } from "@/context/AppContext";
 
@@ -19,6 +16,7 @@ interface IForm {
 }
 
 const RequestDemo = () => {
+  const { t } = useTranslation("forms");
   const { setShowRequestDemo, sendForm, setSendForm } = useAppContext();
   const [hidePopUp, setHidePopUp] = useState<boolean>(false);
   const {
@@ -95,21 +93,25 @@ const RequestDemo = () => {
               <>
                 <div className={styles.RequestWrap}>
                   <h2 className={styles.RequestTitle}>
-                    See How <br /> <span>Track 360</span> Works
+                    <Trans
+                      key={"requestDemoTitle"}
+                      defaults={t("requestDemoTitle")}
+                      components={{ br: <br />, span: <span /> }}
+                    />
                   </h2>
 
                   <ul className={styles.RequestList}>
                     <li className={styles.RequestItem}>
-                      <h3 className={styles.RequestItemTitle}>Experience Efficiency:</h3>
+                      <h3 className={styles.RequestItemTitle}>{t("Experience Efficiency:")}</h3>
                       <p className={styles.RequestItemDescr}>
-                        See our platform&apos;s effectiveness firsthand.
+                        {t("See our platform's effectiveness firsthand.")}
                       </p>
                     </li>
 
                     <li className={styles.RequestItem}>
-                      <h3 className={styles.RequestItemTitle}>Customized Demo:</h3>
+                      <h3 className={styles.RequestItemTitle}>{t("Customized Demo:")}</h3>
                       <p className={styles.RequestItemDescr}>
-                        Tailored walkthrough for your business needs.
+                        {t("Tailored walkthrough for your business needs.")}
                       </p>
                     </li>
                   </ul>
@@ -121,8 +123,9 @@ const RequestDemo = () => {
 
                 <div className={cn(styles.PopUpFormWrap)}>
                   <p className={styles.PopUpDescr}>
-                    Fill out the form below and we will contact you as soon as possible to provide a
-                    demo.
+                    {t(
+                      "Fill out the form below and we will contact you as soon as possible to provide a demo.",
+                    )}
                   </p>
 
                   <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
@@ -131,7 +134,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="text"
-                        placeholder="First Name*"
+                        placeholder={t("First Name") + "*"}
                         {...register("firstName", {
                           required: { value: true, message: "This field is required" },
                           minLength: { value: 2, message: "Minimum 2 characters" },
@@ -147,7 +150,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="text"
-                        placeholder="Last Name*"
+                        placeholder={t("Last Name") + "*"}
                         {...register("lastName", {
                           required: { value: true, message: "This field is required" },
                           minLength: { value: 2, message: "Minimum 2 characters" },
@@ -163,7 +166,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="email"
-                        placeholder="Email*"
+                        placeholder={t("Email") + "*"}
                         {...register("email", {
                           required: { value: true, message: "This field is required" },
                           pattern: { value: /^\S+@\S+$/, message: "Invalid e-mail format" },
@@ -179,7 +182,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="text"
-                        placeholder="Phone Number"
+                        placeholder={t("Phone Number")}
                         {...register("phone")}
                       />
                     </div>
@@ -191,10 +194,10 @@ const RequestDemo = () => {
                         type="checkbox"
                         {...register("checkbox")}
                       />
-                      I agree to receive commercial information regarding Track 360 via email.
+                      {t("agreeLable")}
                     </label>
                     <button type="submit" className={styles.FormBtn}>
-                      Send Request
+                      {t("Send Request", { ns: "buttons" })}
                     </button>
                   </form>
                 </div>
@@ -206,21 +209,20 @@ const RequestDemo = () => {
                 {sendForm === "success" ? (
                   <div className={styles.SendWrap}>
                     <div className={styles.SendImg}></div>
-                    <h2 className={styles.SendTitle}>Thank you for sending!</h2>
-                    <p className={styles.SendMessage}>We will get in touch with you shortly.</p>
+                    <h2 className={styles.SendTitle}>{t("Thank you for sending!")}</h2>
+                    <p className={styles.SendMessage}>
+                      {t("We will get in touch with you shortly.")}
+                    </p>
                     <p onClick={onClosePopUp} className={styles.SendBackLink}>
-                      Back to Page
+                      {t("Back to Page", { ns: "buttons" })}
                     </p>
                   </div>
                 ) : (
                   <div className={styles.SendWrap}>
-                    {/* <div className={styles.SendImg}></div> */}
-                    <h2 className={styles.SendTitle}>Something went wrong...</h2>
-                    <p className={styles.SendMessage}>
-                      Please check your internet connection and try again.
-                    </p>
-                    <p onClick={onClosePopUp} className={styles.SendBackLink}>
-                      Back to Page
+                    <h2 className={styles.SendTitle}>{t("Something went wrong...")}</h2>
+                    <p className={styles.SendMessage}>{t("Please try again.")}</p>
+                    <p onClick={() => setSendForm("hold")} className={styles.SendBackLink}>
+                      {t("Back to form", { ns: "buttons" })}
                     </p>
                   </div>
                 )}

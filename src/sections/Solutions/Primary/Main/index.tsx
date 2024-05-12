@@ -1,10 +1,13 @@
 import React from "react";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 import styles from "./Main.module.scss";
 import ArrowLink from "@/components/ArrowLink";
 
 const Main = () => {
+  const { t } = useTranslation("solutions");
+
   return (
     <section className={styles.Main}>
       <div className={cn(styles.CircleeDashed, styles.CircleeDashed_1)}></div>
@@ -17,17 +20,16 @@ const Main = () => {
       <ArrowLink arrowLink="affiliate" />
       <div className="container">
         <div className={styles.MainWrapper}>
-          <h1 className={styles.Subtitle}>solutions</h1>
-          <h2 className={styles.Title}>Track 360</h2>
-          <p className={styles.Text}>
-            Track 360 stands as the ultimate <span>affiliate management software</span> available
-            today, offering an extensive range of features. Experience an unparalleled level of
-            functionality, empowering you to carry out a multitude of actions like never before.
-          </p>
-          <p className={styles.Text}>
-            Moreover, Track 360 delivers profoundly detailed reports, enabling you to uncover the{" "}
-            <span>true value of your affiliates!</span>
-          </p>
+          <h1 className={styles.Subtitle}>{t("primary.main.title")}</h1>
+          <h2 className={styles.Title}>{t("primary.main.subtitle")}</h2>
+          <p
+            className={styles.Text}
+            dangerouslySetInnerHTML={{ __html: t("primary.main.text1") }}
+          ></p>
+          <p
+            className={styles.Text}
+            dangerouslySetInnerHTML={{ __html: t("primary.main.text2") }}
+          ></p>
         </div>
       </div>
     </section>

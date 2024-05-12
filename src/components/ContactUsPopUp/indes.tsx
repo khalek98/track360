@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 import styles from "./ContactUsPopUp.module.scss";
 import { useAppContext } from "@/context/AppContext";
@@ -14,6 +15,7 @@ interface IForm {
 }
 
 const ContactUsPopUp = () => {
+  const { t } = useTranslation("forms");
   const { setShowContactUs, sendForm, setSendForm } = useAppContext();
   const [hidePopUp, setHidePopUp] = useState<boolean>(false);
 
@@ -92,10 +94,8 @@ const ContactUsPopUp = () => {
           </div>
           {sendForm === "hold" && (
             <>
-              <h2 className={styles.PopUpTitle}>Contact us</h2>
-              <p className={styles.PopUpDescr}>
-                Questions? Suggestions? We would love to hear from you. Don’t hesitate to reach out.
-              </p>
+              <h2 className={styles.PopUpTitle}>{t("Contact us", { ns: "forms" })}</h2>
+              <p className={styles.PopUpDescr}>{t("contactUsDescr")}</p>
 
               <form onSubmit={handleSubmit(onSubmit)} className={styles.Form}>
                 <div className={styles.InputWrapper}>
@@ -103,7 +103,7 @@ const ContactUsPopUp = () => {
                     tabIndex={0}
                     className={styles.Input}
                     type="text"
-                    placeholder="Name*"
+                    placeholder={t("Name") + "*"}
                     {...register("name", {
                       required: { value: true, message: "This field is required" },
                       minLength: { value: 2, message: "Minimum 2 characters" },
@@ -119,7 +119,7 @@ const ContactUsPopUp = () => {
                     tabIndex={0}
                     className={styles.Input}
                     type="email"
-                    placeholder="Email*"
+                    placeholder={t("Email") + "*"}
                     {...register("email", {
                       required: { value: true, message: "This field is required" },
                       pattern: { value: /^\S+@\S+$/, message: "Invalid e-mail format" },
@@ -134,14 +134,14 @@ const ContactUsPopUp = () => {
                   tabIndex={0}
                   className={styles.Input}
                   type="text"
-                  placeholder="Subject"
+                  placeholder={t("Subject")}
                   {...register("subject")}
                 />
 
                 <div className={styles.InputWrapper}>
                   <textarea
                     className={styles.Textarea}
-                    placeholder="Message*"
+                    placeholder={t("Message") + "*"}
                     {...register("message", {
                       required: { value: true, message: "This field is required" },
                       minLength: { value: 5, message: "Minimum 5 characters" },
@@ -158,10 +158,10 @@ const ContactUsPopUp = () => {
                     type="checkbox"
                     {...register("checkbox")}
                   />
-                  I agree to receive commercial information regarding Track 360 via email.
+                  {t("agreeLable")}
                 </label>
                 <button type="submit" className={styles.FormBtn}>
-                  Send
+                  {t("send", { ns: "buttons" })}
                 </button>
               </form>
             </>
@@ -172,19 +172,20 @@ const ContactUsPopUp = () => {
               {sendForm === "success" ? (
                 <div className={styles.SendWrap}>
                   <div className={styles.SendImg}></div>
-                  <h2 className={styles.SendTitle}>Thank you for sending!</h2>
-                  <p className={styles.SendMessage}>We will get in touch with you shortly.</p>
+                  <h2 className={styles.SendTitle}>{t("Thank you for sending!")}</h2>
+                  <p className={styles.SendMessage}>
+                    {t("We will get in touch with you shortly.")}
+                  </p>
                   <p onClick={onClosePopUp} className={styles.SendBackLink}>
-                    Back to Page
+                    {t("Back to Page", { ns: "buttons" })}
                   </p>
                 </div>
               ) : (
                 <div className={styles.SendWrap}>
-                  {/* <div className={styles.SendImg}></div> */}
-                  <h2 className={styles.SendTitle}>Something went wrong...</h2>
-                  <p className={styles.SendMessage}>Please try again.</p>
+                  <h2 className={styles.SendTitle}>{t("Something went wrong...")}</h2>
+                  <p className={styles.SendMessage}>{t("Please try again.")}</p>
                   <p onClick={() => setSendForm("hold")} className={styles.SendBackLink}>
-                    Back to form
+                    {t("Back to form", { ns: "buttons" })}
                   </p>
                 </div>
               )}

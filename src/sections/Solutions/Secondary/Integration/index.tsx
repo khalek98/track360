@@ -1,48 +1,53 @@
 import React from "react";
-import { Fade, Bounce } from "react-reveal";
+import { Fade } from "react-reveal";
+import { Trans, useTranslation } from "react-i18next";
 
 import styles from "./Integration.module.scss";
 
 const Integration = () => {
+  const { t } = useTranslation("solutions");
   return (
     <section id="integration" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <h2 className={styles.Title}>Integration</h2>
+          <h2 className={styles.Title}>{t("secondary.integrations.title")}</h2>
           <Fade bottom delay={300}>
             <p className={styles.Text}>
-              Track 360 is flexible and customizable, and can cater to both{" "}
-              <span>quick and simple integrations</span>, as well as complex data integrations. For
-              structured data clients, Track 360 can synthesize to client’s terminology and KPIs
-              free of code writing or programming.
+              <Trans
+                key={"secondary.integrations.descr1"}
+                defaults={t("secondary.integrations.descr1")}
+                components={{ span: <span /> }}
+              />
             </p>
           </Fade>
           <Fade bottom delay={300}>
             <p className={styles.Text}>
-              For more complex integration, the Track 360 integration team can{" "}
-              <span>tweak raw data and match the platform</span> for quick and efficient
-              integration.
+              <Trans
+                key={"secondary.integrations.descr2"}
+                defaults={t("secondary.integrations.descr2")}
+                components={{ span: <span /> }}
+              />
             </p>
           </Fade>
 
           <ul className={styles.List}>
             <Fade bottom delay={100}>
-              <li className={styles.ListItem}>Reads data from various databases;</li>
+              <li className={styles.ListItem}>{t("secondary.integrations.solutionList.0")}</li>
             </Fade>
             <Fade bottom delay={200}>
-              <li className={styles.ListItem}>Postback events;</li>
+              <li className={styles.ListItem}>{t("secondary.integrations.solutionList.1")}</li>
             </Fade>
             <Fade bottom delay={300}>
-              <li className={styles.ListItem}>Push & Pulls;</li>
+              <li className={styles.ListItem}>{t("secondary.integrations.solutionList.2")}</li>
             </Fade>
             <Fade bottom delay={400}>
-              <li className={styles.ListItem}>Files & API;</li>
+              <li className={styles.ListItem}>{t("secondary.integrations.solutionList.3")}</li>
             </Fade>
             <Fade bottom delay={500}>
-              <li className={styles.ListItem}>File uploads;</li>
+              <li className={styles.ListItem}>{t("secondary.integrations.solutionList.4")}</li>
             </Fade>
             <Fade bottom delay={600}>
-              <li className={styles.ListItem}>Message queues.</li>
+              <li className={styles.ListItem}>{t("secondary.integrations.solutionList.5")}</li>
             </Fade>
           </ul>
           <div className={styles.ImgWrapper}>

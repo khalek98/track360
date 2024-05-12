@@ -1,12 +1,12 @@
 import React from "react";
-import Image from "next/image";
 import { Fade, Zoom } from "react-reveal";
+import { Trans, useTranslation } from "react-i18next";
 
 import styles from "./Migration.module.scss";
 
-import MigrationImg from "./MigrationAnimation.gif";
-
 const Migration = () => {
+  const { t } = useTranslation("solutions");
+
   return (
     <section id="migration" className={styles.Section}>
       <div className="container">
@@ -15,38 +15,44 @@ const Migration = () => {
             <div className={styles.Img}></div>
           </div>
 
-          <h2 className={styles.Title}>Migration</h2>
+          <h2 className={styles.Title}>{t("secondary.migration.title")}</h2>
           <Fade right>
             <p className={styles.Text}>
-              Clients interested in migrating to Track 360 can rest assured that the transition will
-              be <span>smooth, quick, and hassle-free.</span>
+              <Trans
+                key={"secondary.migration.descr1"}
+                defaults={t("secondary.migration.descr1")}
+                components={{ span: <span /> }}
+              />
             </p>
           </Fade>
           <Fade right delay={300}>
             <p className={styles.Text}>
-              All you have to do is transit the following data, and our{" "}
-              <span>automation and experts handle the rest!</span>
+              <Trans
+                key={"secondary.migration.descr2"}
+                defaults={t("secondary.migration.descr2")}
+                components={{ span: <span /> }}
+              />
             </p>
           </Fade>
 
           <ul className={styles.List}>
             <Zoom delay={100}>
-              <li className={styles.ListItem}>Client History;</li>
+              <li className={styles.ListItem}>{t("secondary.migration.solutionList.0")}</li>
             </Zoom>
             <Zoom delay={200}>
-              <li className={styles.ListItem}>Commissions;</li>
+              <li className={styles.ListItem}>{t("secondary.migration.solutionList.1")}</li>
             </Zoom>
             <Zoom delay={300}>
-              <li className={styles.ListItem}>affiliates payment details;</li>
+              <li className={styles.ListItem}>{t("secondary.migration.solutionList.2")}</li>
             </Zoom>
             <Zoom delay={400}>
-              <li className={styles.ListItem}>Payments;</li>
+              <li className={styles.ListItem}>{t("secondary.migration.solutionList.3")}</li>
             </Zoom>
             <Zoom delay={500}>
-              <li className={styles.ListItem}>Reports;</li>
+              <li className={styles.ListItem}>{t("secondary.migration.solutionList.4")}</li>
             </Zoom>
             <Zoom delay={600}>
-              <li className={styles.ListItem}>Deal structure of each affiliate. </li>
+              <li className={styles.ListItem}>{t("secondary.migration.solutionList.5")} </li>
             </Zoom>
           </ul>
         </div>

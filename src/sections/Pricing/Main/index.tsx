@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import cn from "classnames";
 import { Swiper as SwiperWrap, SwiperSlide } from "swiper/react";
 import SwiperClass, { Pagination } from "swiper";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,27 +10,15 @@ import "swiper/css/pagination";
 import styles from "./Main.module.scss";
 
 import { useAppContext } from "@/context/AppContext";
-import { pricePackageArr } from "@/utils/pricePackage";
+import { PricePackageArr } from "@/utils/pricePackage";
 
 const Main = () => {
+  const { t, i18n } = useTranslation(["price", "buttons"]);
   const { setShowRequestDemo } = useAppContext();
   const [showFeeList, setShowFeeList] = React.useState<string[]>([]);
   const [swiper, setSwiper] = React.useState<SwiperClass | null>(null);
   const [activePackageSlide, setActivePackageSlide] = React.useState(0);
-  const [innerWidth, setInnerWidth] = React.useState<number>(0);
-
-  useEffect(() => {
-    setInnerWidth(window.innerWidth);
-    window.addEventListener("resize", () => {
-      setInnerWidth(window.innerWidth);
-    });
-
-    return () => {
-      window.removeEventListener("resize", () => {
-        setInnerWidth(window.innerWidth);
-      });
-    };
-  }, []);
+  const pricePackageArr = PricePackageArr();
 
   const onSetShowFeeList = (id: string) => {
     if (showFeeList.includes(id)) {
@@ -43,9 +32,9 @@ const Main = () => {
     <section className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <h1 className={styles.Title}>Pricing</h1>
-          <h2 className={styles.Subtitle}>SaaS Packages</h2>
-          <p className={styles.Label}>Monthly Fee per # of Leads/ Sign ups</p>
+          <h1 className={styles.Title}>{t("Pricing")}</h1>
+          <h2 className={styles.Subtitle}>{t("SaaS Packages")}</h2>
+          <p className={styles.Label}>{t("Monthly Fee per # of Leads/ Sign ups")}</p>
 
           <ul className={styles.Packages}>
             {pricePackageArr.map(
@@ -56,17 +45,24 @@ const Main = () => {
                 <li key={packageId} className={styles.Package}>
                   <h3 className={styles.PackageTitle}>{packageTitle}</h3>
                   <p className={styles.PackageDescr}>{packageDescr}</p>
-                  <div className={styles.PriceMO}>
+                  <div
+                    className={`${styles.PriceMO} ${
+                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                    }`}
+                  >
                     {priceMO.curr && priceMO.curr}
                     <span>{priceMO.value}</span>
                     {priceMO.months && "/mo"}
                     {priceMO.descr && <p className={styles.PriceMODescr}>{priceMO.descr}</p>}
                   </div>
-
-                  <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
-                    Get Started
+                  <button
+                    onClick={() => setShowRequestDemo(true)}
+                    className={`${styles.PackageBtn} ${
+                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                    }`}
+                  >
+                    {t("Get Started")}
                   </button>
-
                   <ul className={styles.Including}>
                     {includes.map((include, index) => (
                       <li key={index} className={styles.IncludingItem}>
@@ -111,13 +107,11 @@ const Main = () => {
                       </li>
                     ))}
                   </ul>
-
                   <div
                     className={cn(styles.Divider, {
                       [styles.DividerActive]: showFeeList.includes(packageId),
                     })}
                   ></div>
-
                   <ul className={styles.Features}>
                     {features.map((feature, index) => (
                       <li key={index} className={styles.Feature}>
@@ -163,27 +157,31 @@ const Main = () => {
             className={cn(styles.Packages, styles.PackagesContentMobile, "mySwiper")}
           >
             {pricePackageArr.map(
-              ({
-                id: packageId,
-                packageTitle,
-                packageDescr,
-                priceMO,
-                includes,
-                feeList,
-                features,
-              }) => (
+              (
+                { id: packageId, packageTitle, packageDescr, priceMO, includes, feeList, features },
+                index,
+              ) => (
                 <SwiperSlide key={packageId} className={styles.Package}>
                   <h3 className={styles.PackageTitle}>{packageTitle}</h3>
                   <p className={styles.PackageDescr}>{packageDescr}</p>
-                  <div className={styles.PriceMO}>
+                  <div
+                    className={`${styles.PriceMO} ${
+                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                    }`}
+                  >
                     {priceMO.curr && priceMO.curr}
                     <span>{priceMO.value}</span>
                     {priceMO.months && "/mo"}
                     {priceMO.descr && <p className={styles.PriceMODescr}>{priceMO.descr}</p>}
                   </div>
 
-                  <button onClick={() => setShowRequestDemo(true)} className={styles.PackageBtn}>
-                    Get Started
+                  <button
+                    onClick={() => setShowRequestDemo(true)}
+                    className={`${styles.PackageBtn} ${
+                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                    }`}
+                  >
+                    {t("Get Started")}
                   </button>
 
                   <ul className={styles.Including}>
@@ -267,89 +265,80 @@ const Main = () => {
             ))}
           </ul>
 
-          <p className={styles.NoteAfterPrice}>
-            All packages include 10M impressions/ mo & 4M clicks/ mo. Above, €0.06 per additional
-            1000 impressions & €0.5 per additional 1000 clicks.
-          </p>
+          <p className={styles.NoteAfterPrice}>{t("NoteAfterPrice1")}</p>
 
-          <div className={styles.NoteAfterPrice}>
-            *Setup fee may vary pending on system analysis, complexity & client&apos;s requirements
-          </div>
+          <div className={styles.NoteAfterPrice}>{t("NoteAfterPrice2")}</div>
 
-          <p className={styles.NoteAfterPrice}>
-            **The quoted Integration and Migration costs apply only if client data is ready for
-            immediate use. Extra charges may apply for data processing, currency conversion, or
-            consolidation from multiple sources.
-          </p>
+          <p className={styles.NoteAfterPrice}>{t("NoteAfterPrice3")}</p>
 
           <div className={styles.Table}>
             <div className={styles.TableContent}>
               <div className={styles.TableStatic}>
-                <h2 className={styles.TableTitle}>Features</h2>
+                <h2 className={styles.TableTitle}>{t("Features")}</h2>
                 <ul className={styles.TableList}>
-                  <li className={styles.TableItem}># of Reports</li>
-                  <li className={styles.TableItem}>Deals Module</li>
-                  <li className={styles.TableItem}>Payment Management System</li>
-                  <li className={styles.TableItem}>Compliance System</li>
-                  <li className={styles.TableItem}>API connections to Affiliates/IBs</li>
-                  <li className={styles.TableItem}>Number of Brands/Products</li>
+                  <li className={styles.TableItem}>{t("# of Reports")}</li>
+                  <li className={styles.TableItem}>{t("Deals Module")}</li>
+                  <li className={styles.TableItem}>{t("Payment Management System")}</li>
+                  <li className={styles.TableItem}>{t("Compliance System")}</li>
+                  <li className={styles.TableItem}>{t("API connections to Affiliates/IBs")}</li>
+                  <li className={styles.TableItem}>{t("Number of Brands/Products")}</li>
                 </ul>
               </div>
 
               <div className={styles.TableInner}>
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>Start Up</span> Package
+                    <span>{t("Start Up")}</span> {t("Package")}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
                     <li className={styles.TableItem}>+ €700/mo</li>
                     <li className={styles.TableItem}>N/A</li>
-                    <li className={styles.TableItem}>Up to 3</li>
+                    <li className={styles.TableItem}>{t("Up to")} 3</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </div>
 
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>Standard</span> Package
+                    <span>{t("Standard")}</span> {t("Package")}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
-                    <li className={styles.TableItem}>Up to 50</li>
+                    <li className={styles.TableItem}>{t("Up to")} 50</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </div>
 
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>Premium</span> Package
+                    <span>{t("Premium")}</span> {t("Package")}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Up to 500</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Up to")} 500</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </div>
 
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>Enterprise</span> Package
+                    <span>{t("Enterprise")}</span> {t("Package")}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Unlimited</li>
-                    <li className={styles.TableItem}>Unlimited</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Unlimited")}</li>
+                    <li className={styles.TableItem}>{t("Unlimited")}</li>
                   </ul>
                 </div>
               </div>
@@ -368,57 +357,61 @@ const Main = () => {
               >
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    Start Up<span>Package</span>
+                    {t("Start Up")}
+                    <span>{t("Package")}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
                     <li className={styles.TableItem}>+ €700/mo</li>
                     <li className={styles.TableItem}>N/A</li>
-                    <li className={styles.TableItem}>Up to 3</li>
+                    <li className={styles.TableItem}>{t("Up to")} 3</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </SwiperSlide>
 
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    Standard<span>Package</span>
+                    {t("Standard")}
+                    <span>{t("Package")}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
-                    <li className={styles.TableItem}>Up to 50</li>
+                    <li className={styles.TableItem}>{t("Up to")} 50</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </SwiperSlide>
 
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    Premium<span>Package</span>
+                    {t("Premium")}
+                    <span>{t("Package")}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Up to 500</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Up to")} 500</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </SwiperSlide>
 
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    Enterprise<span>Package</span>
+                    {t("Enterprise")}
+                    <span>{t("Package")}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>Full Package</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Included</li>
-                    <li className={styles.TableItem}>Unlimited</li>
-                    <li className={styles.TableItem}>Unlimited</li>
+                    <li className={styles.TableItem}>{t("Full Package")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Unlimited")}</li>
+                    <li className={styles.TableItem}>{t("Unlimited")}</li>
                   </ul>
                 </SwiperSlide>
               </SwiperWrap>
