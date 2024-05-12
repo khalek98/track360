@@ -1,6 +1,6 @@
 import React from "react";
-import { Fade, Zoom } from "react-reveal";
-import { useTranslation } from "react-i18next";
+import { Fade, Zoom } from "react-awesome-reveal";
+import { useTranslation } from "next-i18next";
 
 import styles from "./Reporting.module.scss";
 
@@ -14,14 +14,12 @@ const Reporting = () => {
     <section id="reporting" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <Fade left delay={500}>
-            <div className={styles.ImgWrapper}>
-              <div className={styles.Screenshot}></div>
-            </div>
+          <Fade triggerOnce direction="left" delay={500} className={styles.ImgWrapper}>
+            <div className={styles.Screenshot}></div>
           </Fade>
 
           <h2 className={styles.Title}>{t("primary.reporting.title")}</h2>
-          <Zoom>
+          <Zoom triggerOnce>
             <p
               className={styles.Text}
               dangerouslySetInnerHTML={{ __html: t("primary.reporting.descr") }}
@@ -29,16 +27,16 @@ const Reporting = () => {
           </Zoom>
 
           <ul className={styles.List}>
-            <Fade bottom>
+            <Fade triggerOnce direction="down">
               <li className={styles.ListItem}>{t("primary.reporting.solutionList.0")}</li>
             </Fade>
-            <Fade bottom delay={300}>
+            <Fade triggerOnce direction="down" delay={300}>
               <li className={styles.ListItem}>{t("primary.reporting.solutionList.1")}</li>
             </Fade>
-            <Fade bottom delay={400}>
+            <Fade triggerOnce direction="down" delay={400}>
               <li className={styles.ListItem}>{t("primary.reporting.solutionList.2")}</li>
             </Fade>
-            <Fade bottom delay={500}>
+            <Fade triggerOnce direction="down" delay={500}>
               <li className={styles.ListItem}>{t("primary.reporting.solutionList.3")}</li>
             </Fade>
           </ul>

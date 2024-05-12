@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 import RonenImg from "./RonenBuchholz.png";
 import AviImg from "./AviKenigsberg.png";
@@ -34,6 +34,7 @@ const Team = () => {
               <a
                 href="https://www.linkedin.com/in/ronen-buchholz-593817b1"
                 className={styles.TeamLink}
+                target="_blank"
               >
                 Linked In
               </a>
@@ -50,7 +51,11 @@ const Team = () => {
               <h3 className={styles.TeamName}>Avi Kenigsberg</h3>
               <div className={styles.TeamPosition}>{t("Co-Founder")}</div>
               <p className={styles.TeamDescription}>{t("AviDescr")}</p>
-              <a href="https://www.linkedin.com/in/avikenigsberg" className={styles.TeamLink}>
+              <a
+                href="https://www.linkedin.com/in/avikenigsberg"
+                className={styles.TeamLink}
+                target="_blank"
+              >
                 Linked In
               </a>
             </li>
@@ -66,7 +71,11 @@ const Team = () => {
               <h3 className={styles.TeamName}>Lior Yashinski</h3>
               <div className={styles.TeamPosition}>{t("Co-Founder")}</div>
               <p className={styles.TeamDescription}>{t("LiorDescr")}</p>
-              <a href="http://linkedin.com/in/lior-yashinski-2678743" className={styles.TeamLink}>
+              <a
+                href="http://linkedin.com/in/lior-yashinski-2678743"
+                className={styles.TeamLink}
+                target="_blank"
+              >
                 Linked In
               </a>
             </li>

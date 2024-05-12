@@ -1,5 +1,6 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 import styles from "./Solutions.module.scss";
 
@@ -7,25 +8,25 @@ import ArrowSVG from "./arrow.svg";
 import { SolutionArr } from "@/utils/solutionsArr";
 
 const Solutions = () => {
-  const { t } = useTranslation("price");
+  const { t } = useTranslation();
   const solutionArr = SolutionArr();
 
   return (
     <section className={styles.Solutions}>
       <div className="container">
         <div className={styles.SolutionsWrapper}>
-          <h2 className={styles.Title}>{t("Explore our solutions")}</h2>
+          <h2 className={styles.Title}>{t("Explore our solutions", { ns: "price" })}</h2>
 
           <ul className={styles.SolutionsList}>
             {solutionArr.map(({ key, img: Img, title, link }) => (
               <li key={key}>
-                <a href={link} className={styles.SolutionsItem}>
+                <Link href={link} className={styles.SolutionsItem}>
                   <Img className={styles.SolutionsImg} />
                   <h3 className={styles.SolutionsTitle}>{title}</h3>
                   <div className={styles.SolutionsLink}>
-                    {t("Explore")} <ArrowSVG />
+                    {t("Explore", { ns: "price" })} <ArrowSVG />
                   </div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

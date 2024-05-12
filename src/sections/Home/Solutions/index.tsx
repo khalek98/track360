@@ -1,5 +1,6 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 import styles from "./Solutions.module.scss";
 
@@ -21,10 +22,10 @@ const Solutions = () => {
           <ul className={styles.SolutionsList}>
             {solutionArr.map(({ key, img: Img, title, link }) => (
               <li key={key}>
-                <a href={link} className={styles.SolutionsItem}>
+                <Link href={link} className={styles.SolutionsItem}>
                   <Img className={styles.SolutionsImg} />
                   <h3 className={styles.SolutionsTitle}>{title}</h3>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

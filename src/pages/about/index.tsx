@@ -1,11 +1,27 @@
 import Head from "next/head";
 import React from "react";
+import type { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import MainLayout from "@/layouts/MainLayout";
 import Main from "@/sections/AboutUs/Main";
 import Team from "@/sections/AboutUs/Team";
 import Testimonial from "@/sections/AboutUs/Testimonial";
 import Partnership from "@/sections/AboutUs/Partnership";
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", [
+        "home",
+        "buttons",
+        "footer",
+        "about",
+        "forms",
+      ])),
+    },
+  };
+};
 
 const AboutPage = () => {
   return (

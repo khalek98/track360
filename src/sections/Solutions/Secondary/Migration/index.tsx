@@ -1,6 +1,6 @@
 import React from "react";
-import { Fade, Zoom } from "react-reveal";
-import { Trans, useTranslation } from "react-i18next";
+import { Fade, Zoom } from "react-awesome-reveal";
+import { Trans, useTranslation } from "next-i18next";
 
 import styles from "./Migration.module.scss";
 
@@ -16,7 +16,7 @@ const Migration = () => {
           </div>
 
           <h2 className={styles.Title}>{t("secondary.migration.title")}</h2>
-          <Fade right>
+          <Fade triggerOnce direction="right">
             <p className={styles.Text}>
               <Trans
                 key={"secondary.migration.descr1"}
@@ -25,7 +25,7 @@ const Migration = () => {
               />
             </p>
           </Fade>
-          <Fade right delay={300}>
+          <Fade triggerOnce direction="right" delay={300}>
             <p className={styles.Text}>
               <Trans
                 key={"secondary.migration.descr2"}

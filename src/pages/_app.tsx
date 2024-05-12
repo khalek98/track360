@@ -1,9 +1,9 @@
 import type { AppProps } from "next/app";
+import { appWithTranslation } from "next-i18next";
 
 import { AppContextProvider } from "../context/AppContext";
 
 import "@/styles/index.scss";
-import "../i18n/config";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -13,4 +13,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default App;
+export default appWithTranslation(App);

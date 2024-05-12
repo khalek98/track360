@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "./Installations.module.scss";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "next-i18next";
 
 const Installations = () => {
   const { t } = useTranslation("solutions");

@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import { Swiper as SwiperWrap, SwiperSlide } from "swiper/react";
 import SwiperClass, { Pagination } from "swiper";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,7 +13,7 @@ import { useAppContext } from "@/context/AppContext";
 import { PricePackageArr } from "@/utils/pricePackage";
 
 const Main = () => {
-  const { t, i18n } = useTranslation(["price", "buttons"]);
+  const { t, i18n } = useTranslation();
   const { setShowRequestDemo } = useAppContext();
   const [showFeeList, setShowFeeList] = React.useState<string[]>([]);
   const [swiper, setSwiper] = React.useState<SwiperClass | null>(null);
@@ -32,9 +32,11 @@ const Main = () => {
     <section className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <h1 className={styles.Title}>{t("Pricing")}</h1>
-          <h2 className={styles.Subtitle}>{t("SaaS Packages")}</h2>
-          <p className={styles.Label}>{t("Monthly Fee per # of Leads/ Sign ups")}</p>
+          <h1 className={styles.Title}>{t("Pricing", { ns: "price" })}</h1>
+          <h2 className={styles.Subtitle}>{t("SaaS Packages", { ns: "price" })}</h2>
+          <p className={styles.Label}>
+            {t("Monthly Fee per # of Leads/ Sign ups", { ns: "price" })}
+          </p>
 
           <ul className={styles.Packages}>
             {pricePackageArr.map(
@@ -47,7 +49,7 @@ const Main = () => {
                   <p className={styles.PackageDescr}>{packageDescr}</p>
                   <div
                     className={`${styles.PriceMO} ${
-                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                      index === pricePackageArr.length - 1 && i18n.language === "br" && styles.Pt
                     }`}
                   >
                     {priceMO.curr && priceMO.curr}
@@ -58,10 +60,10 @@ const Main = () => {
                   <button
                     onClick={() => setShowRequestDemo(true)}
                     className={`${styles.PackageBtn} ${
-                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                      index === pricePackageArr.length - 1 && i18n.language === "br" && styles.Pt
                     }`}
                   >
-                    {t("Get Started")}
+                    {t("Get Started", { ns: "buttons" })}
                   </button>
                   <ul className={styles.Including}>
                     {includes.map((include, index) => (
@@ -166,7 +168,7 @@ const Main = () => {
                   <p className={styles.PackageDescr}>{packageDescr}</p>
                   <div
                     className={`${styles.PriceMO} ${
-                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                      index === pricePackageArr.length - 1 && i18n.language === "br" && styles.Pt
                     }`}
                   >
                     {priceMO.curr && priceMO.curr}
@@ -178,10 +180,10 @@ const Main = () => {
                   <button
                     onClick={() => setShowRequestDemo(true)}
                     className={`${styles.PackageBtn} ${
-                      index === pricePackageArr.length - 1 && i18n.language === "pt" && styles.Pt
+                      index === pricePackageArr.length - 1 && i18n.language === "br" && styles.Pt
                     }`}
                   >
-                    {t("Get Started")}
+                    {t("Get Started", { ns: "buttons" })}
                   </button>
 
                   <ul className={styles.Including}>
@@ -265,80 +267,86 @@ const Main = () => {
             ))}
           </ul>
 
-          <p className={styles.NoteAfterPrice}>{t("NoteAfterPrice1")}</p>
+          <p className={styles.NoteAfterPrice}>{t("NoteAfterPrice1", { ns: "price" })}</p>
 
-          <div className={styles.NoteAfterPrice}>{t("NoteAfterPrice2")}</div>
+          <div className={styles.NoteAfterPrice}>{t("NoteAfterPrice2", { ns: "price" })}</div>
 
-          <p className={styles.NoteAfterPrice}>{t("NoteAfterPrice3")}</p>
+          <p className={styles.NoteAfterPrice}>{t("NoteAfterPrice3", { ns: "price" })}</p>
 
           <div className={styles.Table}>
             <div className={styles.TableContent}>
               <div className={styles.TableStatic}>
-                <h2 className={styles.TableTitle}>{t("Features")}</h2>
+                <h2 className={styles.TableTitle}>{t("Features", { ns: "price" })}</h2>
                 <ul className={styles.TableList}>
-                  <li className={styles.TableItem}>{t("# of Reports")}</li>
-                  <li className={styles.TableItem}>{t("Deals Module")}</li>
-                  <li className={styles.TableItem}>{t("Payment Management System")}</li>
-                  <li className={styles.TableItem}>{t("Compliance System")}</li>
-                  <li className={styles.TableItem}>{t("API connections to Affiliates/IBs")}</li>
-                  <li className={styles.TableItem}>{t("Number of Brands/Products")}</li>
+                  <li className={styles.TableItem}>{t("# of Reports", { ns: "price" })}</li>
+                  <li className={styles.TableItem}>{t("Deals Module", { ns: "price" })}</li>
+                  <li className={styles.TableItem}>
+                    {t("Payment Management System", { ns: "price" })}
+                  </li>
+                  <li className={styles.TableItem}>{t("Compliance System", { ns: "price" })}</li>
+                  <li className={styles.TableItem}>
+                    {t("API connections to Affiliates/IBs", { ns: "price" })}
+                  </li>
+                  <li className={styles.TableItem}>
+                    {t("Number of Brands/Products", { ns: "price" })}
+                  </li>
                 </ul>
               </div>
 
               <div className={styles.TableInner}>
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>{t("Start Up")}</span> {t("Package")}
+                    <span>{t("Start Up", { ns: "price" })}</span> {t("Package", { ns: "price" })}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
                     <li className={styles.TableItem}>+ €700/mo</li>
                     <li className={styles.TableItem}>N/A</li>
-                    <li className={styles.TableItem}>{t("Up to")} 3</li>
+                    <li className={styles.TableItem}>{t("Up to", { ns: "price" })} 3</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </div>
 
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>{t("Standard")}</span> {t("Package")}
+                    <span>{t("Standard", { ns: "price" })}</span> {t("Package", { ns: "price" })}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
-                    <li className={styles.TableItem}>{t("Up to")} 50</li>
+                    <li className={styles.TableItem}>{t("Up to", { ns: "price" })} 50</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </div>
 
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>{t("Premium")}</span> {t("Package")}
+                    <span>{t("Premium", { ns: "price" })}</span> {t("Package", { ns: "price" })}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Up to")} 500</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Up to", { ns: "price" })} 500</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </div>
 
                 <div className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    <span>{t("Enterprise")}</span> {t("Package")}
+                    <span>{t("Enterprise", { ns: "price" })}</span> {t("Package", { ns: "price" })}
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Unlimited")}</li>
-                    <li className={styles.TableItem}>{t("Unlimited")}</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Unlimited", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Unlimited", { ns: "price" })}</li>
                   </ul>
                 </div>
               </div>
@@ -357,61 +365,61 @@ const Main = () => {
               >
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    {t("Start Up")}
-                    <span>{t("Package")}</span>
+                    {t("Start Up", { ns: "price" })}
+                    <span>{t("Package", { ns: "price" })}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
                     <li className={styles.TableItem}>+ €700/mo</li>
                     <li className={styles.TableItem}>N/A</li>
-                    <li className={styles.TableItem}>{t("Up to")} 3</li>
+                    <li className={styles.TableItem}>{t("Up to", { ns: "price" })} 3</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </SwiperSlide>
 
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    {t("Standard")}
-                    <span>{t("Package")}</span>
+                    {t("Standard", { ns: "price" })}
+                    <span>{t("Package", { ns: "price" })}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
                     <li className={styles.TableItem}>+ €250/mo</li>
-                    <li className={styles.TableItem}>{t("Up to")} 50</li>
+                    <li className={styles.TableItem}>{t("Up to", { ns: "price" })} 50</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </SwiperSlide>
 
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    {t("Premium")}
-                    <span>{t("Package")}</span>
+                    {t("Premium", { ns: "price" })}
+                    <span>{t("Package", { ns: "price" })}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Up to")} 500</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Up to", { ns: "price" })} 500</li>
                     <li className={styles.TableItem}>1</li>
                   </ul>
                 </SwiperSlide>
 
                 <SwiperSlide className={styles.TableCol}>
                   <h3 className={styles.FeatureTitle}>
-                    {t("Enterprise")}
-                    <span>{t("Package")}</span>
+                    {t("Enterprise", { ns: "price" })}
+                    <span>{t("Package", { ns: "price" })}</span>
                   </h3>
                   <ul className={styles.TableList}>
-                    <li className={styles.TableItem}>{t("Full Package")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Included")}</li>
-                    <li className={styles.TableItem}>{t("Unlimited")}</li>
-                    <li className={styles.TableItem}>{t("Unlimited")}</li>
+                    <li className={styles.TableItem}>{t("Full Package", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Included", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Unlimited", { ns: "price" })}</li>
+                    <li className={styles.TableItem}>{t("Unlimited", { ns: "price" })}</li>
                   </ul>
                 </SwiperSlide>
               </SwiperWrap>

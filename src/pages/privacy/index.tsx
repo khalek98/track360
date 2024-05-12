@@ -1,8 +1,18 @@
 import React from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import type { GetStaticProps } from "next";
 
 import styles from "../terms/terms.module.scss";
 
 import PrimaryLayout from "@/layouts/MainLayout";
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", ["home", "buttons", "footer", "forms"])),
+    },
+  };
+};
 
 const Privacy = () => {
   return (

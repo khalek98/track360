@@ -6,7 +6,7 @@ import styles from "./Partnership.module.scss";
 import MailSVG from "./mail.svg";
 import LocationSVG from "./location.svg";
 import { useAppContext } from "@/context/AppContext";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "next-i18next";
 
 interface IForm {
   name: string;
@@ -19,7 +19,7 @@ interface IForm {
 
 const Partnership = () => {
   const { setSendForm, setShowRequestDemo } = useAppContext();
-  const { t } = useTranslation(["about", "forms"]);
+  const { t } = useTranslation();
   const {
     handleSubmit,
     reset,
@@ -55,7 +55,7 @@ const Partnership = () => {
     <section id="partnership" className={styles.Section}>
       <div className="container">
         <div className={styles.SectionWrapper}>
-          <h2 className={styles.Title}>{t("Partnerships")}</h2>
+          <h2 className={styles.Title}>{t("Partnerships", { ns: "about" })}</h2>
           <p className={styles.Text}>
             <Trans
               key={"partnershipText1"}
@@ -64,13 +64,13 @@ const Partnership = () => {
             />
           </p>
 
-          <p className={styles.Text}>{t("partnershipText2")}</p>
+          <p className={styles.Text}>{t("partnershipText2", { ns: "about" })}</p>
 
           <ul className={styles.ContactsWrap}>
             <li className={styles.ContactItem}>
               <MailSVG className={styles.ContactSvg} />
               <div className={styles.ContactItemWrap}>
-                <div className={styles.ContactTitle}>{t("footer:mailTitle")}</div>
+                <div className={styles.ContactTitle}>{t("mailTitle", { ns: "footer" })}</div>
                 <a className={styles.Contact} href="mailto:sales@proline.ltd">
                   sales@proline.ltd
                 </a>
@@ -81,7 +81,7 @@ const Partnership = () => {
               <LocationSVG className={styles.ContactSvg} />
 
               <div className={styles.ContactItemWrap}>
-                <div className={styles.ContactTitle}>{t("footer:officeLocation")}</div>
+                <div className={styles.ContactTitle}>{t("officeLocation", { ns: "footer" })}</div>
                 <address className={styles.Contact}>Levi Eshkol 68, Kiryat Ono, Israel</address>
               </div>
             </li>

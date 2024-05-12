@@ -1,0 +1,21 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import type { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    ...(await serverSideTranslations("br", ["header", "footer"])),
+  },
+});
+
+const Br = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/", undefined, { locale: "br" });
+  }, [router]);
+};
+
+export default Br;

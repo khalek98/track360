@@ -3,7 +3,7 @@ import cn from "classnames";
 import NextLink from "next/link";
 import { animateScroll as scroll } from "react-scroll";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 import styles from "./Footer.module.scss";
 import Logo from "@/assets/icons/logo.svg";

@@ -2,7 +2,7 @@
 import React, { FC, useEffect, useState } from "react";
 import cn from "classnames";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 import styles from "./Header.module.scss";
 import footerStyles from "../Footer/Footer.module.scss";
@@ -17,7 +17,7 @@ type IHeaderProps = {
 };
 
 const Header: FC<IHeaderProps> = ({ darkMode }) => {
-  const { t } = useTranslation(["buttons", "footer", "home"]);
+  const { t } = useTranslation();
 
   const menuList: IMenuList[] = [
     {
@@ -181,6 +181,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
           <Link href="/" className={styles.LogoWrapper}>
             <Logo onClick={onCloseMenu} className={cn(styles.Logo)} />
           </Link>
+
           <nav className={cn(styles.Nav, { [styles.NavMobileActive]: openMenu })}>
             <ul className={cn(styles.Menu)}>
               {menuList.map(({ menuLink, menuName }, index: number) => (
@@ -238,13 +239,13 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                       >
                         {submenuList.map(({ menuLink, menuName }) => (
                           <li className={styles.SubmenuItem} key={menuName}>
-                            <a
+                            <Link
                               onClick={onCloseMenu}
                               href={menuLink}
                               className={cn(styles.SubmenuLink)}
                             >
                               {menuName}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -262,7 +263,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   onClick={() => setShowContactUsMenu(!showContactUMenu)}
                   className={cn(styles.MenuLink)}
                 >
-                  {t("contactUs")}
+                  {t("contactUs", { ns: "buttons" })}
                   <ArrowSvg
                     className={cn(styles.Arrow, { [styles.ArrowActive]: showContactUMenu })}
                   />
@@ -271,13 +272,17 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                 {showContactUMenu && (
                   <ul className={cn(footerStyles.ContactsList, styles.ContactsList)}>
                     <li className={footerStyles.ContactsItem}>
-                      <h5 className={footerStyles.ContactTitle}>{t("footer:mailTitle")}</h5>
+                      <h5 className={footerStyles.ContactTitle}>
+                        {t("mailTitle", { ns: "footer" })}
+                      </h5>
                       <a href="mailto:sales@proline.ltd" className={footerStyles.Mail}>
                         sales@proline.ltd
                       </a>
                     </li>
                     <li className={footerStyles.ContactsItem}>
-                      <h5 className={footerStyles.ContactTitle}>{t("footer:addressTitle")}</h5>
+                      <h5 className={footerStyles.ContactTitle}>
+                        {t("addressTitle", { ns: "footer" })}
+                      </h5>
                       <address className={footerStyles.Address}>
                         Proline Technologies Ltd Levi Eshkol 68, Kiryat Ono, Israel
                       </address>
@@ -293,7 +298,7 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   }}
                   className={cn(styles.MobileBtn, styles.BtnRequest)}
                 >
-                  {t("requestDemo")}
+                  {t("requestDemo", { ns: "buttons" })}
                 </button>
                 <button
                   onClick={() => {
@@ -302,14 +307,14 @@ const Header: FC<IHeaderProps> = ({ darkMode }) => {
                   }}
                   className={cn(styles.MobileBtn, styles.BtnContact)}
                 >
-                  {t("contactUs")}
+                  {t("contactUs", { ns: "buttons" })}
                 </button>
               </div>
             </ul>
           </nav>
 
           <button onClick={() => setShowRequestDemo(true)} className={cn(styles.Button)}>
-            {t("requestDemo")}
+            {t("requestDemo", { ns: "buttons" })}
           </button>
 
           <button

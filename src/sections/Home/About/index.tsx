@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
-import { useTranslation } from "react-i18next";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
+import { useTranslation } from "next-i18next";
 
 import styles from "./About.module.scss";
 
@@ -18,24 +18,22 @@ const About = () => {
             dangerouslySetInnerHTML={{ __html: t("about.subtitle") }}
           ></h3>
 
-          <Fade bottom>
+          <Fade direction="down" triggerOnce>
             <p
               className={cn(styles.Text)}
               dangerouslySetInnerHTML={{ __html: t("about.paragraph1") }}
             ></p>
           </Fade>
 
-          <Fade bottom>
+          <Fade direction="down" triggerOnce>
             <p
               className={cn(styles.Text)}
               dangerouslySetInnerHTML={{ __html: t("about.paragraph2") }}
             ></p>
           </Fade>
 
-          <Fade right duration={1000}>
-            <div className={styles.ImgWrapper}>
-              <div className={styles.Screenshot}></div>
-            </div>
+          <Fade className={styles.ImgWrapper} direction="right" duration={1000}>
+            <div className={styles.Screenshot}></div>
           </Fade>
         </div>
       </div>

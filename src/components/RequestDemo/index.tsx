@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import cn from "classnames";
-import { Trans, useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "next-i18next";
 
 import styles from "./RequestDemo.module.scss";
 
@@ -95,23 +95,27 @@ const RequestDemo = () => {
                   <h2 className={styles.RequestTitle}>
                     <Trans
                       key={"requestDemoTitle"}
-                      defaults={t("requestDemoTitle")}
+                      defaults={t("requestDemoTitle", { ns: "forms" })}
                       components={{ br: <br />, span: <span /> }}
                     />
                   </h2>
 
                   <ul className={styles.RequestList}>
                     <li className={styles.RequestItem}>
-                      <h3 className={styles.RequestItemTitle}>{t("Experience Efficiency:")}</h3>
+                      <h3 className={styles.RequestItemTitle}>
+                        {t("Experience Efficiency:", { ns: "forms" })}
+                      </h3>
                       <p className={styles.RequestItemDescr}>
-                        {t("See our platform's effectiveness firsthand.")}
+                        {t("See our platform's effectiveness firsthand.", { ns: "forms" })}
                       </p>
                     </li>
 
                     <li className={styles.RequestItem}>
-                      <h3 className={styles.RequestItemTitle}>{t("Customized Demo:")}</h3>
+                      <h3 className={styles.RequestItemTitle}>
+                        {t("Customized Demo:", { ns: "forms" })}
+                      </h3>
                       <p className={styles.RequestItemDescr}>
-                        {t("Tailored walkthrough for your business needs.")}
+                        {t("Tailored walkthrough for your business needs.", { ns: "forms" })}
                       </p>
                     </li>
                   </ul>
@@ -134,7 +138,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="text"
-                        placeholder={t("First Name") + "*"}
+                        placeholder={t("First Name", { ns: "forms" }) + "*"}
                         {...register("firstName", {
                           required: { value: true, message: "This field is required" },
                           minLength: { value: 2, message: "Minimum 2 characters" },
@@ -150,7 +154,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="text"
-                        placeholder={t("Last Name") + "*"}
+                        placeholder={t("Last Name", { ns: "forms" }) + "*"}
                         {...register("lastName", {
                           required: { value: true, message: "This field is required" },
                           minLength: { value: 2, message: "Minimum 2 characters" },
@@ -166,7 +170,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="email"
-                        placeholder={t("Email") + "*"}
+                        placeholder={t("Email", { ns: "forms" }) + "*"}
                         {...register("email", {
                           required: { value: true, message: "This field is required" },
                           pattern: { value: /^\S+@\S+$/, message: "Invalid e-mail format" },
@@ -182,7 +186,7 @@ const RequestDemo = () => {
                         tabIndex={0}
                         className={styles.Input}
                         type="text"
-                        placeholder={t("Phone Number")}
+                        placeholder={t("Phone Number", { ns: "forms" })}
                         {...register("phone")}
                       />
                     </div>
@@ -194,7 +198,7 @@ const RequestDemo = () => {
                         type="checkbox"
                         {...register("checkbox")}
                       />
-                      {t("agreeLable")}
+                      {t("agreeLable", { ns: "forms" })}
                     </label>
                     <button type="submit" className={styles.FormBtn}>
                       {t("Send Request", { ns: "buttons" })}
@@ -209,9 +213,11 @@ const RequestDemo = () => {
                 {sendForm === "success" ? (
                   <div className={styles.SendWrap}>
                     <div className={styles.SendImg}></div>
-                    <h2 className={styles.SendTitle}>{t("Thank you for sending!")}</h2>
+                    <h2 className={styles.SendTitle}>
+                      {t("Thank you for sending!", { ns: "forms" })}
+                    </h2>
                     <p className={styles.SendMessage}>
-                      {t("We will get in touch with you shortly.")}
+                      {t("We will get in touch with you shortly.", { ns: "forms" })}
                     </p>
                     <p onClick={onClosePopUp} className={styles.SendBackLink}>
                       {t("Back to Page", { ns: "buttons" })}
@@ -219,8 +225,10 @@ const RequestDemo = () => {
                   </div>
                 ) : (
                   <div className={styles.SendWrap}>
-                    <h2 className={styles.SendTitle}>{t("Something went wrong...")}</h2>
-                    <p className={styles.SendMessage}>{t("Please try again.")}</p>
+                    <h2 className={styles.SendTitle}>
+                      {t("Something went wrong...", { ns: "forms" })}
+                    </h2>
+                    <p className={styles.SendMessage}>{t("Please try again.", { ns: "forms" })}</p>
                     <p onClick={() => setSendForm("hold")} className={styles.SendBackLink}>
                       {t("Back to form", { ns: "buttons" })}
                     </p>

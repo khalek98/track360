@@ -1,10 +1,9 @@
 import React from "react";
 
-import { Fade, Zoom } from "react-reveal";
-
 import styles from "./Choose.module.scss";
 import { reasonsArr } from "./reasonsArr";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
+import { Fade, Zoom } from "react-awesome-reveal";
 
 const Choose = () => {
   const { t } = useTranslation("home");
@@ -14,14 +13,14 @@ const Choose = () => {
       <div className="container">
         <div className={styles.ChooseWrapper}>
           <h2 className={styles.Title} dangerouslySetInnerHTML={{ __html: t("choose.title") }}></h2>
-          <Fade bottom>
+          <Fade triggerOnce direction="up">
             <p
               className={styles.Text}
               dangerouslySetInnerHTML={{ __html: t("choose.paragraph1") }}
             ></p>
           </Fade>
 
-          <Fade bottom delay={200}>
+          <Fade triggerOnce direction="up" delay={200}>
             <p
               className={styles.Text}
               dangerouslySetInnerHTML={{ __html: t("choose.paragraph2") }}
@@ -31,12 +30,12 @@ const Choose = () => {
           <ul className={styles.ChooseList}>
             {reasonsArr.map(({ title, descr, imgSVG: ImgSVG }, i) => (
               <li className={styles.ChooseItem} key={title}>
-                <Zoom delay={100}>
+                <Zoom triggerOnce delay={100}>
                   <div className={styles.ImgWrapper}>
                     <ImgSVG />
                   </div>
                 </Zoom>
-                <Fade right delay={100}>
+                <Fade direction="right" delay={100 + i * 10}>
                   <div className={styles.ChooseItemText}>
                     <h3
                       className={styles.ChooseTitle}

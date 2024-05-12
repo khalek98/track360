@@ -1,7 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import cn from "classnames";
-import { Fade } from "react-reveal";
-import { useTranslation } from "react-i18next";
+import { Fade } from "react-awesome-reveal";
+import { useTranslation } from "next-i18next";
 
 import styles from "./Main.module.scss";
 import ArrowLink from "@/components/ArrowLink";
@@ -45,74 +46,74 @@ const Main: React.FC = () => {
                 <div className={styles.ArrowInner}></div>
 
                 <div className={styles.MiddleMenu}>
-                  <Fade top delay={400}>
-                    <a
+                  <Fade triggerOnce direction="down" delay={400}>
+                    <Link
                       href="solutions/primary#payment"
                       className={styles.MiddleMenuLink}
                       dangerouslySetInnerHTML={{ __html: t("menu.payment") }}
                     >
                       {/* Payment Module */}
-                    </a>
+                    </Link>
                   </Fade>
-                  <Fade top delay={300}>
-                    <a
+                  <Fade triggerOnce direction="down" delay={300}>
+                    <Link
                       href="solutions/primary#compliance"
                       className={styles.MiddleMenuLink}
                       dangerouslySetInnerHTML={{ __html: t("menu.compliance") }}
                     >
                       {/* Compliance */}
-                    </a>
+                    </Link>
                   </Fade>
-                  <Fade top delay={200}>
-                    <a
+                  <Fade triggerOnce direction="down" delay={200}>
+                    <Link
                       href="solutions/primary#communicator"
                       className={styles.MiddleMenuLink}
                       dangerouslySetInnerHTML={{ __html: t("menu.communicator") }}
                     >
                       {/* Communicator */}
-                    </a>
+                    </Link>
                   </Fade>
-                  <Fade top delay={100}>
-                    <a
+                  <Fade triggerOnce direction="down" delay={100}>
+                    <Link
                       href="solutions/primary#organization"
                       className={styles.MiddleMenuLink}
                       dangerouslySetInnerHTML={{ __html: t("menu.organization") }}
                     >
                       {/* Organization Manager */}
-                    </a>
+                    </Link>
                   </Fade>
                 </div>
 
-                <a
+                <Link
                   href="solutions/primary#affiliate"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_1)}
                 >
                   {t("menu.affiliate")}
                   {/* affiliate manager */}
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="solutions/primary#reporting"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_2)}
                 >
                   {t("menu.reporting")}
                   {/* Reports */}
-                </a>
+                </Link>
 
-                <a
+                <Link
                   href="solutions/primary#marketing"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_3)}
                 >
                   {t("menu.marketing")}
                   {/* marketing tools */}
-                </a>
-                <a
+                </Link>
+                <Link
                   href="solutions/primary#deals"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_4)}
                   dangerouslySetInnerHTML={{ __html: t("menu.deals") }}
                 >
                   {/* deals manager */}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

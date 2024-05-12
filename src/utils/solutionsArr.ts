@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 import AffiliateManagerSVG from "@/assets/icons/solutions/AffiliateManager.svg";
 import OrganizationManagerSVG from "@/assets/icons/solutions/OrganizationManager.svg";
