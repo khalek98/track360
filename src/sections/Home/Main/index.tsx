@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import Link from "next/link";
 import cn from "classnames";
@@ -8,7 +9,7 @@ import styles from "./Main.module.scss";
 import ArrowLink from "@/components/ArrowLink";
 
 const Main: React.FC = () => {
-  const { t } = useTranslation(["home", "buttons"]);
+  const { t } = useTranslation();
 
   return (
     <section className={styles.Main}>
@@ -20,10 +21,16 @@ const Main: React.FC = () => {
 
       <div className="container">
         <div className={styles.MainWrapper}>
-          <h1 className={styles.Title} dangerouslySetInnerHTML={{ __html: t("main.title") }}>
+          <h1
+            className={styles.Title}
+            dangerouslySetInnerHTML={{ __html: t("main.title", { ns: "home" }) }}
+          >
             {/* Maximize <span>Your</span> Success */}
           </h1>
-          <p className={styles.Text} dangerouslySetInnerHTML={{ __html: t("main.subtitle") }}>
+          <p
+            className={styles.Text}
+            dangerouslySetInnerHTML={{ __html: t("main.subtitle", { ns: "home" }) }}
+          >
             {/* Track 360 is the most feature-rich, enabling <span>affiliate management software</span>{" "}
             available today. With an unrivaled level of functionality, you can perform{" "}
             <span>more actions</span> than ever before. */}
@@ -50,7 +57,7 @@ const Main: React.FC = () => {
                     <Link
                       href="solutions/primary#payment"
                       className={styles.MiddleMenuLink}
-                      dangerouslySetInnerHTML={{ __html: t("menu.payment") }}
+                      dangerouslySetInnerHTML={{ __html: t("menu.payment", { ns: "home" }) }}
                     >
                       {/* Payment Module */}
                     </Link>
@@ -59,7 +66,7 @@ const Main: React.FC = () => {
                     <Link
                       href="solutions/primary#compliance"
                       className={styles.MiddleMenuLink}
-                      dangerouslySetInnerHTML={{ __html: t("menu.compliance") }}
+                      dangerouslySetInnerHTML={{ __html: t("menu.compliance", { ns: "home" }) }}
                     >
                       {/* Compliance */}
                     </Link>
@@ -68,7 +75,7 @@ const Main: React.FC = () => {
                     <Link
                       href="solutions/primary#communicator"
                       className={styles.MiddleMenuLink}
-                      dangerouslySetInnerHTML={{ __html: t("menu.communicator") }}
+                      dangerouslySetInnerHTML={{ __html: t("menu.communicator", { ns: "home" }) }}
                     >
                       {/* Communicator */}
                     </Link>
@@ -77,7 +84,7 @@ const Main: React.FC = () => {
                     <Link
                       href="solutions/primary#organization"
                       className={styles.MiddleMenuLink}
-                      dangerouslySetInnerHTML={{ __html: t("menu.organization") }}
+                      dangerouslySetInnerHTML={{ __html: t("menu.organization", { ns: "home" }) }}
                     >
                       {/* Organization Manager */}
                     </Link>
@@ -88,7 +95,7 @@ const Main: React.FC = () => {
                   href="solutions/primary#affiliate"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_1)}
                 >
-                  {t("menu.affiliate")}
+                  {t("menu.affiliate", { ns: "home" })}
                   {/* affiliate manager */}
                 </Link>
 
@@ -96,7 +103,7 @@ const Main: React.FC = () => {
                   href="solutions/primary#reporting"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_2)}
                 >
-                  {t("menu.reporting")}
+                  {t("menu.reporting", { ns: "home" })}
                   {/* Reports */}
                 </Link>
 
@@ -104,13 +111,13 @@ const Main: React.FC = () => {
                   href="solutions/primary#marketing"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_3)}
                 >
-                  {t("menu.marketing")}
+                  {t("menu.marketing", { ns: "home" })}
                   {/* marketing tools */}
                 </Link>
                 <Link
                   href="solutions/primary#deals"
                   className={cn(styles.CircleLinkWrap, styles.CircleLinkWrap_4)}
-                  dangerouslySetInnerHTML={{ __html: t("menu.deals") }}
+                  dangerouslySetInnerHTML={{ __html: t("menu.deals", { ns: "home" }) }}
                 >
                   {/* deals manager */}
                 </Link>

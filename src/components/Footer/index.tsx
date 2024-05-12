@@ -58,7 +58,7 @@ const Footer = () => {
               <ul className={styles.Menu}>
                 {menuList.map(({ menuLink, menuName }, index) => (
                   <li className={styles.MenuItem} key={menuName}>
-                    <a
+                    <Link
                       href={menuLink}
                       className={cn(
                         styles.MenuLink,
@@ -72,7 +72,7 @@ const Footer = () => {
                       )}
                     >
                       {menuName}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

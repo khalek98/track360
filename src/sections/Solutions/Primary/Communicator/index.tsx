@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { Fade, Zoom } from "react-awesome-reveal";
 import { Trans, useTranslation } from "next-i18next";

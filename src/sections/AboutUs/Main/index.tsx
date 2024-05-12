@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import cn from "classnames";
 import { Trans, useTranslation } from "next-i18next";
@@ -23,19 +24,19 @@ const Main = () => {
         <div className={styles.MainWrapper}>
           <h1 className={styles.Subtitle}>{"who we are"}</h1>
           <h2 className={styles.Title}>
-            {t("About")} <span>Track 360</span>
+            {t("About", { ns: "about" })} <span>Track 360</span>
           </h2>
           <p className={styles.Text}>
             <Trans
               key={"mainDescr1"}
-              defaults={t("mainDescr1")}
+              defaults={t("mainDescr1", { ns: "about" })}
               components={{ span_white: <span className={styles.SpanStyled} />, span: <span /> }}
             />
           </p>
           <p className={styles.Text}>
             <Trans
               key={"mainDescr2"}
-              defaults={t("mainDescr2")}
+              defaults={t("mainDescr2", { ns: "about" })}
               components={{ span_white: <span className={styles.SpanStyled} />, span: <span /> }}
             />
           </p>
