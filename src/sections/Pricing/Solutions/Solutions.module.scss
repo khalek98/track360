@@ -41,12 +41,17 @@
 
   @include media-md {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(4, auto);
     justify-content: center;
     gap: 30px;
   }
 
+  @include media-sm {
+    grid-template-columns: repeat(3, auto);
+  }
+
   @include media-xs {
+    grid-template-columns: repeat(2, auto);
     gap: 20px;
   }
 }

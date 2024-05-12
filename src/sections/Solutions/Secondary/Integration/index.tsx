@@ -51,11 +51,10 @@ const Integration = () => {
               <li className={styles.ListItem}>{t("secondary.integrations.solutionList.5")}</li>
             </Fade>
           </ul>
-          <div className={styles.ImgWrapper}>
-            <Fade triggerOnce direction="right">
-              <div className={styles.Screenshot}></div>
-            </Fade>
-          </div>
+
+          <Fade triggerOnce direction="right" className={styles.ImgWrapper}>
+            <div className={styles.Screenshot}></div>
+          </Fade>
         </div>
       </div>
     </section>
